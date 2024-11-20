@@ -9,7 +9,7 @@ extends CharacterBody3D
 @export var SENS = 0.04
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED 
 	
 	# Assign the shared data to the state
 	for state in state_machine.get_children():
