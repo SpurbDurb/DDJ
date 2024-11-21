@@ -15,6 +15,14 @@ run/main_scene="res://scenes/proto_world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "red",
+"res://scenes/": "teal",
+"res://scripts/": "blue"
+}
+
 [input]
 
 forward={

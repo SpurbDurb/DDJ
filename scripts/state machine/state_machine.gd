@@ -5,7 +5,7 @@ var states : Dictionary = {}
 var current_state : State
 @export var initial_state : State
 
-func _ready() -> void:
+func init() -> void:
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
