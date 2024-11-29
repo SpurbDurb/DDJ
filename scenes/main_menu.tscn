@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://gif8lxijtvuu"]
+[gd_scene load_steps=13 format=3 uid="uid://gif8lxijtvuu"]
 
+[ext_resource type="Script" path="res://scripts/Main Menu/main_menu.gd" id="1_5am0p"]
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_u3sms"]
 [ext_resource type="Texture2D" uid="uid://ci61bwysku68n" path="res://assets/logo.png" id="2_a3gyn"]
 [ext_resource type="FontFile" uid="uid://dpm3atig5yq6m" path="res://assets/ui/NexaRustSans-Black.otf" id="3_f0ecb"]
@@ -67,6 +68,7 @@ Button/styles/normal = ExtResource("4_u07b7")
 Button/styles/pressed = ExtResource("4_u07b7")
 
 [node name="Main Menu" type="CanvasLayer"]
+script = ExtResource("1_5am0p")
 
 [node name="Background" type="Node3D" parent="."]
 
@@ -141,14 +143,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
-[node name="join_button" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "JOIN"
-script = ExtResource("7_3e68g")
-trans_type = 6
-ease_type = 1
-
 [node name="host_button" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -157,7 +151,17 @@ script = ExtResource("7_3e68g")
 trans_type = 6
 ease_type = 1
 
-[connection signal="mouse_entered" from="Control/VBoxContainer/VBoxContainer/join_button" to="Control/VBoxContainer/VBoxContainer/join_button" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Control/VBoxContainer/VBoxContainer/join_button" to="Control/VBoxContainer/VBoxContainer/join_button" method="_on_mouse_exited"]
+[node name="join_button" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "JOIN"
+script = ExtResource("7_3e68g")
+trans_type = 6
+ease_type = 1
+
 [connection signal="mouse_entered" from="Control/VBoxContainer/VBoxContainer/host_button" to="Control/VBoxContainer/VBoxContainer/host_button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Control/VBoxContainer/VBoxContainer/host_button" to="Control/VBoxContainer/VBoxContainer/host_button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/VBoxContainer/VBoxContainer/host_button" to="." method="host_multiplayer"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/VBoxContainer/join_button" to="Control/VBoxContainer/VBoxContainer/join_button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/VBoxContainer/join_button" to="Control/VBoxContainer/VBoxContainer/join_button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/VBoxContainer/VBoxContainer/join_button" to="." method="join_multiplayer"]

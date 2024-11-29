@@ -7,27 +7,29 @@ var direction: Vector3
 @export var visual : Node3D
 @export var SPEED = 2.6
 
-func Enter():
+func enter() -> void:
 	animation_player.play("run")
 
-func Update(_delta: float):
+func update(_deta:float):
+	if Input.is_action_just_pressed("ui_accept"):
+		exit_state = true
+		return
+	
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		exit_state = false
 		player.visual.look_at(player.position + direction)
 		player.velocity.x = direction.x * SPEED
 		player.velocity.z = direction.z * SPEED
-	Handle_state_transition(_delta)
+	else:
+		exit_state = true
 
-func Handle_state_transition(_delta: float):
-	if (Input.is_action_just_pressed("ui_accept") and player.is_on_floor()):
-		player.velocity.y = SPEED
-		state_transition.emit(self, "jump")
-		return
-	if not player.is_on_floor():
-		state_transition.emit(self, "jump")
-		return
-	
-	if not direction:
-		state_transition.emit(self, "idle")
-		return
+func exit_condition() -> bool:
+	return exit_state or !player.is_on_floor()
+
+func enter_condition() -> bool:
+	var input_dir := Input.get_vector("left", "right", "forward", "backward")
+	if input_dir.length() > 0:
+		return true
+	return false

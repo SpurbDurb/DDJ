@@ -9,30 +9,27 @@ func init() -> void:
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
-			child.state_transition.connect(change_state)
 			
 	if initial_state:
-		initial_state.Enter()
+		initial_state.enter()
 		current_state = initial_state
-
-func change_state(source_state: State, new_state_name: String):
-	# Checkar
-	if source_state != current_state:
-		print(source_state)
-		print(current_state)
-		print("Invalid source_state")
-		return
-	var new_state = states.get(new_state_name.to_lower())
-	if !new_state:
-		print ("New state is empty")
-		return
-	
-	# Funcionalidade
-	if current_state:
-		current_state.Exit()
-	new_state.Enter()
-	current_state = new_state
 
 func _physics_process(delta: float) -> void:
 	if current_state:
-		current_state.Update(delta)
+		current_state.update(delta)
+		check_change_state()
+
+func check_change_state() -> void:
+	if !current_state.exit_condition():
+		return
+	for state in get_children():
+		if state != current_state:
+			if state.enter_condition():
+				change_state(state)
+				return
+
+func change_state(new_state: State) -> void:
+	if current_state:
+		current_state.exit()
+	new_state.enter()
+	current_state = new_state

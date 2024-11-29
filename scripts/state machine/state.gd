@@ -1,16 +1,19 @@
 extends Node
 class_name State
 
-signal state_transition
+@export var exit_state : bool = false
 
-func Enter():
+func enter() -> void:
 	pass
 
-func Exit():
+func exit():
 	pass
 
-func Update(_deta:float):
+func update(_deta:float):
 	pass
 
-func Handle_state_transition(_delta: float):
-	pass
+func exit_condition() -> bool:
+	return exit_state
+
+func enter_condition() -> bool:
+	return true
