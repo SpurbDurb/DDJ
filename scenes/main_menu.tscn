@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://gif8lxijtvuu"]
+[gd_scene load_steps=12 format=3 uid="uid://gif8lxijtvuu"]
 
-[ext_resource type="Script" path="res://scripts/Main Menu/background.gd" id="1_n20vf"]
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_u3sms"]
 [ext_resource type="Texture2D" uid="uid://ci61bwysku68n" path="res://assets/logo.png" id="2_a3gyn"]
+[ext_resource type="FontFile" uid="uid://dpm3atig5yq6m" path="res://assets/ui/NexaRustSans-Black.otf" id="3_f0ecb"]
 [ext_resource type="Script" path="res://scripts/Main Menu/logo_animation.gd" id="4_fux50"]
+[ext_resource type="StyleBox" uid="uid://co4i0qidpqixn" path="res://assets/ui/button.tres" id="4_u07b7"]
+[ext_resource type="Script" path="res://scripts/Main Menu/button_animation.gd" id="7_3e68g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o8jx3"]
 shader = ExtResource("1_u3sms")
@@ -27,10 +29,46 @@ fog_enabled = true
 fog_light_color = Color(0.748908, 0.773225, 0.811435, 1)
 fog_sky_affect = 0.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ahtw"]
+bg_color = Color(1, 1, 0.913725, 1)
+border_width_bottom = 6
+border_color = Color(0.882353, 0.882353, 0.882353, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_mct8e"]
+Button/colors/font_color = Color(0.513234, 0.513232, 0.513233, 1)
+Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 0)
+Button/colors/font_focus_color = Color(0.513726, 0.513726, 0.513726, 1)
+Button/colors/font_hover_color = Color(0.513726, 0.513726, 0.513726, 1)
+Button/colors/font_hover_pressed_color = Color(0.513726, 0.513726, 0.513726, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.513726, 0.513726, 0.513726, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 18
+Button/fonts/font = ExtResource("3_f0ecb")
+Button/styles/disabled = SubResource("StyleBoxFlat_6ahtw")
+Button/styles/focus = ExtResource("4_u07b7")
+Button/styles/hover = ExtResource("4_u07b7")
+Button/styles/normal = ExtResource("4_u07b7")
+Button/styles/pressed = ExtResource("4_u07b7")
+
 [node name="Main Menu" type="CanvasLayer"]
 
 [node name="Background" type="Node3D" parent="."]
-script = ExtResource("1_n20vf")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Background"]
 environment = SubResource("Environment_cbtom")
@@ -56,29 +94,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_mct8e")
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_top = -244.0
+offset_bottom = 230.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 500
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 500
-theme_override_constants/margin_bottom = 32
+theme_override_constants/separation = 60
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
-layout_mode = 2
-
-[node name="Control" type="Control" parent="Control/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(360, 280)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/Control"]
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/Control"]
 custom_minimum_size = Vector2(360, 240)
 layout_mode = 1
 anchors_preset = 8
@@ -86,10 +122,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_left = -178.0
+offset_top = -96.0
+offset_right = 182.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_a3gyn")
@@ -99,5 +135,29 @@ script = ExtResource("4_fux50")
 trans_type = 1
 ease_type = 2
 
-[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="join_button" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "JOIN"
+script = ExtResource("7_3e68g")
+trans_type = 6
+ease_type = 1
+
+[node name="host_button" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "host"
+script = ExtResource("7_3e68g")
+trans_type = 6
+ease_type = 1
+
+[connection signal="mouse_entered" from="Control/VBoxContainer/VBoxContainer/join_button" to="Control/VBoxContainer/VBoxContainer/join_button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/VBoxContainer/join_button" to="Control/VBoxContainer/VBoxContainer/join_button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/VBoxContainer/host_button" to="Control/VBoxContainer/VBoxContainer/host_button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/VBoxContainer/host_button" to="Control/VBoxContainer/VBoxContainer/host_button" method="_on_mouse_exited"]
