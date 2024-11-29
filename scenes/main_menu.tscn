@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://gif8lxijtvuu"]
+
+[ext_resource type="Script" path="res://scripts/Main Menu/background.gd" id="1_n20vf"]
+[ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_u3sms"]
+[ext_resource type="Texture2D" uid="uid://ci61bwysku68n" path="res://assets/logo.png" id="2_a3gyn"]
+[ext_resource type="Script" path="res://scripts/Main Menu/logo_animation.gd" id="4_fux50"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8jx3"]
+shader = ExtResource("1_u3sms")
+shader_parameter/color_top = Color(0.432615, 0.229111, 1, 1)
+shader_parameter/color_horizon = Color(0, 0.380392, 0.941176, 1)
+shader_parameter/color_bottom = Color(0.34902, 0.588235, 1, 1)
+shader_parameter/exponent_factor_top = 1.0
+shader_parameter/exponent_factor_bottom = 1.0
+shader_parameter/intensity_amp = 1.0
+
+[sub_resource type="Sky" id="Sky_pduks"]
+sky_material = SubResource("ShaderMaterial_o8jx3")
+
+[sub_resource type="Environment" id="Environment_cbtom"]
+background_mode = 2
+sky = SubResource("Sky_pduks")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.748908, 0.773225, 0.811435, 1)
+fog_sky_affect = 0.0
+
+[node name="Main Menu" type="CanvasLayer"]
+
+[node name="Background" type="Node3D" parent="."]
+script = ExtResource("1_n20vf")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background"]
+environment = SubResource("Environment_cbtom")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Background/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Background/SubViewportContainer/SubViewport"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(360, 280)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/Control"]
+custom_minimum_size = Vector2(360, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a3gyn")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_fux50")
+trans_type = 1
+ease_type = 2
+
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
