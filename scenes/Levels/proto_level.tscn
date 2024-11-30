@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://cp4byhnxpxe2"]
 
-[ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="1_lm7y6"]
-[ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_lwy7y"]
-[ext_resource type="Texture2D" uid="uid://bn8wfhbs1omgo" path="res://assets/grid textures/Dark/texture_08.png" id="2_jm5e5"]
-[ext_resource type="Texture2D" uid="uid://c0rbj02fx21ld" path="res://assets/grid textures/Light/texture_07.png" id="3_c52yc"]
-[ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/player.tscn" id="4_ptm7x"]
+[ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_u4w6a"]
+[ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_yjvdf"]
+[ext_resource type="Texture2D" uid="uid://bn8wfhbs1omgo" path="res://assets/grid textures/Dark/texture_08.png" id="3_epwt0"]
+[ext_resource type="Texture2D" uid="uid://c0rbj02fx21ld" path="res://assets/grid textures/Light/texture_07.png" id="4_6jcjq"]
+[ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/player.tscn" id="5_jmscm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n3rkm"]
-shader = ExtResource("1_lwy7y")
+shader = ExtResource("1_u4w6a")
 shader_parameter/color_top = Color(0.529953, 0.0531767, 1, 1)
 shader_parameter/color_horizon = Color(1.2899e-05, 0.382083, 0.940329, 1)
 shader_parameter/color_bottom = Color(0.34902, 0.588235, 1, 1)
@@ -15,12 +15,12 @@ shader_parameter/exponent_factor_top = 1.0
 shader_parameter/exponent_factor_bottom = 1.0
 shader_parameter/intensity_amp = 1.0
 
-[sub_resource type="Sky" id="Sky_wk0va"]
+[sub_resource type="Sky" id="Sky_017qs"]
 sky_material = SubResource("ShaderMaterial_n3rkm")
 
 [sub_resource type="Environment" id="Environment_qxgvh"]
 background_mode = 2
-sky = SubResource("Sky_wk0va")
+sky = SubResource("Sky_017qs")
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
@@ -29,18 +29,18 @@ fog_light_color = Color(0.748908, 0.773225, 0.811435, 1)
 fog_sky_affect = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ld33"]
-albedo_texture = ExtResource("1_lm7y6")
+albedo_texture = ExtResource("2_yjvdf")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmj3w"]
-albedo_texture = ExtResource("2_jm5e5")
+albedo_texture = ExtResource("3_epwt0")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwwnk"]
-albedo_texture = ExtResource("3_c52yc")
+albedo_texture = ExtResource("4_6jcjq")
 uv1_triplanar = true
 
-[node name="Proto World" type="Node3D"]
+[node name="Proto Level" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -68,4 +68,4 @@ material_override = SubResource("StandardMaterial3D_dwwnk")
 use_collision = true
 size = Vector3(2, 2, 2)
 
-[node name="Player" parent="." instance=ExtResource("4_ptm7x")]
+[node name="Player" parent="." instance=ExtResource("5_jmscm")]

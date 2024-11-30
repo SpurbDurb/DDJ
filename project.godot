@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="DDJ"
-run/main_scene="res://scenes/proto_world.tscn"
+run/main_scene="res://scenes/Levels/proto_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/icon.png"
 
 [autoload]
 
 MultiplayerManager="*res://scripts/Multiplayer/multiplayer_manager.gd"
+SceneManager="*res://scene_manager.gd"
 
 [display]
 

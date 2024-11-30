@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://gif8lxijtvuu"]
 
-[ext_resource type="Script" path="res://scripts/Main Menu/main_menu.gd" id="1_5am0p"]
-[ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_u3sms"]
-[ext_resource type="Texture2D" uid="uid://ci61bwysku68n" path="res://assets/logo.png" id="2_a3gyn"]
-[ext_resource type="FontFile" uid="uid://dpm3atig5yq6m" path="res://assets/ui/NexaRustSans-Black.otf" id="3_f0ecb"]
-[ext_resource type="Script" path="res://scripts/Main Menu/logo_animation.gd" id="4_fux50"]
-[ext_resource type="StyleBox" uid="uid://co4i0qidpqixn" path="res://assets/ui/button.tres" id="4_u07b7"]
-[ext_resource type="Script" path="res://scripts/Main Menu/button_animation.gd" id="7_3e68g"]
+[ext_resource type="Script" path="res://scripts/Main Menu/main_menu.gd" id="1_knx08"]
+[ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="2_hgjcw"]
+[ext_resource type="FontFile" uid="uid://dpm3atig5yq6m" path="res://assets/ui/NexaRustSans-Black.otf" id="3_26j5n"]
+[ext_resource type="StyleBox" uid="uid://co4i0qidpqixn" path="res://assets/ui/button.tres" id="4_ve3oy"]
+[ext_resource type="Texture2D" uid="uid://ci61bwysku68n" path="res://assets/logo.png" id="5_77te4"]
+[ext_resource type="Script" path="res://scripts/Main Menu/logo_animation.gd" id="6_tr43l"]
+[ext_resource type="Script" path="res://scripts/Main Menu/button_animation.gd" id="7_im6jx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o8jx3"]
-shader = ExtResource("1_u3sms")
+shader = ExtResource("2_hgjcw")
 shader_parameter/color_top = Color(0.432615, 0.229111, 1, 1)
 shader_parameter/color_horizon = Color(0, 0.380392, 0.941176, 1)
 shader_parameter/color_bottom = Color(0.34902, 0.588235, 1, 1)
@@ -60,15 +60,15 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 18
-Button/fonts/font = ExtResource("3_f0ecb")
+Button/fonts/font = ExtResource("3_26j5n")
 Button/styles/disabled = SubResource("StyleBoxFlat_6ahtw")
-Button/styles/focus = ExtResource("4_u07b7")
-Button/styles/hover = ExtResource("4_u07b7")
-Button/styles/normal = ExtResource("4_u07b7")
-Button/styles/pressed = ExtResource("4_u07b7")
+Button/styles/focus = ExtResource("4_ve3oy")
+Button/styles/hover = ExtResource("4_ve3oy")
+Button/styles/normal = ExtResource("4_ve3oy")
+Button/styles/pressed = ExtResource("4_ve3oy")
 
 [node name="Main Menu" type="CanvasLayer"]
-script = ExtResource("1_5am0p")
+script = ExtResource("1_knx08")
 
 [node name="Background" type="Node3D" parent="."]
 
@@ -130,10 +130,10 @@ offset_right = 182.0
 offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_a3gyn")
+texture = ExtResource("5_77te4")
 expand_mode = 1
 stretch_mode = 5
-script = ExtResource("4_fux50")
+script = ExtResource("6_tr43l")
 trans_type = 1
 ease_type = 2
 
@@ -147,7 +147,7 @@ theme_override_constants/separation = 20
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "host"
-script = ExtResource("7_3e68g")
+script = ExtResource("7_im6jx")
 trans_type = 6
 ease_type = 1
 
@@ -155,7 +155,7 @@ ease_type = 1
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "JOIN"
-script = ExtResource("7_3e68g")
+script = ExtResource("7_im6jx")
 trans_type = 6
 ease_type = 1
 

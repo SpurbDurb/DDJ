@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=4 uid="uid://dhkm8sofbow5v"]
 
-[ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_iehw4"]
-[ext_resource type="Script" path="res://scripts/Player/player states/run.gd" id="3_g1atc"]
-[ext_resource type="Script" path="res://scripts/State Machine/state_machine.gd" id="3_xjtfd"]
-[ext_resource type="Script" path="res://scripts/Player/player states/jump.gd" id="5_ciuda"]
-[ext_resource type="Script" path="res://scripts/Player/player states/idle.gd" id="5_vcdy6"]
+[ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_pvxaj"]
+[ext_resource type="Script" path="res://scripts/State Machine/state_machine.gd" id="2_xpino"]
+[ext_resource type="Script" path="res://scripts/Player/player states/run.gd" id="3_vgyyq"]
+[ext_resource type="Script" path="res://scripts/Player/player states/idle.gd" id="4_ytc0m"]
+[ext_resource type="Script" path="res://scripts/Player/player states/jump.gd" id="5_fynr4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwvqb"]
 radius = 0.15
@@ -3492,7 +3492,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "player", "visual")]
-script = ExtResource("1_iehw4")
+script = ExtResource("1_pvxaj")
 animation_player = NodePath("visual/stickman/AnimationPlayer")
 player = NodePath(".")
 visual = NodePath("visual")
@@ -3793,14 +3793,14 @@ playback_default_blend_time = 0.2
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 1.5, 2.5)
 
 [node name="state machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("3_xjtfd")
+script = ExtResource("2_xpino")
 initial_state = NodePath("idle")
 
 [node name="run" type="Node" parent="state machine"]
-script = ExtResource("3_g1atc")
+script = ExtResource("3_vgyyq")
 
 [node name="idle" type="Node" parent="state machine"]
-script = ExtResource("5_vcdy6")
+script = ExtResource("4_ytc0m")
 
 [node name="jump" type="Node" parent="state machine"]
-script = ExtResource("5_ciuda")
+script = ExtResource("5_fynr4")
