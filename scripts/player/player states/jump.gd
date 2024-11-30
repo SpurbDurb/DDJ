@@ -25,6 +25,8 @@ func move():
 		player.velocity.z = direction.z * SPEED
 
 func enter_condition() -> bool:
+	if !player.is_on_floor():
+		return true
 	if player.is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		player.velocity.y = 3
 		return true
