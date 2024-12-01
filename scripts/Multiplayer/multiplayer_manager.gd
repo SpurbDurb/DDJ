@@ -35,12 +35,9 @@ func _add_player(id: int):
 	
 	if id_list.size() == 2:
 		SceneManager.switch_scene("res://scenes/Levels/multiplayer_proto_level.tscn")
-		spawn_players()
+		call_deferred("_deferred_add_player")
 
-func spawn_players():
-	call_deferred("_deferred_spawn_scene")
-
-func _deferred_spawn_scene():
+func _deferred_add_player():
 	spawn = get_tree().get_current_scene().get_node("Spawn")
 	for id in id_list:
 		var player_mp = player_mp_scene.instantiate()
@@ -50,4 +47,10 @@ func _deferred_spawn_scene():
 
 func _remove_player(id: int):
 	print("Player %s left the game :(" % id)
+	call_deferred("_deferred_remove_player", id)
 	id_list.erase(id)
+
+func _deferred_remove_player(id: int):
+	if !spawn or not spawn.has_node(str(id)):
+		return
+	spawn.get_node(str(id)).queue_free()
