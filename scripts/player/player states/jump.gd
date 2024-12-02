@@ -4,6 +4,8 @@ var direction: Vector3
 var camera_pivot
 
 func _ready() -> void:
+	call_deferred("_deferred_ready")
+func _deferred_ready() -> void:
 	camera_pivot = get_tree().get_current_scene().get_node("camera_pivot")
 
 func enter():
