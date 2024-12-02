@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cp4byhnxpxe2"]
+[gd_scene load_steps=14 format=3 uid="uid://cp4byhnxpxe2"]
 
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_u4w6a"]
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_yjvdf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c0rbj02fx21ld" path="res://assets/grid textures/Light/texture_07.png" id="4_6jcjq"]
 [ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="5_jmscm"]
 [ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="6_ciexw"]
+[ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="7_1xqe3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n3rkm"]
 shader = ExtResource("1_u4w6a")
@@ -64,10 +65,10 @@ material_override = SubResource("StandardMaterial3D_cmj3w")
 use_collision = true
 
 [node name="box2" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.180416, 0, -0.98359, 0, 1, 0, 0.98359, 0, 0.180416, 2.13558, 1, -2.26198)
+transform = Transform3D(0.180416, 0, -0.98359, 0, 1, 0, 0.98359, 0, 0.180416, 2.13558, 0.75, -2.26198)
 material_override = SubResource("StandardMaterial3D_dwwnk")
 use_collision = true
-size = Vector3(2, 2, 2)
+size = Vector3(2, 1.5, 2)
 
 [node name="Player" parent="." instance=ExtResource("5_jmscm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -75,7 +76,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="Player2" parent="." instance=ExtResource("6_ciexw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="camera_mount" type="Node3D" parent="."]
-
-[node name="Camera3D" type="Camera3D" parent="camera_mount"]
-transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 1.5, 2.5)
+[node name="camera_pivot" parent="." instance=ExtResource("7_1xqe3")]

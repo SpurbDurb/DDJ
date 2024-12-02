@@ -11,8 +11,6 @@ var character: String = "White"
 @export var SENS = 0.04
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED 
-	
 	# Assign the shared data to the states and initialize state machine
 	for state in sm.get_children():
 		state.character = character
@@ -27,7 +25,3 @@ func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
 	#move
 	move_and_slide()
-
-#func _input(event: InputEvent) -> void:
-	#if event is InputEventMouseMotion:
-		#rotate_y(deg_to_rad(-event.relative.x * SENS))

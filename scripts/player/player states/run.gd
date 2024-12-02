@@ -1,6 +1,10 @@
 extends Player_State
 
 var direction: Vector3
+var camera_pivot
+
+func _ready() -> void:
+	camera_pivot = get_tree().get_current_scene().get_node("camera_pivot")
 
 func enter() -> void:
 	animation_player.play("run")
@@ -14,7 +18,7 @@ func update(_deta:float):
 		return
 	
 	var input_dir := get_input()
-	direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction = (camera_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		exit_state = false
 		player.visual.look_at(player.position + direction)
