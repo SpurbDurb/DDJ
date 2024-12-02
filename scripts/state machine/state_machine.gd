@@ -1,5 +1,5 @@
 extends Node
-class_name state_machine
+
 
 var states : Dictionary = {}
 var current_state : Player_State
