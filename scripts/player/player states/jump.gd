@@ -1,11 +1,6 @@
-extends State
+extends Player_State
 
 var direction: Vector3
-
-@export var animation_player: AnimationPlayer
-@export var player : CharacterBody3D
-@export var visual : Node3D
-@export var SPEED = 2.6
 
 func enter():
 	if player.velocity.y > 0:
@@ -17,7 +12,7 @@ func update(_delta: float):
 	move()
 
 func move():
-	var input_dir := Input.get_vector("left", "right", "forward", "backward")
+	var input_dir := get_input()
 	direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		player.visual.look_at(player.position + direction)
@@ -27,10 +22,20 @@ func move():
 func enter_condition() -> bool:
 	if !player.is_on_floor():
 		return true
-	if player.is_on_floor() and Input.is_action_just_pressed("ui_accept"):
+	
+	if character == "White" and player.is_on_floor() and Input.is_action_just_pressed("jump"):
+		player.velocity.y = 3
+		return true
+	if character == "Black" and player.is_on_floor() and Input.is_action_just_pressed("jump2"):
 		player.velocity.y = 3
 		return true
 	return false
 
 func exit_condition() -> bool:
 	return player.is_on_floor()
+
+func get_input() -> Vector2:
+	if character == "White":
+		return Input.get_vector("left", "right", "forward", "backward")
+	# Black
+	return Input.get_vector("left2", "right2", "forward2", "backward2")
