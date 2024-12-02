@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func host_multiplayer():
-	MultiplayerManager.host()
+	pass
 
 func join_multiplayer():
-	MultiplayerManager.join()
+	pass

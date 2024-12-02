@@ -17,7 +17,6 @@ config/icon="res://assets/icon.png"
 
 [autoload]
 
-MultiplayerManager="*res://scripts/Multiplayer/multiplayer_manager.gd"
 SceneManager="*res://scene_manager.gd"
 
 [display]
