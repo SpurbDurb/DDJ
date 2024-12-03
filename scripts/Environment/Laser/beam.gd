@@ -5,9 +5,10 @@ extends RayCast3D
 @onready var beam_particles = $BeamParticles
 
 @export var secondary_beam: bool = false
+@export var transition_duration: float = 1
 @export var beam_radius: float = 0.03
+
 var tween: Tween
-var time: float = 1
 
 func _ready() -> void:
 	beam_mesh.mesh = beam_mesh.mesh.duplicate()
@@ -48,22 +49,22 @@ func activate():
 	enable_beam()
 	
 	# Animate beam and particle properties
-	tween.tween_property(beam_mesh.mesh, "top_radius", beam_radius, time)
-	tween.tween_property(beam_mesh.mesh, "bottom_radius", beam_radius, time)
-	tween.tween_property(beam_particles.process_material, "scale_min", 1, time)
-	tween.tween_property(end_particles.process_material, "scale_min", 1, time)
+	tween.tween_property(beam_mesh.mesh, "top_radius", beam_radius, transition_duration)
+	tween.tween_property(beam_mesh.mesh, "bottom_radius", beam_radius, transition_duration)
+	tween.tween_property(beam_particles.process_material, "scale_min", 1, transition_duration)
+	tween.tween_property(end_particles.process_material, "scale_min", 1, transition_duration)
 
-func deactivate(time: float = 0.5):
+func deactivate():
 	if tween and tween.is_running():
 		tween.kill()
 	tween = create_tween()
 	tween.set_parallel(true)
 
 	# Animate beam and particle properties to shrink or fade out
-	tween.tween_property(beam_mesh.mesh, "top_radius", 0, time)
-	tween.tween_property(beam_mesh.mesh, "bottom_radius", 0, time)
-	tween.tween_property(beam_particles.process_material, "scale_min", 0, time)
-	tween.tween_property(end_particles.process_material, "scale_min", 0, time)
+	tween.tween_property(beam_mesh.mesh, "top_radius", 0, transition_duration)
+	tween.tween_property(beam_mesh.mesh, "bottom_radius", 0, transition_duration)
+	tween.tween_property(beam_particles.process_material, "scale_min", 0, transition_duration)
+	tween.tween_property(end_particles.process_material, "scale_min", 0, transition_duration)
 
 	# Wait for the tween to finish, then hide and stop emissions
 	await tween.finished
