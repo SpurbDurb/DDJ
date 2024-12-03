@@ -1,7 +1,4 @@
 extends CanvasLayer
 
-func host_multiplayer():
-	MultiplayerManager.host()
-
-func join_multiplayer():
-	MultiplayerManager.join()
+func play():
+	SceneManager.switch_scene("res://scenes/Levels/proto_level.tscn")

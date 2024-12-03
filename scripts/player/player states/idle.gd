@@ -1,9 +1,4 @@
-extends State
-
-@export var animation_player: AnimationPlayer
-@export var player : CharacterBody3D
-@export var visual : Node3D
-@export var SPEED = 2.6
+extends Player_State
 
 func _ready() -> void:
 	exit_state = true
@@ -19,5 +14,15 @@ func enter_condition() -> bool:
 	if !player.is_on_floor():
 		return false
 	
-	var input_dir := Input.get_vector("left", "right", "forward", "backward")
-	return input_dir.length() == 0 and !Input.is_action_just_pressed("ui_accept")
+	var input_dir := get_input()
+	if character == "White" and !Input.is_action_just_pressed("jump"):
+		return input_dir.length() == 0
+	elif character == "Black" and !Input.is_action_just_pressed("jump2"):
+		return input_dir.length() == 0
+	return false
+
+func get_input() -> Vector2:
+	if character == "White":
+		return Input.get_vector("left", "right", "forward", "backward")
+	# Black
+	return Input.get_vector("left2", "right2", "forward2", "backward2")
