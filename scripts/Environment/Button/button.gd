@@ -4,16 +4,18 @@ extends StaticBody3D
 @onready var anim = $AnimationPlayer
 var is_pressed = false
 
-signal pressed
-signal released
+@export var connection_id = 1
+
+func _ready() -> void:
+	SignalManager.register_signal(connection_id)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if is_pressed: return
 	
 	is_pressed = true
 	anim.play("pressdown")
-	pressed.emit()
-	print("Pressed")
+	
+	SignalManager.emit_connection_signal(connection_id)
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if not is_pressed: return
@@ -21,5 +23,5 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	
 	is_pressed = false
 	anim.play("pressup")
-	released.emit()
-	print("Released")
+	
+	SignalManager.emit_connection_signal(connection_id)

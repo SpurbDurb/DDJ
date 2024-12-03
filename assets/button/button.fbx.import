@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://co6wbjy0uymos"
-path="res://.godot/imported/button.fbx-64bc300e62fd260c82f1488c65fec498.scn"
+path="res://.godot/imported/button.fbx-75be0faadd79c6667dfb339064e4d078.scn"
 
 [deps]
 
-source_file="res://button.fbx"
-dest_files=["res://.godot/imported/button.fbx-64bc300e62fd260c82f1488c65fec498.scn"]
+source_file="res://assets/button/button.fbx"
+dest_files=["res://.godot/imported/button.fbx-75be0faadd79c6667dfb339064e4d078.scn"]
 
 [params]
 

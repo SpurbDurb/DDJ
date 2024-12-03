@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=4 uid="uid://dst42qoje3div"]
 
-[ext_resource type="Script" path="res://scripts/Button/button.gd" id="1_cu3gk"]
-[ext_resource type="Texture2D" uid="uid://c3wpcg271e03y" path="res://button_defaultPolygonShader_BaseMap.png" id="1_ybu3v"]
-[ext_resource type="Texture2D" uid="uid://bbxjgv2ghy8ol" path="res://button_defaultPolygonShader_Normal.png" id="2_3k0v7"]
+[ext_resource type="Script" path="res://scripts/Environment/Button/button.gd" id="1_cu3gk"]
+[ext_resource type="Texture2D" uid="uid://c3wpcg271e03y" path="res://assets/button/button_defaultPolygonShader_BaseMap.png" id="1_ybu3v"]
+[ext_resource type="Texture2D" uid="uid://bbxjgv2ghy8ol" path="res://assets/button/button_defaultPolygonShader_Normal.png" id="2_3k0v7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16s5b"]
 resource_name = "defaultPolygonShader"
@@ -98,28 +98,12 @@ radius = 2.50051
 height = 0.583434
 radius = 1.92424
 
-[sub_resource type="Animation" id="Animation_gsc3s"]
-resource_name = "pressdown"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("button:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0.1, 0), Vector3(0, -0.2, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_ijito"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("button:position")
+tracks/0/path = NodePath("press:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -129,13 +113,29 @@ tracks/0/keys = {
 "values": [Vector3(0, 0.1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_gsc3s"]
+resource_name = "pressdown"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("press:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.1, 0), Vector3(0, -0.2, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ehbdj"]
 resource_name = "pressup"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("button:position")
+tracks/0/path = NodePath("press:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -152,7 +152,7 @@ _data = {
 "pressup": SubResource("Animation_ehbdj")
 }
 
-[node name="StaticBody3D" type="StaticBody3D"]
+[node name="Button" type="StaticBody3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.01, 0)
 script = ExtResource("1_cu3gk")
 
@@ -162,7 +162,7 @@ mesh = SubResource("ArrayMesh_2y1ro")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5a4bf")
 
-[node name="button" type="MeshInstance3D" parent="."]
+[node name="press" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0.1, 0)
 mesh = SubResource("ArrayMesh_hlsjx")
 skeleton = NodePath("")

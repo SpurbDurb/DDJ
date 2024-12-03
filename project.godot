@@ -17,7 +17,8 @@ config/icon="res://assets/icon.png"
 
 [autoload]
 
-SceneManager="*res://scene_manager.gd"
+SceneManager="*res://scripts/Managers/scene_manager.gd"
+SignalManager="*res://scripts/Managers/signal_manager.gd"
 
 [display]
 

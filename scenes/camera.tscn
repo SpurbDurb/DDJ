@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://brspoype2rxdh"]
 
-[ext_resource type="Script" path="res://scripts/Camera/camera_pivot.gd" id="1_vq0e2"]
+[ext_resource type="Script" path="res://scripts/Player/Camera/camera_pivot.gd" id="1_vq0e2"]
 
 [node name="camera_pivot" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

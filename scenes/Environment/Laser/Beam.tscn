@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cpfia88gwklee"]
 
-[ext_resource type="Script" path="res://scripts/Laser/laser.gd" id="1_tny3h"]
-[ext_resource type="PackedScene" uid="uid://b7pi282lahv3k" path="res://scenes/Laser/end_particules.tscn" id="2_scjcj"]
-[ext_resource type="PackedScene" uid="uid://bt7xxqixg7b81" path="res://scenes/Laser/beam_particules.tscn" id="3_wxmru"]
+[ext_resource type="Script" path="res://scripts/Environment/Laser/beam.gd" id="1_qrmgr"]
+[ext_resource type="PackedScene" uid="uid://b7pi282lahv3k" path="res://scenes/Environment/Laser/end_particules.tscn" id="2_um52w"]
+[ext_resource type="PackedScene" uid="uid://bt7xxqixg7b81" path="res://scenes/Environment/Laser/beam_particules.tscn" id="3_mgmm7"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_g2lov"]
 flip_faces = true
@@ -10,7 +10,7 @@ top_radius = 0.03
 bottom_radius = 0.08
 height = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16kr3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esyfk"]
 transparency = 1
 albedo_color = Color(1, 0, 0, 0.823529)
 emission_enabled = true
@@ -51,18 +51,18 @@ gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_rjsst")
 collision_mode = 2
 
-[node name="Laser" type="RayCast3D"]
-script = ExtResource("1_tny3h")
+[node name="Beam" type="RayCast3D"]
+script = ExtResource("1_qrmgr")
 
 [node name="BeamMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013369, 2.98023e-08, -0.000730336)
 mesh = SubResource("CylinderMesh_g2lov")
-surface_material_override/0 = SubResource("StandardMaterial3D_16kr3")
+surface_material_override/0 = SubResource("StandardMaterial3D_esyfk")
 
-[node name="EndParticles" parent="." instance=ExtResource("2_scjcj")]
+[node name="EndParticles" parent="." instance=ExtResource("2_um52w")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 process_material = SubResource("ParticleProcessMaterial_6c2co")
 
-[node name="BeamParticles" parent="." instance=ExtResource("3_wxmru")]
+[node name="BeamParticles" parent="." instance=ExtResource("3_mgmm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 process_material = SubResource("ParticleProcessMaterial_v2nhf")

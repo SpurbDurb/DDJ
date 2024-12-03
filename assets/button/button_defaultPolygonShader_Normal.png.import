@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3wpcg271e03y"
-path.s3tc="res://.godot/imported/button_defaultPolygonShader_BaseMap.png-15544b75ecaf2c112ea95a1332e57fc8.s3tc.ctex"
+uid="uid://bbxjgv2ghy8ol"
+path.s3tc="res://.godot/imported/button_defaultPolygonShader_Normal.png-9e742bc87359e361765665662ecd7f25.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://button_defaultPolygonShader_BaseMap.png"
-dest_files=["res://.godot/imported/button_defaultPolygonShader_BaseMap.png-15544b75ecaf2c112ea95a1332e57fc8.s3tc.ctex"]
+source_file="res://assets/button/button_defaultPolygonShader_Normal.png"
+dest_files=["res://.godot/imported/button_defaultPolygonShader_Normal.png-9e742bc87359e361765665662ecd7f25.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://button_defaultPolygonShader_Normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=4 uid="uid://ci4aatp43nomr"]
 
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_4s3yk"]
-[ext_resource type="Script" path="res://scripts/State Machine/state_machine.gd" id="2_vper5"]
-[ext_resource type="Script" path="res://scripts/Player/player states/run.gd" id="3_jprjb"]
-[ext_resource type="Script" path="res://scripts/Player/player states/idle.gd" id="4_wbe55"]
-[ext_resource type="Script" path="res://scripts/Player/player states/jump.gd" id="5_b0quu"]
+[ext_resource type="Script" path="res://scripts/Player/State Machine/state_machine.gd" id="2_vper5"]
+[ext_resource type="Script" path="res://scripts/Player/State Machine/player states/run.gd" id="3_jprjb"]
+[ext_resource type="Script" path="res://scripts/Player/State Machine/player states/idle.gd" id="4_wbe55"]
+[ext_resource type="Script" path="res://scripts/Player/State Machine/player states/jump.gd" id="5_b0quu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwvqb"]
 radius = 0.15

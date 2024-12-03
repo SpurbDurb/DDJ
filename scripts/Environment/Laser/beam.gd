@@ -4,17 +4,15 @@ extends RayCast3D
 @onready var end_particles = $EndParticles
 @onready var beam_particles = $BeamParticles
 
-var tween : Tween
 var beam_radius: float = 0.03
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	await get_tree().create_timer(3.0).timeout
-	deactivate(1)
-	await get_tree().create_timer(3.0).timeout
-	activate(1)
+var tween: Tween
+var time: float = 1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _ready() -> void:
+	# Duplicate the mesh for beam_mesh to ensure uniqueness
+	beam_mesh.mesh = beam_mesh.mesh.duplicate()
+
+func _process(_delta: float) -> void:
 	var cast_point
 	force_raycast_update()
 	
@@ -22,11 +20,11 @@ func _process(delta: float) -> void:
 		cast_point = to_local(get_collision_point())
 		
 		beam_mesh.mesh.height = cast_point.y
-		beam_mesh.position.y = cast_point.y/2
+		beam_mesh.position.y = cast_point.y / 2
 		
 		end_particles.position.y = cast_point.y
 		
-		var particle_amount = snapped(abs(cast_point.y)*50, 1)
+		var particle_amount = snapped(abs(cast_point.y) * 50, 1)
 		
 		if particle_amount > 1:
 			beam_particles.amount = particle_amount
@@ -34,18 +32,18 @@ func _process(delta: float) -> void:
 			beam_particles.amount = 1
 			
 		var material = beam_particles.process_material
-		print(material)			
 		material.emission_box_extents = Vector3(
 			beam_mesh.mesh.top_radius,
 			abs(cast_point.y) / 2,
 			beam_mesh.mesh.top_radius
 		)
-	pass
-func activate(time: float = 0.5):
+
+func activate():
 	tween = get_tree().create_tween()
 	visible = true
 	beam_particles.emitting = true
 	end_particles.emitting = true
+	
 	# Animate beam and particle properties
 	tween.set_parallel(true)
 	tween.tween_property(beam_mesh.mesh, "top_radius", beam_radius, time)
@@ -53,7 +51,7 @@ func activate(time: float = 0.5):
 	tween.tween_property(beam_particles.process_material, "scale_min", 1, time)
 	tween.tween_property(end_particles.process_material, "scale_min", 1, time)
 	await tween.finished
-	
+
 func deactivate(time: float = 0.5):
 	tween = get_tree().create_tween()
 	tween.set_parallel(true)

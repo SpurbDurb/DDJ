@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_tmels"]
 [ext_resource type="Texture2D" uid="uid://bn8wfhbs1omgo" path="res://assets/grid textures/Dark/texture_08.png" id="3_s2krn"]
 [ext_resource type="Texture2D" uid="uid://c0rbj02fx21ld" path="res://assets/grid textures/Light/texture_07.png" id="4_jeil1"]
-[ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/player.tscn" id="5_7fcey"]
-[ext_resource type="PackedScene" uid="uid://dmcij0x5t53sp" path="res://scenes/Laser/main_laser.tscn" id="6_qmjoj"]
+[ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="5_7fcey"]
+[ext_resource type="PackedScene" uid="uid://dmcij0x5t53sp" path="res://scenes/Environment/Laser/laser.tscn" id="6_qmjoj"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nf5jd"]
 shader = ExtResource("1_55uxe")

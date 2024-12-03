@@ -7,8 +7,8 @@ extends Node3D
 @onready var player: CharacterBody3D = $"../Player"
 @onready var player_2: CharacterBody3D = $"../Player2"
 # Parâmetros de zoom
-@export var min_zoom: float = 0.8
-@export var max_zoom: float = 8.0
+@export var min_zoom: float = 8.0
+@export var max_zoom: float = 0.8
 # Parâmetros de altura
 @export var min_height: float = 1.0
 @export var max_height: float = 2.0
@@ -24,22 +24,21 @@ extends Node3D
 func _physics_process(_delta: float) -> void:
 	if player == null or player_2 == null:
 		return
-		
+	var player_distance = player.global_transform.origin.distance_to(player_2.global_transform.origin)
+	
 	# Posição central dos dois jogadores
 	var center_position = (player.global_transform.origin + player_2.global_transform.origin) / 2.0
 	global_transform.origin = lerp(global_transform.origin, center_position, camera_speed)
 	
 	# Rotação da câmera
-	var player_distance = player.global_transform.origin.distance_to(player_2.global_transform.origin)
-	var direction = (player_2.global_transform.origin - player.global_transform.origin).normalized()
-	var target_rotation_y = atan2(direction.x, direction.z) + PI / 2
-	var current_rotation_y = rotation.y
-	
-	var rotation_speed = clamp(player_distance / 100, min_rotation_speed, max_rotation_speed)
-	rotation.y = lerp_angle(current_rotation_y, target_rotation_y, rotation_speed / 10)
+	#var direction = (player_2.global_transform.origin - player.global_transform.origin).normalized()
+	#var target_rotation_y = atan2(direction.x, direction.z) + PI / 2
+	#var current_rotation_y = rotation.y
+	#var rotation_speed = clamp(player_distance / 100, min_rotation_speed, max_rotation_speed)
+	#rotation.y = lerp_angle(current_rotation_y, target_rotation_y, rotation_speed / 10)
 	
 	# Ajusta o zoom dinamicamente com base na distância
-	var target_zoom = clamp(player_distance, min_zoom, max_zoom)
+	var target_zoom = clamp(player_distance, max_zoom, min_zoom,)
 	camera_mount.spring_length = lerp(camera_mount.spring_length, target_zoom, zoom_speed)
 	
 	# Ajusta a altura da câmera dinamicamente com base na distância
@@ -48,7 +47,7 @@ func _physics_process(_delta: float) -> void:
 	
 	# Ajusta o ângulo da câmera dinamicamente com base na distância
 	var angle_range = deg_to_rad(max_angle - min_angle)  # Intervalo em radianos
-	var normalized_distance = clamp(player_distance / max_zoom, 0, 1)  # Normaliza entre 0 e 1
+	var normalized_distance = clamp(player_distance / min_zoom, 0, 1)  # Normaliza entre 0 e 1
 	var target_angle = deg_to_rad(min_angle) + normalized_distance * angle_range  # Calcula o ângulo com base na distância
 	# Suaviza a rotação no eixo X
 	camera_3d.rotation.x = lerp(camera_3d.rotation.x, target_angle, zoom_speed)
