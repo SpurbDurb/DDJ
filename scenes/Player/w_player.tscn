@@ -3491,7 +3491,7 @@ _data = {
 "swim(bad)": SubResource("Animation_qebfn")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "player", "visual")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "player", "visual") groups=["Player"]]
 collision_layer = 3
 script = ExtResource("1_pvxaj")
 animation_player = NodePath("visual/stickman/AnimationPlayer")

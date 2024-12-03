@@ -33,6 +33,10 @@ folder_colors={
 "res://scripts/": "blue"
 }
 
+[global_group]
+
+Player=""
+
 [input]
 
 forward={
