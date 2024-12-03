@@ -18,12 +18,12 @@ shader_parameter/exponent_factor_top = 1.0
 shader_parameter/exponent_factor_bottom = 1.0
 shader_parameter/intensity_amp = 1.0
 
-[sub_resource type="Sky" id="Sky_017qs"]
+[sub_resource type="Sky" id="Sky_pua8o"]
 sky_material = SubResource("ShaderMaterial_n3rkm")
 
 [sub_resource type="Environment" id="Environment_qxgvh"]
 background_mode = 2
-sky = SubResource("Sky_017qs")
+sky = SubResource("Sky_pua8o")
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true

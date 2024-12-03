@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bt7xxqixg7b81"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xomts"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.870588)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_alemd"]
+_data = [Vector2(0, 0.459488), 0.0, 0.0, 0, 0, Vector2(0.304945, 0.979211), 0.0, 0.0, 0, 0, Vector2(0.884615, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_rjsst"]
+curve = SubResource("Curve_alemd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_scrm1"]
+resource_local_to_scene = true
+emission_shape = 3
+emission_box_extents = Vector3(0.03, 0.1, 0.03)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_rjsst")
+collision_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_f1032"]
+size = Vector2(0.02, 0.02)
+
+[node name="BeamParticules" type="GPUParticles3D"]
+transform = Transform3D(0.999915, 0.0124057, -0.0040847, -0.0124147, 0.999921, -0.0021858, 0.00405726, 0.00223632, 0.999989, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xomts")
+amount = 50
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_scrm1")
+draw_pass_1 = SubResource("QuadMesh_f1032")
