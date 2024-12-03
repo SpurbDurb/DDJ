@@ -11,6 +11,7 @@ extends RayCast3D
 var tween: Tween
 
 func _ready() -> void:
+	beam_particles.position.y = beam_mesh.position.y - 0.8
 	beam_mesh.mesh = beam_mesh.mesh.duplicate()
 
 func _process(_delta: float) -> void:
@@ -36,7 +37,7 @@ func _process(_delta: float) -> void:
 	var material = beam_particles.process_material
 	material.emission_box_extents = Vector3(
 		beam_mesh.mesh.top_radius,
-		abs(cast_point.y) / 2,
+		abs(cast_point.y)/2,
 		beam_mesh.mesh.top_radius
 	)
 

@@ -1,8 +1,86 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmcij0x5t53sp"]
+[gd_scene load_steps=17 format=3 uid="uid://dmcij0x5t53sp"]
 
 [ext_resource type="Script" path="res://scripts/Environment/Laser/laser.gd" id="1_53dek"]
 [ext_resource type="PackedScene" uid="uid://c1xf8hsj5vju2" path="res://scenes/Environment/Laser/barrier.tscn" id="1_qrqrq"]
 [ext_resource type="PackedScene" uid="uid://cpfia88gwklee" path="res://scenes/Environment/Laser/Beam.tscn" id="2_pjyfv"]
+[ext_resource type="Script" path="res://scripts/Environment/Laser/beam.gd" id="4_hx30c"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g2lov"]
+flip_faces = true
+top_radius = 0.03
+bottom_radius = 0.08
+height = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esyfk"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.823529)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbsnq"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.788235)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_3qowu"]
+_data = [Vector2(0, 0.549574), 0.0, 0.0, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6ympn"]
+curve = SubResource("Curve_3qowu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2l8sl"]
+resource_local_to_scene = true
+spread = 80.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_6ympn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a2r40"]
+size = Vector2(0.02, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xomts"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.870588)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_alemd"]
+_data = [Vector2(0, 0.459488), 0.0, 0.0, 0, 0, Vector2(0.304945, 0.979211), 0.0, 0.0, 0, 0, Vector2(0.884615, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_rjsst"]
+curve = SubResource("Curve_alemd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qokp0"]
+resource_local_to_scene = true
+emission_shape = 3
+emission_box_extents = Vector3(0.03, 0.1, 0.03)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_rjsst")
+collision_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_f1032"]
+size = Vector2(0.02, 0.02)
 
 [node name="Laser" type="Node3D"]
 script = ExtResource("1_53dek")
@@ -16,6 +94,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, 0)
 [node name="Beam" parent="." instance=ExtResource("2_pjyfv")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -1.24339, 0.35, 0)
 
-[node name="Beam2" parent="." instance=ExtResource("2_pjyfv")]
+[node name="Beam2" type="RayCast3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.243, 0.35, 0)
+script = ExtResource("4_hx30c")
 secondary_beam = true
+
+[node name="BeamMesh" type="MeshInstance3D" parent="Beam2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013369, 2.98023e-08, -0.000730336)
+mesh = SubResource("CylinderMesh_g2lov")
+surface_material_override/0 = SubResource("StandardMaterial3D_esyfk")
+
+[node name="EndParticles" type="GPUParticles3D" parent="Beam2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_bbsnq")
+amount = 25
+lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_2l8sl")
+draw_pass_1 = SubResource("QuadMesh_a2r40")
+
+[node name="BeamParticles" type="GPUParticles3D" parent="Beam2"]
+visible = false
+material_override = SubResource("StandardMaterial3D_xomts")
+amount = 50
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_qokp0")
+draw_pass_1 = SubResource("QuadMesh_f1032")
