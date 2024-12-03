@@ -1,6 +1,5 @@
 extends Node
 
-
 var states : Dictionary = {}
 var current_state : Player_State
 @export var initial_state : Player_State

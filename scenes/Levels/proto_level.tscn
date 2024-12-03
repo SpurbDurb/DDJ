@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="5_jmscm"]
 [ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="6_ciexw"]
 [ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="7_1xqe3"]
-[ext_resource type="PackedScene" uid="uid://bvtrv1t4g1q0h" path="res://scenes/Button/Button.tscn" id="8_lqma8"]
+[ext_resource type="PackedScene" uid="uid://dst42qoje3div" path="res://scenes/Button/Button.tscn" id="9_d7ov7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n3rkm"]
 shader = ExtResource("1_u4w6a")
@@ -80,5 +80,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="camera_pivot" parent="." instance=ExtResource("7_1xqe3")]
 
-[node name="FloorButton" parent="." instance=ExtResource("8_lqma8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1555, 0, 0.834346)
+[node name="StaticBody3D" parent="." instance=ExtResource("9_d7ov7")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.95549, 0, 1.95066)
