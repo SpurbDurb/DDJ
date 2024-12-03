@@ -15,12 +15,12 @@ shader_parameter/exponent_factor_top = 1.0
 shader_parameter/exponent_factor_bottom = 1.0
 shader_parameter/intensity_amp = 1.0
 
-[sub_resource type="Sky" id="Sky_017qs"]
+[sub_resource type="Sky" id="Sky_pua8o"]
 sky_material = SubResource("ShaderMaterial_n3rkm")
 
 [sub_resource type="Environment" id="Environment_qxgvh"]
 background_mode = 2
-sky = SubResource("Sky_017qs")
+sky = SubResource("Sky_pua8o")
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
@@ -41,6 +41,7 @@ albedo_texture = ExtResource("4_6jcjq")
 uv1_triplanar = true
 
 [node name="Proto Level" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00086844, -0.00285, -0.000343859)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
