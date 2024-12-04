@@ -1,14 +1,12 @@
 extends Node3D
 
-@onready var beam: RayCast3D = $Beam
-@onready var beam_2: RayCast3D = $Beam2
-@onready var moving_barrier = $Barrier2
-
-
-@export var connection_id = 1
+@export_range(1,9) var connection_id: int = 1
 @export var beam_size := 2.5
 @export var activated: bool = true
 
+@onready var beam: RayCast3D = $Beam
+@onready var beam_2: RayCast3D = $Beam2
+@onready var moving_barrier = $Barrier2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

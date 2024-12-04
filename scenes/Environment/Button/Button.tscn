@@ -4,10 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://c3wpcg271e03y" path="res://assets/button/button_defaultPolygonShader_BaseMap.png" id="1_ybu3v"]
 [ext_resource type="Texture2D" uid="uid://bbxjgv2ghy8ol" path="res://assets/button/button_defaultPolygonShader_Normal.png" id="2_3k0v7"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rp8ld"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16s5b"]
 resource_name = "defaultPolygonShader"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.665185, 0.665185, 0.665185, 1)
+albedo_texture = ExtResource("1_ybu3v")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lmcyj"]
@@ -84,12 +87,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_townp")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6qy2"]
-albedo_texture = ExtResource("1_ybu3v")
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("2_3k0v7")
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0xgs8"]
 height = 0.318794
 radius = 2.50051
@@ -155,6 +152,7 @@ _data = {
 [node name="Button" type="StaticBody3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.01, 0)
 script = ExtResource("1_cu3gk")
+texture = SubResource("StandardMaterial3D_rp8ld")
 
 [node name="base" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0.1, 1.49536e-05)
@@ -166,7 +164,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5a4bf")
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0.1, 0)
 mesh = SubResource("ArrayMesh_hlsjx")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_i6qy2")
 
 [node name="BaseCollison" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0660763, 0)

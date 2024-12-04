@@ -1,27 +1,47 @@
 extends StaticBody3D
 
+@export_range(1,9) var connection_id: int = 1
+@export var one_time: bool = false
+@export var texture: Texture
+
+@onready var press: MeshInstance3D = $press
 @onready var area_3d: Area3D = $Area3D
 @onready var anim = $AnimationPlayer
 var is_pressed = false
 
-@export var connection_id = 1
-
 func _ready() -> void:
 	SignalManager.register_signal(connection_id)
+		
+	if texture: change_texture(texture)
 
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	if is_pressed: return
 	
 	is_pressed = true
 	anim.play("pressdown")
-	
 	SignalManager.emit_connection_signal(connection_id)
 
 func _on_area_3d_body_exited(_body: Node3D) -> void:
-	if not is_pressed: return
+	if one_time or not is_pressed: return
 	if area_3d.get_overlapping_bodies().size() != 0: return
 	
 	is_pressed = false
 	anim.play("pressup")
 	
 	SignalManager.emit_connection_signal(connection_id)
+
+
+
+#MUDANCA DE TEXTURA
+func change_texture(new_texture: Texture) -> void:
+	if press and press.mesh:
+		# Duplicate the mesh to create a unique instance
+		var unique_mesh = press.mesh.duplicate()
+		press.mesh = unique_mesh
+		
+		# Create a new material with the texture
+		var material = StandardMaterial3D.new()
+		material.albedo_texture = new_texture
+		
+		# Apply the material to the first surface of the unique mesh
+		unique_mesh.surface_set_material(0, material)

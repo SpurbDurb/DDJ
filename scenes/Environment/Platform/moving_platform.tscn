@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://jqklhb314c0c"]
+
+[ext_resource type="Script" path="res://scripts/Environment/Platform/moving_platform.gd" id="1_idug6"]
+[ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://assets/grid textures/Orange/texture_09.png" id="1_r8fuk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87akj"]
+albedo_texture = ExtResource("1_r8fuk")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v06bg"]
+size = Vector3(1.5, 0.3, 1.5)
+
+[node name="Moving Platform" type="Node3D"]
+script = ExtResource("1_idug6")
+active = false
+
+[node name="Body3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(-0.000312723, 0.000327645, 0.999983, 1.45516e-11, 0.999984, -0.000327644, -0.999977, -1.0245e-07, -0.000312724, -0.00107646, -0.00262085, -0.00250079)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Body3D"]
+transform = Transform3D(1, 2.13163e-14, -2.91038e-11, -7.10543e-15, 1, -5.5272e-11, 2.91038e-11, -2.61681e-11, 1, 0, 0.15, 1.16415e-10)
+size = Vector3(1.5, 0.3, 1.5)
+material = SubResource("StandardMaterial3D_87akj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body3D"]
+transform = Transform3D(1, 2.84217e-14, 0, 0, 1, -5.5272e-11, 0, 2.93581e-12, 1, -5.96046e-08, 0.15, -5.96046e-08)
+shape = SubResource("BoxShape3D_v06bg")
