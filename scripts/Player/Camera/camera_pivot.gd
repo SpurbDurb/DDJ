@@ -4,8 +4,8 @@ extends Node3D
 @onready var camera_3d: Camera3D = $camera_mount/Camera3D
 
 # Jogadores
-@onready var player: CharacterBody3D = $"../Player"
-@onready var player_2: CharacterBody3D = $"../Player2"
+var player: Node = null
+var player_2: Node = null
 # Parâmetros de zoom
 @export var min_zoom: float = 8.0
 @export var max_zoom: float = 0.8
@@ -22,8 +22,13 @@ extends Node3D
 @export var min_rotation_speed: float = 0.01
 
 func _physics_process(_delta: float) -> void:
+	if player == null:
+		player = get_node_or_null("../Player_W")
+	if player_2 == null:
+		player_2 = get_node_or_null("../Player_B")
 	if player == null or player_2 == null:
 		return
+	
 	var player_distance = player.global_transform.origin.distance_to(player_2.global_transform.origin)
 	
 	# Posição central dos dois jogadores
