@@ -9,7 +9,7 @@ var is_pressed = false
 func _ready() -> void:
 	SignalManager.register_signal(connection_id)
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_area_3d_body_entered(_body: Node3D) -> void:
 	if is_pressed: return
 	
 	is_pressed = true
@@ -17,7 +17,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 	SignalManager.emit_connection_signal(connection_id)
 
-func _on_area_3d_body_exited(body: Node3D) -> void:
+func _on_area_3d_body_exited(_body: Node3D) -> void:
 	if not is_pressed: return
 	if area_3d.get_overlapping_bodies().size() != 0: return
 	

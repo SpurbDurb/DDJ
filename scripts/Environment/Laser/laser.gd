@@ -33,7 +33,7 @@ func _on_connection_triggered():
 		beam_2.activate()
 		activated = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	beam.look_at(moving_barrier.global_position)
 	beam.rotation_degrees.x = 90
 	
