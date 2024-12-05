@@ -21,6 +21,22 @@ var player_2: Node = null
 @export var max_rotation_speed: float = 0.2
 @export var min_rotation_speed: float = 0.01
 
+
+func _ready() -> void:
+	# Listen for spawned players
+	get_tree().connect("node_added", Callable(self, "_on_node_added"))	
+
+	
+func _on_node_added(node: Node) -> void:
+	if node.name == "Player_W":
+		player = node
+	elif node.name == "Player_B":
+		player_2 = node
+		
+	if player != null and player_2 != null:
+		_physics_process(0)  # Run physics processing again
+
+
 func _physics_process(_delta: float) -> void:
 	if player == null:
 		player = get_node_or_null("../Player_W")
