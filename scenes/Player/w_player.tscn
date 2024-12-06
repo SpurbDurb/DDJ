@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://dhkm8sofbow5v"]
+[gd_scene load_steps=20 format=4 uid="uid://dhkm8sofbow5v"]
 
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_pvxaj"]
 [ext_resource type="Script" path="res://scripts/Player/State Machine/state_machine.gd" id="2_xpino"]
 [ext_resource type="Script" path="res://scripts/Player/State Machine/player states/run.gd" id="3_vgyyq"]
 [ext_resource type="Script" path="res://scripts/Player/State Machine/player states/idle.gd" id="4_ytc0m"]
 [ext_resource type="Script" path="res://scripts/Player/State Machine/player states/jump.gd" id="5_fynr4"]
+[ext_resource type="Script" path="res://scripts/Player/State Machine/player states/die.gd" id="6_alvit"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwvqb"]
 radius = 0.15
@@ -3800,3 +3801,6 @@ script = ExtResource("4_ytc0m")
 
 [node name="jump" type="Node" parent="state machine"]
 script = ExtResource("5_fynr4")
+
+[node name="die" type="Node" parent="state machine"]
+script = ExtResource("6_alvit")

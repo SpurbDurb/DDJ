@@ -27,3 +27,6 @@ func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
 	#move
 	move_and_slide()
+
+func die() -> void:
+	sm.force_state("die")
