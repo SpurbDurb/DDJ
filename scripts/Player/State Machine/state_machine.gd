@@ -32,3 +32,9 @@ func change_state(new_state: Player_State) -> void:
 		current_state.exit()
 	new_state.enter()
 	current_state = new_state
+
+func force_state(state_name: String) -> void:
+	if state_name not in states: return
+	
+	var new_state = states[state_name]
+	change_state(new_state)
