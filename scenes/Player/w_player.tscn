@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://dhkm8sofbow5v"]
+[gd_scene load_steps=21 format=4 uid="uid://dhkm8sofbow5v"]
 
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_pvxaj"]
+[ext_resource type="Script" path="res://scripts/Player/Abilities/throw.gd" id="2_2mdre"]
 [ext_resource type="Script" path="res://scripts/Player/State Machine/state_machine.gd" id="2_xpino"]
 [ext_resource type="Script" path="res://scripts/Player/State Machine/player states/run.gd" id="3_vgyyq"]
 [ext_resource type="Script" path="res://scripts/Player/State Machine/player states/idle.gd" id="4_ytc0m"]
@@ -8,8 +9,8 @@
 [ext_resource type="Script" path="res://scripts/Player/State Machine/player states/die.gd" id="6_alvit"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwvqb"]
-radius = 0.15
-height = 0.6
+radius = 0.328486
+height = 0.867156
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffh85"]
 resource_name = "Material.001"
@@ -3499,6 +3500,13 @@ animation_player = NodePath("visual/stickman/AnimationPlayer")
 player = NodePath(".")
 visual = NodePath("visual")
 
+[node name="Grab" type="Area3D" parent="."]
+script = ExtResource("2_2mdre")
+
+[node name="grab_collision" type="CollisionShape3D" parent="Grab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("CapsuleShape3D_fwvqb")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 shape = SubResource("CapsuleShape3D_fwvqb")
@@ -3804,3 +3812,5 @@ script = ExtResource("5_fynr4")
 
 [node name="die" type="Node" parent="state machine"]
 script = ExtResource("6_alvit")
+
+[connection signal="body_entered" from="Grab" to="Grab" method="_on_body_entered"]
