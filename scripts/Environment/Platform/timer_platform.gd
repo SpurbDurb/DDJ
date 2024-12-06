@@ -1,6 +1,7 @@
 extends Node3D
 
 @export_range(1, 9) var connection_id: int = 1
+@export var is_emitter: bool = true
 @export var is_viseble: bool = false
 
 @onready var body: CharacterBody3D = $Body3D
@@ -26,7 +27,7 @@ func _ready() -> void:
 	
 	# Conecta e regista sinal
 	SignalManager.connect_to_signal(connection_id, Callable(self, "_on_connection_triggered"))
-	SignalManager.register_signal(connection_id)
+	if is_emitter: SignalManager.register_signal(connection_id)
 	
 	# Temporizador da plataforma visivel
 	add_child(visibility_timer)
@@ -51,7 +52,7 @@ func _process(delta: float) -> void:
 			csg_box_3d.material.albedo_color.a = current_alpha
 
 func _on_visibility_timeout():
-	SignalManager.emit_connection_signal(connection_id)
+	if is_emitter: SignalManager.emit_connection_signal(connection_id)
 	locked = false
 	switch_visibility()
 
