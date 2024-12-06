@@ -13,9 +13,13 @@ func _ready() -> void:
 	beam.target_position.y = -beam_size
 	beam_2.target_position.y = beam_size
 	if activated: 
+		beam.active = true
+		beam_2.active = true
 		beam.activate()
 		beam_2.activate()
 	else: 
+		beam.active = false
+		beam_2.active = false
 		beam.deactivate()
 		beam_2.deactivate()
 	
@@ -23,10 +27,14 @@ func _ready() -> void:
 
 func _on_connection_triggered():
 	if activated: 
+		beam.active = false
+		beam_2.active = false
 		beam.deactivate()
 		beam_2.deactivate()
 		activated = false
 	else:
+		beam.active = true
+		beam_2.active = true
 		beam.activate()
 		beam_2.activate()
 		activated = true

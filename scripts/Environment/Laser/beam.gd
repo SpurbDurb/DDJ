@@ -8,6 +8,7 @@ extends RayCast3D
 @export var transition_duration: float = 1
 @export var beam_radius: float = 0.03
 
+var active: bool = true
 var tween: Tween
 
 func _ready() -> void:
@@ -21,7 +22,7 @@ func _process(_delta: float) -> void:
 	if not is_colliding(): return
 	var collider = get_collider()
 	if not collider.is_in_group("Player") and secondary_beam: disable_beam()
-	if visible and collider.is_in_group("Player") and secondary_beam: enable_beam()
+	if active and collider.is_in_group("Player") and secondary_beam: enable_beam()
 	
 	cast_point = to_local(get_collision_point())
 	beam_mesh.mesh.height = cast_point.y
