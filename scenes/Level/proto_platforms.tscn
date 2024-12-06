@@ -77,7 +77,7 @@ connection_id = 2
 reset = true
 direction = 1
 speed = 2.0
-distance = 2.0
+distance = 20.0
 
 [node name="Moving Platform2" parent="Map/Platforms" instance=ExtResource("3_4yebv")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.5, -0.3, 0)

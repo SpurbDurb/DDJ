@@ -52,7 +52,6 @@ func _physics_process(delta: float) -> void:
 	elif traveled_distance >= distance:
 		if reset:
 			moving_forward = !moving_forward
-			initial_position = global_transform.origin
 			reset_lock = true
 		else:
 			is_paused = true
