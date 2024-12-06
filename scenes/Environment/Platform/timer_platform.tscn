@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8sm1shogleoq"]
 
-[ext_resource type="Script" path="res://scripts/Environment/Platform/auto_disappear_platform.gd" id="1_xca3r"]
+[ext_resource type="Script" path="res://scripts/Environment/Platform/timer_platform.gd" id="1_xca3r"]
 [ext_resource type="Texture2D" uid="uid://c60h7aap3pgnt" path="res://assets/grid textures/Light/texture_08.png" id="2_3aaby"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fiuhp"]
@@ -12,7 +12,7 @@ uv1_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_unu8h"]
 size = Vector3(1.5, 0.3, 1.5)
 
-[node name="Auto Disappear Platform" type="Node3D"]
+[node name="Timer Platform" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 script = ExtResource("1_xca3r")
 

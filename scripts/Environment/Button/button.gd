@@ -2,34 +2,42 @@ extends StaticBody3D
 
 @export_range(1,9) var connection_id: int = 1
 @export var one_time: bool = false
+@export var call_back: bool = false
 @export var texture: Texture
 
 @onready var press: MeshInstance3D = $press
 @onready var area_3d: Area3D = $Area3D
 @onready var anim = $AnimationPlayer
 var is_pressed = false
+var locked = false
 
 func _ready() -> void:
 	SignalManager.register_signal(connection_id)
-		
 	if texture: change_texture(texture)
+	
+	if call_back: 
+		locked = true
+		SignalManager.connect_to_signal(connection_id, Callable(self, "_on_connection_triggered"))
 
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	if is_pressed: return
 	
 	is_pressed = true
 	anim.play("pressdown")
-	SignalManager.emit_connection_signal(connection_id)
+	SignalManager.emit_connection_signal(connection_id, self)
 
 func _on_area_3d_body_exited(_body: Node3D) -> void:
-	if one_time or not is_pressed: return
+	if locked or one_time or not is_pressed: return
 	if area_3d.get_overlapping_bodies().size() != 0: return
 	
 	is_pressed = false
 	anim.play("pressup")
 	
-	SignalManager.emit_connection_signal(connection_id)
+	SignalManager.emit_connection_signal(connection_id, self)
 
+func _on_connection_triggered() -> void:
+	locked = false
+	_on_area_3d_body_exited(null)
 
 
 #MUDANCA DE TEXTURA

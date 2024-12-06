@@ -32,7 +32,7 @@ func _on_connection_triggered():
 	is_viseble = not is_viseble
 	
 	if is_viseble:
-		body.visible = is_viseble
+		body.visible = true
 
 func _process(delta: float) -> void:
 	# Faz a transição de transparência com `lerp`

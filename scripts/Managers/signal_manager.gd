@@ -9,9 +9,12 @@ func register_signal(connection_id):
 		connections[connection_id] = []  # Uma lista de listeners para o sinal
 
 # Emite um sinal para uma conexão específica
-func emit_connection_signal(connection_id):
+func emit_connection_signal(connection_id, emitter = null):
 	if connections.has(connection_id):
 		for callable in connections[connection_id]:
+			# Evitar chamar callbacks pertencentes ao emissor
+			if callable.get_object() == emitter:
+				continue
 			callable.call()
 
 # Liga um callback a uma conexão específica

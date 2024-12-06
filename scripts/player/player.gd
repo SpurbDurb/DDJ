@@ -4,6 +4,8 @@ extends CharacterBody3D
 
 @export_enum("White", "Black")
 var character: String = "White"
+@export var spawn: bool = true
+
 @export var animation_player: AnimationPlayer
 @export var player : CharacterBody3D
 @export var visual : Node3D
