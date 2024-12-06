@@ -1,10 +1,15 @@
 extends Player_State
 
+@export var SPRINT_SPEED: float = 3
+
 var direction: Vector3
 var camera_pivot
+var player_speed: float
 
 func _ready() -> void:
+	player_speed = SPEED
 	call_deferred("_deferred_ready")
+	
 func _deferred_ready() -> void:
 	camera_pivot = get_tree().get_current_scene().get_node("camera_pivot")
 
@@ -12,6 +17,12 @@ func enter() -> void:
 	animation_player.play("run")
 
 func update(_deta:float):
+	if character == "White":
+		if Input.is_action_pressed("sprint"):
+			player_speed = SPRINT_SPEED
+		else:
+			player_speed = SPEED
+		
 	if character == "White" and Input.is_action_just_pressed("jump"):
 		exit_state = true
 		return
@@ -24,8 +35,8 @@ func update(_deta:float):
 	if direction:
 		exit_state = false
 		player.visual.look_at(player.position + direction)
-		player.velocity.x = direction.x * SPEED
-		player.velocity.z = direction.z * SPEED
+		player.velocity.x = direction.x * player_speed
+		player.velocity.z = direction.z * player_speed
 	else:
 		exit_state = true
 

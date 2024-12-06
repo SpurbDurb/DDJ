@@ -7,7 +7,7 @@ var character: String = "White"
 @export var animation_player: AnimationPlayer
 @export var player : CharacterBody3D
 @export var visual : Node3D
-@export var SPEED = 2.6
+@export var SPEED = 2
 
 func enter() -> void:
 	pass
