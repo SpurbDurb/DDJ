@@ -1,12 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8sm1shogleoq"]
 
 [ext_resource type="Script" path="res://scripts/Environment/Platform/timer_platform.gd" id="1_xca3r"]
-[ext_resource type="Texture2D" uid="uid://c60h7aap3pgnt" path="res://assets/grid textures/Light/texture_08.png" id="2_3aaby"]
+[ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://assets/grid textures/Purple/texture_09.png" id="2_jmnrd"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fiuhp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkjbj"]
 transparency = 1
-albedo_color = Color(0.356716, 0.323858, 1, 1)
-albedo_texture = ExtResource("2_3aaby")
+albedo_texture = ExtResource("2_jmnrd")
 uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_unu8h"]
@@ -22,7 +21,7 @@ transform = Transform3D(-0.000312723, 0.000327645, 0.999983, 1.45516e-11, 0.9999
 [node name="CSGBox3D" type="CSGBox3D" parent="Body3D"]
 transform = Transform3D(1, 2.13163e-14, -2.91038e-11, -7.10543e-15, 1, -5.5272e-11, 2.91038e-11, -2.61681e-11, 1, 0, 0.15, 1.16415e-10)
 size = Vector3(1.5, 0.3, 1.5)
-material = SubResource("StandardMaterial3D_fiuhp")
+material = SubResource("StandardMaterial3D_kkjbj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body3D"]
 transform = Transform3D(1, 2.84217e-14, 0, 0, 1, -5.5272e-11, 0, 2.93581e-12, 1, -5.96046e-08, 0.15, -5.96046e-08)

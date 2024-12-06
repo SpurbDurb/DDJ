@@ -35,7 +35,6 @@ func _ready() -> void:
 
 func _on_connection_triggered():
 	if locked: return
-	print("entrou")
 	locked = true
 	visibility_timer.start(visible_duration) 
 	switch_visibility()
@@ -52,15 +51,16 @@ func _process(delta: float) -> void:
 			csg_box_3d.material.albedo_color.a = current_alpha
 
 func _on_visibility_timeout():
-	print("saiu")
 	SignalManager.emit_connection_signal(connection_id)
 	locked = false
 	switch_visibility()
 
 func switch_visibility():
 	if is_viseble:
+		current_alpha = 1.0
 		target_alpha = 0.0
 	else:
+		current_alpha = 0.0
 		target_alpha = 1.0
 	is_viseble = not is_viseble
 	

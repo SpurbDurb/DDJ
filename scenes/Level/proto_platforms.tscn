@@ -85,6 +85,7 @@ speed = 2.0
 [node name="Auto Dissapear Platform" parent="Map/Platforms" instance=ExtResource("4_pjjnc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.3, 4)
 connection_id = 4
+is_viseble = true
 
 [node name="camera_pivot" parent="." instance=ExtResource("4_dhmqt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.000714779, 0.00280476, 0.00599909)

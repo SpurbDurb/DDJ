@@ -21,7 +21,8 @@ func _ready() -> void:
 
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	if is_pressed: return
-	
+	if call_back: 
+		locked = true
 	is_pressed = true
 	anim.play("pressdown")
 	SignalManager.emit_connection_signal(connection_id, self)
