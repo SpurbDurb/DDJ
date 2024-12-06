@@ -38,3 +38,6 @@ func force_state(state_name: String) -> void:
 	
 	var new_state = states[state_name]
 	change_state(new_state)
+
+func get_current_state():
+	return current_state

@@ -8,9 +8,10 @@ func enter():
 	animation_player.connect("animation_finished", Callable(self,"_on_animation_finished"))
 
 func _on_animation_finished(anim_name):
+	animation_player.disconnect("animation_finished", Callable(self,"_on_animation_finished"))
 	if anim_name == "dye":
 		player.queue_free() 
-		animation_player.disconnect("animation_finished", Callable(self,"_on_animation_finished"))
+
 
 func exit_condition() -> bool:
 	return false

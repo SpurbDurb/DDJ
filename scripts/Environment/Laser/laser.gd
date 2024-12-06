@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 	check_for_player_collision()
 	
 func check_for_player_collision() -> void:
-	if beam.is_colliding():
+	if activated and beam.is_colliding():
 		var collided_obj = beam.get_collider()
 		if collided_obj and collided_obj.is_in_group("Player"):
 			collided_obj.die()

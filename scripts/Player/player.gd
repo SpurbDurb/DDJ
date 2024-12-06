@@ -29,4 +29,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func die() -> void:
-	sm.force_state("die")
+	var current_state_name = sm.get_current_state().name
+	if current_state_name != "die":
+		sm.force_state("die")
