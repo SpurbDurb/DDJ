@@ -3,6 +3,7 @@ extends Player_State
 var direction: Vector3
 var camera_pivot
 
+
 func _ready() -> void:
 	call_deferred("_deferred_ready")
 func _deferred_ready() -> void:
@@ -21,7 +22,7 @@ func move():
 	var input_dir := get_input()
 	direction = (camera_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		player.visual.look_at(player.position + direction)
+		player.look_at(player.position + direction)
 		player.velocity.x = direction.x * SPEED
 		player.velocity.z = direction.z * SPEED
 

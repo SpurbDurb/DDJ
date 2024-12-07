@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnj0a8xvjmtve"]
+[gd_scene load_steps=14 format=3 uid="uid://cnj0a8xvjmtve"]
 
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_3a1wa"]
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_td465"]
 [ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="5_6c3m4"]
+[ext_resource type="PackedScene" uid="uid://d1qrw8doltj2c" path="res://scenes/Environment/key.tscn" id="7_rumdn"]
 [ext_resource type="Script" path="res://scripts/spawn.gd" id="8_8smfn"]
 [ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="9_pu8oc"]
 [ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="10_3gjsr"]
@@ -34,8 +35,11 @@ albedo_texture = ExtResource("2_td465")
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_rpxor"]
+size = Vector3(1.3, 1.3, 1.3)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_m887p"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2x3l6"]
+margin = 0.1
+size = Vector3(1.4, 1.43, 1.4)
 
 [node name="Proto Throw" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0109477, 0.00565386, 0.0646338)
@@ -52,10 +56,12 @@ environment = SubResource("Environment_qxgvh")
 [node name="Map" type="Node3D" parent="."]
 
 [node name="floor" type="CSGBox3D" parent="Map"]
-transform = Transform3D(0.996103, 0, 0, 0, 0.996103, 0, 0, 0, 0.996103, 0.00722384, -0.5, -0.00414228)
+transform = Transform3D(0.996103, 0, 0, 0, 0.996103, 0, 0, 0, 0.996103, 0, -0.5, 0)
 material_override = SubResource("StandardMaterial3D_0ld33")
 use_collision = true
-size = Vector3(10, 1, 10)
+collision_layer = 5
+collision_mask = 5
+size = Vector3(6, 1, 6)
 
 [node name="camera_pivot" parent="." instance=ExtResource("5_6c3m4")]
 max_zoom = 1.5
@@ -72,13 +78,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.86265e-09, 0)
 script = ExtResource("8_8smfn")
 scene_to_spawn = ExtResource("10_3gjsr")
 
+[node name="Key" parent="." instance=ExtResource("7_rumdn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -1)
+
 [node name="Throwable" type="RigidBody3D" parent="." groups=["Throwable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98885, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+collision_layer = 4
+collision_mask = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Throwable"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.140349, 0)
 mesh = SubResource("BoxMesh_rpxor")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Throwable"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.131932, 0)
-shape = SubResource("CylinderShape3D_m887p")
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.140191, 0)
+shape = SubResource("BoxShape3D_2x3l6")

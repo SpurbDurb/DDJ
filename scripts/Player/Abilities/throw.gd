@@ -1,44 +1,47 @@
 extends Area3D
 
-@export var throw_force: float = 1.5
-@export var throw_direction: Vector3 = Vector3.FORWARD
+@export var throw_force: float = 1.6
+@export var up_force: float = 1
+@export var player : CharacterBody3D
+@export var pause_duration: float = 1
 
-var throwable: Object
-var offset_from_head: Vector3 = Vector3(0, 0.8, 0)  # The offset to carry the object above the player
+@onready var pause_timer: Timer = Timer.new()
+var throawable: Object
+var offset_from_head: Vector3 = Vector3(0, 0.7, 0) 
 
-func throw_object(obj: Node3D) -> void:
-	if obj:
-		if obj and obj is RigidBody3D:
-			obj.freeze = false
-			var linear_velocity = throw_direction * throw_force
-			obj.linear_velocity = linear_velocity
-			obj.apply_central_impulse(throw_direction * throw_force)
-			print("Object thrown with ", linear_velocity)
-			throwable = null
-		else:
-			print("No RigidBody3D found to apply physics")
+func _ready() -> void:
+	# Configura o temporizador
+	pause_timer.wait_time = pause_duration
+	pause_timer.one_shot = true
+	pause_timer.connect("timeout", Callable(self, "_on_pause_timer_timeout"))
+	add_child(pause_timer)
+
+func _on_pause_timer_timeout() -> void:
+	monitoring = true
+	
+func throw_object() -> void:
+	var throw_direction = -player.transform.basis.z + Vector3(0, 1, 0) * up_force
+	throw_direction = throw_direction.normalized()
+
+	var linear_velocity = throw_direction * throw_force
+	throawable.linear_velocity = linear_velocity
+	throawable.apply_central_impulse(throw_direction * throw_force)
+
+	throawable = null
+	pause_timer.start()
 
 func _on_body_entered(body: Node3D) -> void:
+	if throawable: return
 	if body.is_in_group("Throwable"):
-		throwable = body
-		print("Throwable object detected")
-		_carry_object(throwable)
+		throawable = body
+		set_deferred("monitoring", false)
 
-func _carry_object(obj: Node3D) -> void:
-	var holder_position = global_transform.origin
-	var new_position = holder_position + offset_from_head
+func _process(_delta: float) -> void:
+	if not throawable: return
+	#update position
+	throawable.rotation = Vector3(0, 0, 0)
+	var target_position = global_transform.origin + offset_from_head
+	throawable.global_transform.origin = throawable.global_transform.origin.lerp(target_position, 0.2)
 
-	obj.global_transform.origin = new_position
-	obj.rotation = Vector3(0, 0, 0)
-
-func _process(delta: float) -> void:
-	if throwable:
-		# Continuously update the object's position while carrying
-		var new_position = global_transform.origin + offset_from_head
-		throwable.global_transform.origin = new_position
-		
-		# Set the object's rotation to 0,0,0 while carrying
-		throwable.rotation = Vector3(0, 0, 0)
-
-		if Input.is_action_just_pressed("throw"):
-			throw_object(throwable)
+	if Input.is_action_just_pressed("throw"):
+		throw_object()

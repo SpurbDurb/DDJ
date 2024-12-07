@@ -35,7 +35,7 @@ func update(_deta:float):
 
 	if direction:
 		exit_state = false
-		player.visual.look_at(player.position + direction)
+		player.look_at(player.position + direction)
 		player.velocity.x = direction.x * player_speed
 		player.velocity.z = direction.z * player_speed
 	else:
