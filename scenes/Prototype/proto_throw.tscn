@@ -2,7 +2,6 @@
 
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_3a1wa"]
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_td465"]
-[ext_resource type="Texture2D" uid="uid://c0rbj02fx21ld" path="res://assets/grid textures/Light/texture_07.png" id="4_36mxe"]
 [ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="5_6c3m4"]
 [ext_resource type="Script" path="res://scripts/spawn.gd" id="8_8smfn"]
 [ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="9_pu8oc"]
@@ -34,9 +33,9 @@ fog_sky_affect = 0.0
 albedo_texture = ExtResource("2_td465")
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwwnk"]
-albedo_texture = ExtResource("4_36mxe")
-uv1_triplanar = true
+[sub_resource type="BoxMesh" id="BoxMesh_rpxor"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m887p"]
 
 [node name="Proto Throw" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0109477, 0.00565386, 0.0646338)
@@ -53,16 +52,10 @@ environment = SubResource("Environment_qxgvh")
 [node name="Map" type="Node3D" parent="."]
 
 [node name="floor" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00722384, -0.5, -0.00414228)
+transform = Transform3D(0.996103, 0, 0, 0, 0.996103, 0, 0, 0, 0.996103, 0.00722384, -0.5, -0.00414228)
 material_override = SubResource("StandardMaterial3D_0ld33")
 use_collision = true
 size = Vector3(10, 1, 10)
-
-[node name="box_throw" type="CSGBox3D" parent="Map" groups=["Throwable"]]
-transform = Transform3D(0.180416, 0, -0.98359, 0, 1, 0, 0.98359, 0, 0.180416, -1.06081, 0.0931276, -0.30239)
-material_override = SubResource("StandardMaterial3D_dwwnk")
-use_collision = true
-size = Vector3(0.200293, 0.186255, 0.168945)
 
 [node name="camera_pivot" parent="." instance=ExtResource("5_6c3m4")]
 max_zoom = 1.5
@@ -78,3 +71,14 @@ scene_to_spawn = ExtResource("9_pu8oc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.86265e-09, 0)
 script = ExtResource("8_8smfn")
 scene_to_spawn = ExtResource("10_3gjsr")
+
+[node name="Throwable" type="RigidBody3D" parent="." groups=["Throwable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98885, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Throwable"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.140349, 0)
+mesh = SubResource("BoxMesh_rpxor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Throwable"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.131932, 0)
+shape = SubResource("CylinderShape3D_m887p")

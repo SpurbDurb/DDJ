@@ -9,8 +9,8 @@
 [ext_resource type="Script" path="res://scripts/Player/State Machine/player states/die.gd" id="6_alvit"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwvqb"]
-radius = 0.328486
-height = 0.867156
+radius = 0.3
+height = 0.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffh85"]
 resource_name = "Material.001"
@@ -3494,6 +3494,7 @@ _data = {
 }
 
 [node name="Player_W" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "player", "visual") groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00169301, 1.19209e-07, 0.00242472)
 collision_layer = 3
 script = ExtResource("1_pvxaj")
 animation_player = NodePath("visual/stickman/AnimationPlayer")

@@ -33,6 +33,5 @@ func die() -> void:
 	if current_state_name != "die":
 		sm.force_state("die")
 
-
 func _on_grab_body_entered(body: Node3D) -> void:
 	pass # Replace with function body.

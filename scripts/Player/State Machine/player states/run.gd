@@ -32,6 +32,7 @@ func update(_deta:float):
 	
 	var input_dir := get_input()
 	direction = (camera_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
 	if direction:
 		exit_state = false
 		player.visual.look_at(player.position + direction)
