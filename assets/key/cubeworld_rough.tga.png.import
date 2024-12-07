@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvvwuxrt0xnbi"
-path.s3tc="res://.godot/imported/texture_13.png-70cc9899cbaa41adf611b039f66def3f.s3tc.ctex"
+uid="uid://doru7wx05pvcf"
+path.s3tc="res://.godot/imported/cubeworld_rough.tga.png-8400b9ab3e96d6d0d4f058177379f4d8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/grid textures/Green/texture_13.png"
-dest_files=["res://.godot/imported/texture_13.png-70cc9899cbaa41adf611b039f66def3f.s3tc.ctex"]
+source_file="res://assets/key/cubeworld_rough.tga.png"
+dest_files=["res://.godot/imported/cubeworld_rough.tga.png-8400b9ab3e96d6d0d4f058177379f4d8.s3tc.ctex"]
 
 [params]
 

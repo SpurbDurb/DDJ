@@ -1,15 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://cnj0a8xvjmtve"]
+[gd_scene load_steps=15 format=3 uid="uid://cnj0a8xvjmtve"]
 
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_3a1wa"]
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_td465"]
 [ext_resource type="Texture2D" uid="uid://dyshw81wmob45" path="res://assets/grid textures/Green/texture_10.png" id="3_qbc8k"]
 [ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="5_6c3m4"]
-[ext_resource type="PackedScene" uid="uid://d1qrw8doltj2c" path="res://scenes/Environment/Key Door/key.tscn" id="7_rumdn"]
+[ext_resource type="PackedScene" uid="uid://d1qrw8doltj2c" path="res://scenes/Environment/key.tscn" id="7_rumdn"]
 [ext_resource type="PackedScene" uid="uid://btxh5ai8kmnry" path="res://scenes/Environment/throwable.tscn" id="8_5jx7x"]
 [ext_resource type="Script" path="res://scripts/spawn.gd" id="8_8smfn"]
 [ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="9_pu8oc"]
 [ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="10_3gjsr"]
-[ext_resource type="PackedScene" uid="uid://dmxb0jvnh5l4j" path="res://scenes/Environment/Key Door/door.tscn" id="10_blaul"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n3rkm"]
 shader = ExtResource("1_3a1wa")
@@ -87,14 +86,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.86265e-09, 0)
 script = ExtResource("8_8smfn")
 scene_to_spawn = ExtResource("10_3gjsr")
 
-[node name="Throwable Spawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65661e-09, -1.86265e-09, -1)
-script = ExtResource("8_8smfn")
-scene_to_spawn = ExtResource("8_5jx7x")
-
-[node name="Key Spawn" type="Node3D" parent="."]
+[node name="key Spawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65661e-09, -1.86265e-09, 1)
 script = ExtResource("8_8smfn")
 scene_to_spawn = ExtResource("7_rumdn")
 
-[node name="Door" parent="." instance=ExtResource("10_blaul")]
+[node name="Throwable Spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65661e-09, -1.86265e-09, -1)
+script = ExtResource("8_8smfn")
+scene_to_spawn = ExtResource("8_5jx7x")

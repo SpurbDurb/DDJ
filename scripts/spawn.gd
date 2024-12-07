@@ -12,6 +12,7 @@ func _process(_delta):
 
 	if spawned_instance.spawn == false:
 		queue_free()
+		return
 	if spawned_instance.global_transform.origin.y < fall_threshold:
 		_respawn()
 
