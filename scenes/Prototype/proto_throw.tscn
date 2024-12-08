@@ -89,12 +89,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 [node name="Key" parent="." instance=ExtResource("7_rumdn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.1, 4.47035e-08)
 
-[node name="Laser" parent="." instance=ExtResource("9_fejql")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.68905, -0.00565386, -0.0646338)
-
-[node name="Laser2" parent="." instance=ExtResource("9_fejql")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.68905, 0.494346, -0.0646338)
-
 [node name="Multiple Button" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, -0.02, 0)
 script = ExtResource("10_eeyea")
@@ -106,3 +100,12 @@ multiple = true
 [node name="Button2" parent="Multiple Button" instance=ExtResource("10_j1v4n")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, 0.01, -1.19209e-07)
 multiple = true
+
+[node name="Laser" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0, 0)
+
+[node name="Laser1" parent="Laser" instance=ExtResource("9_fejql")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Laser2" parent="Laser" instance=ExtResource("9_fejql")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 0)
