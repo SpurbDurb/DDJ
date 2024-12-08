@@ -37,3 +37,7 @@ func _process(delta: float) -> void:
 		current_alpha = lerp(current_alpha, 0.0, fade_speed * delta)
 		lock_material.albedo_color.a = current_alpha
 		door_material.albedo_color.a = current_alpha
+	
+	if current_alpha < 0.01:
+		key.use()
+		queue_free()
