@@ -1,8 +1,7 @@
-extends RigidBody3D
+extends Throwable
 
-@export var spawn: bool = true
-var used: bool = false
+var used = false
 
 func use():
-	#spawn = false
-	queue_free()
+	pass
+	#queue_free()

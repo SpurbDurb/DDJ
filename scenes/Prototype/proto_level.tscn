@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cp4byhnxpxe2"]
+[gd_scene load_steps=16 format=3 uid="uid://cp4byhnxpxe2"]
 
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_nf30m"]
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_pje8b"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="5_5wonf"]
 [ext_resource type="PackedScene" uid="uid://dst42qoje3div" path="res://scenes/Environment/Button/Button.tscn" id="6_y14d4"]
 [ext_resource type="PackedScene" uid="uid://dmcij0x5t53sp" path="res://scenes/Environment/Laser/laser.tscn" id="7_ofvic"]
-[ext_resource type="Script" path="res://scripts/spawn.gd" id="8_aotp6"]
 [ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="9_q2811"]
 [ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="10_4sduw"]
 
@@ -91,12 +90,8 @@ connection_id = 2
 [node name="Laser2" parent="." instance=ExtResource("7_ofvic")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5047, 0, 0.276246)
 
-[node name="Player B Spawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.86265e-09, 0)
-script = ExtResource("8_aotp6")
-scene_to_spawn = ExtResource("9_q2811")
+[node name="Player_B" parent="." instance=ExtResource("9_q2811")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Player W Spawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.86265e-09, 0)
-script = ExtResource("8_aotp6")
-scene_to_spawn = ExtResource("10_4sduw")
+[node name="Player_W" parent="." instance=ExtResource("10_4sduw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.998307, 1.19209e-07, 0.00242472)
