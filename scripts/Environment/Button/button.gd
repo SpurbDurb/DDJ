@@ -1,6 +1,10 @@
 extends StaticBody3D
 
+signal entered
+signal exited
+
 @export_range(1,9) var connection_id: int = 1
+@export var multiple: bool = false
 @export var one_time: bool = false
 @export var call_back: bool = false
 @export var texture: Texture
@@ -12,9 +16,10 @@ var is_pressed = false
 var locked = false
 
 func _ready() -> void:
-	SignalManager.register_signal(connection_id)
 	if texture: change_texture(texture)
+	if multiple: return
 	
+	SignalManager.register_signal(connection_id)
 	if call_back: 
 		locked = true
 		SignalManager.connect_to_signal(connection_id, Callable(self, "_on_connection_triggered"))
@@ -25,6 +30,11 @@ func _on_area_3d_body_entered(_body: Node3D) -> void:
 		locked = true
 	is_pressed = true
 	anim.play("pressdown")
+	
+	if multiple: 
+		emit_signal("entered")
+		return
+	
 	SignalManager.emit_connection_signal(connection_id, self)
 
 func _on_area_3d_body_exited(_body: Node3D) -> void:
@@ -33,6 +43,10 @@ func _on_area_3d_body_exited(_body: Node3D) -> void:
 	
 	is_pressed = false
 	anim.play("pressup")
+	
+	if multiple: 
+		emit_signal("exited")
+		return
 	
 	SignalManager.emit_connection_signal(connection_id, self)
 

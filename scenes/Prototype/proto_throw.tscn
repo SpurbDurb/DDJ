@@ -1,13 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnj0a8xvjmtve"]
+[gd_scene load_steps=17 format=3 uid="uid://cnj0a8xvjmtve"]
 
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_3a1wa"]
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_td465"]
 [ext_resource type="Texture2D" uid="uid://dyshw81wmob45" path="res://assets/grid textures/Green/texture_10.png" id="3_qbc8k"]
 [ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="5_6c3m4"]
 [ext_resource type="PackedScene" uid="uid://d1qrw8doltj2c" path="res://scenes/Environment/Key Door/key.tscn" id="7_rumdn"]
+[ext_resource type="PackedScene" uid="uid://dmcij0x5t53sp" path="res://scenes/Environment/Laser/laser.tscn" id="9_fejql"]
 [ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="9_pu8oc"]
 [ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="10_3gjsr"]
 [ext_resource type="PackedScene" uid="uid://dmxb0jvnh5l4j" path="res://scenes/Environment/Key Door/door.tscn" id="10_blaul"]
+[ext_resource type="Script" path="res://scripts/Environment/Button/multiple_button.gd" id="10_eeyea"]
+[ext_resource type="PackedScene" uid="uid://dst42qoje3div" path="res://scenes/Environment/Button/Button.tscn" id="10_j1v4n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n3rkm"]
 shader = ExtResource("1_3a1wa")
@@ -85,3 +88,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="Key" parent="." instance=ExtResource("7_rumdn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.1, 4.47035e-08)
+
+[node name="Laser" parent="." instance=ExtResource("9_fejql")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.68905, -0.00565386, -0.0646338)
+
+[node name="Laser2" parent="." instance=ExtResource("9_fejql")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.68905, 0.494346, -0.0646338)
+
+[node name="Multiple Button" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, -0.02, 0)
+script = ExtResource("10_eeyea")
+
+[node name="Button" parent="Multiple Button" instance=ExtResource("10_j1v4n")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2, 0.01, 1.19209e-07)
+multiple = true
+
+[node name="Button2" parent="Multiple Button" instance=ExtResource("10_j1v4n")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, 0.01, -1.19209e-07)
+multiple = true

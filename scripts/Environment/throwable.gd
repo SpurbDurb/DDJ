@@ -7,7 +7,6 @@ var spawn_offset: Vector3 = Vector3(0, 0.2, 0)
 
 func _ready() -> void:
 	spawn_position = global_transform.origin + spawn_offset
-	print(spawn_position)
 
 func _process(_delta):
 	if global_transform.origin.y < fall_threshold:

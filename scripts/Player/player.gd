@@ -20,7 +20,6 @@ var spawn_cooldown = 1
 func _ready() -> void:
 	#Spawn
 	spawn_position = global_transform.origin + spawn_offset
-	print(spawn_position)
 	#Timer
 	timer.wait_time = spawn_cooldown
 	timer.one_shot = true
