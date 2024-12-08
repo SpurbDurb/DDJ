@@ -92,10 +92,10 @@ transform = Transform3D(0.999995, 0.00270726, -0.00137378, -0.00270715, 0.999996
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, 0)
 
 [node name="Beam" parent="." instance=ExtResource("2_pjyfv")]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -1.24339, 0.35, 0)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -1.24339, 0.25, 0)
 
 [node name="Beam2" type="RayCast3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.243, 0.35, 0)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.243, 0.25, 0)
 script = ExtResource("4_hx30c")
 secondary_beam = true
 

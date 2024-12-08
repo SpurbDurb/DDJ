@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1xf8hsj5vju2"]
+[gd_scene load_steps=5 format=3 uid="uid://c1xf8hsj5vju2"]
+
+[ext_resource type="Texture2D" uid="uid://d13b2glpd6eax" path="res://assets/grid textures/Light/texture_05.png" id="1_6o7tw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnhik"]
+albedo_texture = ExtResource("1_6o7tw")
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_dgda5"]
+material = SubResource("StandardMaterial3D_nnhik")
 size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o1va3"]
