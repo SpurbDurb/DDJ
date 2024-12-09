@@ -31,6 +31,7 @@ func enter_condition() -> bool:
 		return true
 	
 	if character == "White" and player.is_on_floor() and Input.is_action_just_pressed("jump"):
+		animation_player.speed_scale = 1
 		player.velocity.y = 3
 		return true
 	if character == "Black" and player.is_on_floor() and Input.is_action_just_pressed("jump2"):

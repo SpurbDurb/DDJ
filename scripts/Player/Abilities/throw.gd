@@ -43,7 +43,7 @@ func _on_body_entered(body: Node3D) -> void:
 		throawable.rotation = Vector3(0, 0, 0)
 		set_deferred("monitoring", false)
 
-func _process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if not throawable: return
 	if throawable.is_in_group("Key") and throawable.used:
 		throawable = null
@@ -51,6 +51,6 @@ func _process(_delta: float) -> void:
 	
 	#update position
 	target_position = global_transform.origin + offset_from_head
-	throawable.global_transform.origin = throawable.global_transform.origin.lerp(target_position, 0.2)
+	throawable.global_transform.origin = throawable.global_transform.origin.lerp(target_position, 0.1)
 	if Input.is_action_just_pressed("throw"):
 		throw_object()

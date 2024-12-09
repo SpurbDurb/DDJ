@@ -15,6 +15,9 @@ func _deferred_ready() -> void:
 func enter() -> void:
 	animation_player.play("run")
 
+func exit() -> void:
+	animation_player.speed_scale = 1
+
 func update(_deta:float):
 	if character == "White":
 		if Input.is_action_pressed("sprint"):
