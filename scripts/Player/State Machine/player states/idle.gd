@@ -19,6 +19,7 @@ func enter_condition() -> bool:
 		return input_dir.length() == 0
 	elif character == "Black" and !Input.is_action_just_pressed("jump2"):
 		return input_dir.length() == 0
+	elif character == "White" and Input.is_action_pressed("push"): return false
 	return false
 
 func get_input() -> Vector2:

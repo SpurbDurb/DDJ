@@ -88,7 +88,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_townp")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0xgs8"]
-height = 0.318794
+height = 0.3
 radius = 2.50051
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jmb56"]
@@ -151,6 +151,8 @@ _data = {
 
 [node name="Button" type="StaticBody3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.01, 0)
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_cu3gk")
 texture = SubResource("StandardMaterial3D_rp8ld")
 
@@ -166,14 +168,14 @@ mesh = SubResource("ArrayMesh_hlsjx")
 skeleton = NodePath("")
 
 [node name="BaseCollison" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0660763, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0864301, 0)
 shape = SubResource("CylinderShape3D_0xgs8")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313753, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879886, 0)
 shape = SubResource("CylinderShape3D_jmb56")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

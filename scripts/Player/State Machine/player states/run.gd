@@ -1,7 +1,6 @@
 extends Player_State
 
 @export var SPRINT_SPEED: float = 3
-
 var direction: Vector3
 var camera_pivot
 var player_speed: float
@@ -22,27 +21,17 @@ func update(_deta:float):
 			player_speed = SPRINT_SPEED
 		else:
 			player_speed = SPEED
-		
-	if character == "White" and Input.is_action_just_pressed("jump"):
-		exit_state = true
-		return
-	elif character == "Black" and Input.is_action_just_pressed("jump2"):
-		exit_state = true
-		return
 	
 	var input_dir := get_input()
 	direction = (camera_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	if direction:
-		exit_state = false
 		player.look_at(player.position + direction)
 		player.velocity.x = direction.x * player_speed
 		player.velocity.z = direction.z * player_speed
-	else:
-		exit_state = true
 
 func exit_condition() -> bool:
-	return exit_state or !player.is_on_floor()
+	return true
 
 func enter_condition() -> bool:
 	var input_dir := get_input()

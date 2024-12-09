@@ -83,7 +83,6 @@ max_rotation_speed = 0.05
 
 [node name="Player_W" parent="." instance=ExtResource("10_3gjsr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00169301, 1.19209e-07, 1.00242)
-collision_layer = 3
 
 [node name="Player_B" parent="." instance=ExtResource("9_pu8oc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
@@ -96,11 +95,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, -0
 script = ExtResource("10_eeyea")
 
 [node name="Button" parent="Multiple Button" instance=ExtResource("10_j1v4n")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2, 0.01, 1.19209e-07)
 multiple = true
 
 [node name="Button2" parent="Multiple Button" instance=ExtResource("10_j1v4n")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, 0.01, -1.19209e-07)
 multiple = true
 
 [node name="Laser" type="Node3D" parent="."]
@@ -112,5 +111,5 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="Laser2" parent="Laser" instance=ExtResource("9_fejql")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 0)
 
-[node name="box2" parent="." instance=ExtResource("12_tu74p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.86265e-09, -1)
+[node name="box" parent="." instance=ExtResource("12_tu74p")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.01095, -0.00565386, -0.0646338)
