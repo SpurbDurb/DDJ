@@ -140,6 +140,9 @@ bind/32/name = &"mixamorig_RightToe_End"
 bind/32/bone = -1
 bind/32/pose = Transform3D(-9993.3, -365.526, 13.5625, 365.531, -9993.32, 3.46184, 13.4272, 3.95692, 10000, -18.3354, -6.16038, -3.92521)
 
+[sub_resource type="Animation" id="Animation_gp1xe"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_yya7w"]
 resource_name = "air"
 length = 0.7
@@ -3481,9 +3484,6 @@ tracks/58/interp = 1
 tracks/58/loop_wrap = true
 tracks/58/keys = PackedFloat32Array(0, 1, -0.575892, 1.92083, 0.107151)
 
-[sub_resource type="Animation" id="Animation_gp1xe"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cpa6f"]
 _data = {
 "RESET": SubResource("Animation_gp1xe"),
@@ -3507,7 +3507,7 @@ visual = NodePath("visual")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.3, 0)
-target_position = Vector3(0, -0.5, 0)
+target_position = Vector3(0, -0.4, 0)
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

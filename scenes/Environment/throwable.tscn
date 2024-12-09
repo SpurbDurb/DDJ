@@ -1,6 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://btxh5ai8kmnry"]
+[gd_scene load_steps=4 format=3 uid="uid://v4oiigqe0nsa"]
 
-[ext_resource type="Script" path="res://scripts/Environment/throwable.gd" id="1_8m7l4"]
+[sub_resource type="GDScript" id="GDScript_6s0yd"]
+script/source = "extends RigidBody3D
+class_name Throwable
+
+@export var fall_threshold: float = -10.0  
+var spawn_position: Vector3 
+var spawn_offset: Vector3 = Vector3(0, 0.2, 0) 
+
+func _ready() -> void:
+	spawn_position = global_transform.origin + spawn_offset
+
+func _process(_delta):
+	if global_transform.origin.y < fall_threshold:
+		linear_velocity = Vector3.ZERO
+		global_transform.origin = spawn_position
+"
 
 [sub_resource type="BoxMesh" id="BoxMesh_rpxor"]
 size = Vector3(0.15, 0.15, 0.15)
@@ -13,7 +28,7 @@ size = Vector3(0.2, 0.2, 0.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_8m7l4")
+script = SubResource("GDScript_6s0yd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140349, 0)

@@ -108,14 +108,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0, 0)
 
 [node name="Laser1" parent="Laser" instance=ExtResource("9_fejql")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-beam_size = 8.0
 
 [node name="Laser2" parent="Laser" instance=ExtResource("9_fejql")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 0)
-beam_size = 8.0
 
 [node name="box2" parent="." instance=ExtResource("12_tu74p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.86265e-09, -1)
-
-[node name="box3" parent="." instance=ExtResource("12_tu74p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.86265e-09, -1.49012e-08)
