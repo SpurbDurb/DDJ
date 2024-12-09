@@ -1,6 +1,6 @@
 extends Player_State
 
-@export var SPRINT_SPEED: float = 3
+@export var SPRINT_SPEED: float = 2.8
 var direction: Vector3
 var camera_pivot
 var player_speed: float
@@ -19,8 +19,10 @@ func update(_deta:float):
 	if character == "White":
 		if Input.is_action_pressed("sprint"):
 			player_speed = SPRINT_SPEED
+			animation_player.speed_scale = 1.5
 		else:
 			player_speed = SPEED
+			animation_player.speed_scale = 1
 	
 	var input_dir := get_input()
 	direction = (camera_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

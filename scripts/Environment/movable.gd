@@ -25,8 +25,8 @@ func _physics_process(delta: float) -> void:
 	#gravity
 	velocity += get_gravity() * delta
 	#rotate collision_shape_3d
-	collision_shape_3d.rotation_degrees.x = velocity.z * 5
-	collision_shape_3d.rotation_degrees.z = velocity.x * 5
+	collision_shape_3d.rotation_degrees.x = - velocity.z * 5.5
+	collision_shape_3d.rotation_degrees.z = velocity.x * 5.5
 	#stop
 	if not pushing:
 		velocity.x = move_toward(velocity.x, 0, atrito)

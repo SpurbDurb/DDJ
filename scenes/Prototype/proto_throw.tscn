@@ -96,11 +96,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, -0
 script = ExtResource("10_eeyea")
 
 [node name="Button" parent="Multiple Button" instance=ExtResource("10_j1v4n")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2, 0, 0)
+transform = Transform3D(0.2, -0.000142001, -6.61159e-05, 0.000141901, 0.2, -0.000296264, 6.63302e-05, 0.000296216, 0.2, -2, -0.00953841, 0)
 multiple = true
 
 [node name="Button2" parent="Multiple Button" instance=ExtResource("10_j1v4n")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, -0.00953841, 0)
 multiple = true
 
 [node name="Laser" type="Node3D" parent="."]
@@ -116,6 +116,3 @@ beam_size = 8.0
 
 [node name="box2" parent="." instance=ExtResource("12_tu74p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.86265e-09, -1)
-
-[node name="box3" parent="." instance=ExtResource("12_tu74p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.86265e-09, -1.49012e-08)
