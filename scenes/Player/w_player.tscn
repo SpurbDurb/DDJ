@@ -3500,6 +3500,10 @@ animation_player = NodePath("visual/stickman/AnimationPlayer")
 player = NodePath(".")
 visual = NodePath("visual")
 
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.3, 0)
+target_position = Vector3(0, -0.4, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 shape = SubResource("CapsuleShape3D_fwvqb")
@@ -3801,6 +3805,9 @@ script = ExtResource("3_vgyyq")
 script = ExtResource("4_ytc0m")
 
 [node name="jump" type="Node" parent="state machine"]
+script = ExtResource("5_fynr4")
+
+[node name="push" type="Node" parent="state machine"]
 script = ExtResource("5_fynr4")
 
 [node name="die" type="Node" parent="state machine"]
