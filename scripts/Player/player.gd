@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var sm = $"state machine"
+@onready var sm: Node = $"state machine"
 
 @export_enum("White", "Black")
 var character: String = "White"
@@ -61,3 +61,6 @@ func reset() -> void:
 	var current_state_name = sm.get_current_state().name
 	if current_state_name != "idle":
 		sm.force_state("idle")
+
+func get_current_state():
+	return sm.get_current_state()
