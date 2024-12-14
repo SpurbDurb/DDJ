@@ -1,6 +1,7 @@
 extends Player_State
 
 @export var SPRINT_SPEED: float = 2.8
+@export var stamina_bar : ProgressBar
 var direction: Vector3
 var camera_pivot
 var player_speed: float
@@ -20,7 +21,7 @@ func exit() -> void:
 
 func update(_deta:float):
 	if character == "White":
-		if Input.is_action_pressed("sprint"):
+		if Input.is_action_pressed("sprint") and stamina_bar.value > 0:
 			player_speed = SPRINT_SPEED
 			animation_player.speed_scale = 1.5
 		else:
