@@ -2,14 +2,16 @@ extends Sprite3D
 
 @export var player: Node3D
 @export var progressBar: ProgressBar
+@export var staminaIncreaseSpeed : int = 50
+@export var staminaDecreaseSpeed : int = 50
+
 
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
+@onready var hide_stamina_bar_threshold: float = 2.0  
+
 
 var hide_stamina_bar_timer: float = 0
 var is_visible: bool = false  
-
-@export var hide_stamina_bar_threshold: float = 2.0  
-
 var is_progressing: bool = false
 
 func _ready() -> void:
@@ -39,13 +41,13 @@ func _process(delta: float) -> void:
 
 func fill_stamina_bar(delta: float) -> void:
 	if progressBar.value < 100:
-		progressBar.value += delta * 50
+		progressBar.value += delta * staminaIncreaseSpeed
 		if progressBar.value > 100:
 			progressBar.value = 100
 
 func decrease_stamina_bar(delta: float) -> void:
 	if progressBar.value > 0:
-		progressBar.value -= delta * 50
+		progressBar.value -= delta * staminaDecreaseSpeed
 		if progressBar.value < 0:
 			progressBar.value = 0
 
