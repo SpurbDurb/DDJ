@@ -35,7 +35,10 @@ func enter_condition() -> bool:
 		player.velocity.y = 3
 		return true
 	if character == "Black" and player.is_on_floor() and Input.is_action_just_pressed("jump2"):
-		player.velocity.y = 3
+		if player.is_in_water:
+			player.velocity.y = 3.5
+			
+		else: player.velocity.y = 3
 		return true
 	return false
 

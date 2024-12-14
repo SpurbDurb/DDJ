@@ -11,7 +11,7 @@ func update(_delta: float):
 	player.velocity.z = move_toward(player.velocity.z, 0, SPEED)
 
 func enter_condition() -> bool:
-	if !player.is_on_floor():
+	if !player.is_on_floor() or player.is_in_water:
 		return false
 	
 	var input_dir := get_input()
