@@ -3844,9 +3844,6 @@ playback_default_blend_time = 0.2
 script = ExtResource("2_vper5")
 initial_state = NodePath("idle")
 
-[node name="swim" type="Node" parent="state machine"]
-script = ExtResource("8_r5wg7")
-
 [node name="run" type="Node" parent="state machine"]
 script = ExtResource("3_jprjb")
 
@@ -3858,5 +3855,8 @@ script = ExtResource("5_b0quu")
 
 [node name="die" type="Node" parent="state machine"]
 script = ExtResource("6_mwqh5")
+
+[node name="swim" type="Node" parent="state machine"]
+script = ExtResource("8_r5wg7")
 
 [connection signal="body_entered" from="Grab" to="Grab" method="_on_body_entered"]

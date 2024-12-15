@@ -38,6 +38,7 @@ folder_colors={
 Player=""
 Throwable=""
 Water=""
+FloatingObject=""
 
 [input]
 
