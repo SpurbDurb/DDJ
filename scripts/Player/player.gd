@@ -16,6 +16,7 @@ var spawn_offset: Vector3 = Vector3(0, 0.5, 0)
 var spawn_protected: bool = false 
 @onready var timer: Timer = Timer.new()
 var spawn_cooldown = 1
+var is_in_water: bool = false
 
 func _ready() -> void:
 	#Spawn
@@ -64,3 +65,6 @@ func reset() -> void:
 
 func get_current_state():
 	return sm.get_current_state()
+	
+func set_is_in_water(value:bool) -> void:
+	is_in_water = value
