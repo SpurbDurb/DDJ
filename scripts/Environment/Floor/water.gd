@@ -46,7 +46,6 @@ func apply_buoyancy_and_drag_to_rigidbody(body: RigidBody3D) -> void:
 	var depth = water_height - body.global_position.y
 	if depth > 0: 
 		var upward_force = Vector3.UP * float_force * depth
-		print("Applying upward force:", upward_force, "to", body.name)
 		body.apply_central_force(upward_force)  
 		body.linear_velocity *= 1.0 - water_drag
 		body.angular_velocity *= 1.0 - water_angular_drag
@@ -56,6 +55,5 @@ func apply_buoyancy_and_drag_to_character(body: CharacterBody3D) -> void:
 	if depth > 0:  # If submerged in water
 		# Buoyancy force: Apply upward force proportional to the depth
 		var upward_force = Vector3.UP * float_force * depth
-		print("Applying upward force:", upward_force, "to", body.name)
 		body.velocity.y += upward_force.y * get_process_delta_time()
 		body.velocity.y *= 1.0 - water_drag

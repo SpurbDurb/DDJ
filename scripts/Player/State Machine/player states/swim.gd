@@ -13,7 +13,6 @@ func _deferred_ready() -> void:
 	camera_pivot = get_tree().get_current_scene().get_node("camera_pivot")
 
 func enter() -> void:
-	print("entered swim state")
 	animation_player.play("swim(bad)")
 
 func update(_deta:float):

@@ -97,6 +97,7 @@ material_override = SubResource("StandardMaterial3D_jpric")
 mesh = SubResource("BoxMesh_mb3hb")
 
 [node name="Area3D" type="Area3D" parent="Map/floor/water" node_paths=PackedStringArray("b_player", "w_player")]
+collision_mask = 5
 script = ExtResource("4_2y41n")
 b_player = NodePath("../../../../Player_B")
 w_player = NodePath("../../../../Player_W")
