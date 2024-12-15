@@ -25,14 +25,19 @@ func _on_body_exited(body: Node) -> void:
 		b_player.set_is_in_water(false)
 	if body in objects_in_water:
 		objects_in_water.erase(body)
+		if body == b_player or body == w_player:
+			body.set_is_in_water(false)
 
 func handle_player_on_water(body: PhysicsBody3D) -> void:	
+	var depth = water_height - body.global_position.y
+	if depth <= 0:
+		return # podem tocar na agua sem mudar o estado
 	if body.name == "Player_B":
 		# atualizar a flag para o estado do jogador mudar
 		b_player.set_is_in_water(true)
-	else: 
-		# deixar o jogador entrar na agua primeiro
-		await get_tree().create_timer(0.5).timeout
+	elif body.name == "Player_W": 
+		# o jogador branco morre em agua
+		await get_tree().create_timer(0.2).timeout
 		w_player.die()
 		
 func _physics_process(delta: float) -> void:
