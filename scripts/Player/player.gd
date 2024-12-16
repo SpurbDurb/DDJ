@@ -37,6 +37,9 @@ func _ready() -> void:
 	sm.init()
 
 func _physics_process(delta: float) -> void:
+	# Bug fix for swim
+	if not is_in_water and player.character == "Black" and %Skeleton3D.position != Vector3.ZERO:
+		%Skeleton3D.position = %Skeleton3D.position.lerp(Vector3.ZERO, 1 * delta)
 	#gravity
 	velocity += get_gravity() * delta
 	#fall death

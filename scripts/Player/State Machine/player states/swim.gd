@@ -1,6 +1,5 @@
 extends Player_State
 
-@export var stamina_bar : ProgressBar
 var direction: Vector3
 var camera_pivot
 var player_speed: float
@@ -13,7 +12,12 @@ func _deferred_ready() -> void:
 	camera_pivot = get_tree().get_current_scene().get_node("camera_pivot")
 
 func enter() -> void:
-	animation_player.play("swim(bad)")
+	animation_player.play("swim")
+	%CollisionSwim.disabled = false
+
+func exit() -> void:
+	%CollisionSwim.disabled = true
+
 
 func update(_deta:float):
 	var input_dir := get_input()
