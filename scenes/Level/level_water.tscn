@@ -117,6 +117,7 @@ shape = SubResource("BoxShape3D_wgcu6")
 
 [node name="Moving Platform3" parent="Map/Platforms" instance=ExtResource("5_j3gcn")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.73658, -0.3, -2)
+connection_id = 2
 speed = 2.0
 
 [node name="Floor3" type="CSGBox3D" parent="Map/Platforms"]
@@ -165,7 +166,7 @@ multiple = true
 
 [node name="ButtonMPlatform3" parent="Environment" instance=ExtResource("13_mkl4l")]
 transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -6.46274, 0.494532, 0.0356324)
-multiple = true
+connection_id = 2
 
 [node name="Laser" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0, 0)
