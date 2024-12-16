@@ -44,7 +44,7 @@ uv1_triplanar = true
 albedo_texture = ExtResource("4_0l1b4")
 uv1_triplanar = true
 
-[node name="Proto Level" type="Node3D"]
+[node name="Proto Level2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0109477, 0.00565386, 0.0646338)
 
 [node name="Sky" type="Node" parent="."]
