@@ -3,11 +3,11 @@ extends Area3D
 @export var b_player: CharacterBody3D
 @export var w_player: CharacterBody3D
 # floating physics
-@export var float_force := 5.0
+@export var float_force := 20
 @export var water_drag := 0.1
 @export var water_angular_drag := 0.1
 
-var water_height := 1.0
+var water_height := 0.0
 
 var player_in_water: bool = false
 var submerged: bool = false
@@ -45,7 +45,10 @@ func _physics_process(delta: float) -> void:
 		if body is RigidBody3D:
 			apply_buoyancy_and_drag_to_rigidbody(body)
 		elif body is CharacterBody3D:
-			apply_buoyancy_and_drag_to_character(body)
+			if body.is_in_group("Player"):
+				apply_buoyancy_and_drag_to_character(body, 0.7, 0.7)
+			else:
+				apply_buoyancy_and_drag_to_character(body, 1, 0.6)
 			
 func apply_buoyancy_and_drag_to_rigidbody(body: RigidBody3D) -> void:
 	var depth = water_height - body.global_position.y
@@ -56,12 +59,12 @@ func apply_buoyancy_and_drag_to_rigidbody(body: RigidBody3D) -> void:
 		body.angular_velocity *= 1.0 - water_angular_drag
 
 # Define a mass constant for the character (tune this value)
-var character_mass = 1.0
-func apply_buoyancy_and_drag_to_character(body: CharacterBody3D) -> void:
+
+func apply_buoyancy_and_drag_to_character(body: CharacterBody3D, y_drag, character_mass) -> void:
 	var depth = water_height - body.global_position.y
 	if depth > 0:  # If submerged
 		# Calculate buoyancy force
-		var upward_force = float_force * depth * 6 
+		var upward_force = float_force * depth * 10
 
 		# Counteract gravity explicitly
 		var gravity_force = ProjectSettings.get_setting("physics/3d/default_gravity") * character_mass
@@ -76,4 +79,4 @@ func apply_buoyancy_and_drag_to_character(body: CharacterBody3D) -> void:
 		body.velocity.z *= drag_factor
 
 		# Apply less drag to vertical velocity to preserve buoyancy
-		body.velocity.y *= 1.0 - (water_drag * 0.5)
+		body.velocity.y *= 1.0 - (water_drag * y_drag)
