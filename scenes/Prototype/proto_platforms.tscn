@@ -79,7 +79,7 @@ speed = 2.0
 distance = 2.0
 
 [node name="Moving Platform2" parent="Map/Platforms" instance=ExtResource("4_rca0a")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.5, -0.3, 0)
+transform = Transform3D(-0.992258, 0, 8.6746e-08, 0, 0.992258, 0, -8.6746e-08, 0, -0.992258, 2.5, -0.3, 0)
 connection_id = 5
 direction = 1
 speed = 2.0

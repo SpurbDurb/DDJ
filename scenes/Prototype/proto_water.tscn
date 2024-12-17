@@ -127,7 +127,7 @@ material_override = SubResource("StandardMaterial3D_dwwnk")
 use_collision = true
 size = Vector3(2, 1.5, 2)
 
-[node name="Key" parent="Map" groups=["FloatingObject"] instance=ExtResource("6_5eifp")]
+[node name="Key" parent="Map" instance=ExtResource("6_5eifp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98614, 0.35756, 0.0606693)
 mass = 0.5
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bhm5qap6dwcak"]
+[gd_scene load_steps=25 format=3 uid="uid://cjuvpru0i08e7"]
 
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_fgdvw"]
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_x8hc4"]

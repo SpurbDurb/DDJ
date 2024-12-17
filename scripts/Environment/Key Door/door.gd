@@ -23,7 +23,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		key = body
 		key.used = true
 		key.freeze = true
-		key.rotation = Vector3(0, 0, 0)
+		key.rotation = rotation
 		set_deferred("monitoring", false)
 
 func _process(delta: float) -> void:

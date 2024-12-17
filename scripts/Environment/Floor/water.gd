@@ -3,11 +3,11 @@ extends Area3D
 @export var b_player: CharacterBody3D
 @export var w_player: CharacterBody3D
 # floating physics
-@export var float_force := 25.0
-@export var water_drag := 0.05
-@export var water_angular_drag := 1
+@export var float_force := 5.0
+@export var water_drag := 0.1
+@export var water_angular_drag := 0.1
 
-@onready var water_height := 0.0
+var water_height := 1.0
 
 var player_in_water: bool = false
 var submerged: bool = false
