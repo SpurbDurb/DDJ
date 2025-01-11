@@ -19,6 +19,7 @@ config/icon="res://assets/icon.png"
 
 SceneManager="*res://scripts/Managers/scene_manager.gd"
 SignalManager="*res://scripts/Managers/signal_manager.gd"
+LevelManager="*res://scripts/Managers/Level Manager/level_manager.gd"
 
 [display]
 
