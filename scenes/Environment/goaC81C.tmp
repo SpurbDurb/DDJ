@@ -15,7 +15,6 @@ use_collision = true
 collision_layer = 7
 size = Vector3(1.4, 0.3, 1.4)
 script = ExtResource("2_ex6e5")
-duration = 5.0
 
 [node name="Area3D" type="Area3D" parent="."]
 

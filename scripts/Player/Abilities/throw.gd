@@ -46,7 +46,7 @@ func _on_body_entered(body: Node3D) -> void:
 		throawable.rotation = Vector3(0, 0, 0)
 		set_deferred("monitoring", false)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not throawable: return
 	if player.get_current_state().name == "die":
 		reset_respawn()

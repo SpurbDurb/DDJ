@@ -44,10 +44,14 @@ func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
 	#fall death
 	if global_transform.origin.y < fall_threshold:
-		velocity = Vector3.ZERO
-		global_transform.origin = spawn_position
+		spawn_player()
 	#move
 	move_and_slide()
+
+func spawn_player():
+	velocity = Vector3.ZERO
+	global_transform.origin = spawn_position
+	reset()
 
 func die() -> void:
 	if spawn_protected: return

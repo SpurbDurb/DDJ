@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy8e7sle0xnds"]
+[gd_scene load_steps=7 format=3 uid="uid://dy8e7sle0xnds"]
 
 [ext_resource type="PackedScene" uid="uid://dr14hf45qnik0" path="res://scenes/Environment/sky.tscn" id="1_83ij8"]
 [ext_resource type="Script" path="res://scenes/base.gd" id="1_hl5x1"]
+[ext_resource type="PackedScene" uid="uid://bhm5qap6dwcak" path="res://scenes/Level/Level1.tscn" id="3_d4g1t"]
 [ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="11_jce26"]
 [ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="12_ihgry"]
 [ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="13_1pbj4"]
@@ -13,14 +14,16 @@ script = ExtResource("1_hl5x1")
 
 [node name="Level" type="Node3D" parent="."]
 
+[node name="Level1" parent="Level" instance=ExtResource("3_d4g1t")]
+
 [node name="camera_pivot" parent="." instance=ExtResource("11_jce26")]
 max_zoom = 1.5
 min_angle = -35.0
 max_rotation_speed = 0.05
 
 [node name="Player_W" parent="." instance=ExtResource("12_ihgry")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00169, 1.19209e-07, 1.00242)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99831, 1.19209e-07, 1.00242)
 collision_layer = 3
 
 [node name="Player_B" parent="." instance=ExtResource("13_1pbj4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)

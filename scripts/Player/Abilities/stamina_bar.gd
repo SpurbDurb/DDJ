@@ -11,7 +11,7 @@ extends Sprite3D
 
 
 var hide_stamina_bar_timer: float = 0
-var is_visible: bool = false  
+var is_bar_visible: bool = false  
 var is_progressing: bool = false
 
 func _ready() -> void:
@@ -52,8 +52,8 @@ func decrease_stamina_bar(delta: float) -> void:
 			progressBar.value = 0
 
 func show_stamina_bar() -> void:
-	if not is_visible:
-		is_visible = true
+	if not is_bar_visible:
+		is_bar_visible = true
 		show()
 		modulate.a = 1  
 
@@ -70,11 +70,11 @@ func fade_out_sprite(delta: float) -> void:
 		modulate.a -= delta * 5.0 
 		if modulate.a <= 0:
 			modulate.a = 0
-			is_visible = false
+			is_bar_visible = false
 			hide()
 
 func update_visibility() -> void:
-	if not is_visible:
+	if not is_bar_visible:
 		return
 
 	if modulate.a <= 0:

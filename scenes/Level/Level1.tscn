@@ -1,26 +1,26 @@
 [gd_scene load_steps=12 format=3 uid="uid://bhm5qap6dwcak"]
 
-[ext_resource type="PackedScene" uid="uid://4v7g6rkuegav" path="res://scenes/Environment/goal.tscn" id="2_gc3x8"]
-[ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_sf2hv"]
-[ext_resource type="PackedScene" uid="uid://djc0oimbvpqwb" path="res://scenes/Environment/water.tscn" id="5_c3fwd"]
-[ext_resource type="PackedScene" uid="uid://jqklhb314c0c" path="res://scenes/Environment/Platform/moving_platform.tscn" id="5_q88c1"]
-[ext_resource type="Texture2D" uid="uid://dyshw81wmob45" path="res://assets/grid textures/Green/texture_10.png" id="6_sljee"]
-[ext_resource type="PackedScene" uid="uid://dst42qoje3div" path="res://scenes/Environment/Button/Button.tscn" id="8_frley"]
-[ext_resource type="PackedScene" uid="uid://dmxb0jvnh5l4j" path="res://scenes/Environment/Key Door/door.tscn" id="10_tsu3p"]
-[ext_resource type="PackedScene" uid="uid://bliw3i7dpd38m" path="res://scenes/Environment/box.tscn" id="11_3b4fj"]
-[ext_resource type="PackedScene" uid="uid://d1qrw8doltj2c" path="res://scenes/Environment/Key Door/key.tscn" id="12_6g2hc"]
+[ext_resource type="PackedScene" uid="uid://4v7g6rkuegav" path="res://scenes/Environment/goal.tscn" id="1_77ynm"]
+[ext_resource type="Texture2D" uid="uid://dyshw81wmob45" path="res://assets/grid textures/Green/texture_10.png" id="2_4g7wo"]
+[ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="3_sfsmw"]
+[ext_resource type="PackedScene" uid="uid://djc0oimbvpqwb" path="res://scenes/Environment/water.tscn" id="4_qj0fe"]
+[ext_resource type="PackedScene" uid="uid://jqklhb314c0c" path="res://scenes/Environment/Platform/moving_platform.tscn" id="5_g13wn"]
+[ext_resource type="PackedScene" uid="uid://dst42qoje3div" path="res://scenes/Environment/Button/Button.tscn" id="6_og76t"]
+[ext_resource type="PackedScene" uid="uid://dmxb0jvnh5l4j" path="res://scenes/Environment/Key Door/door.tscn" id="7_w21ar"]
+[ext_resource type="PackedScene" uid="uid://bliw3i7dpd38m" path="res://scenes/Environment/box.tscn" id="8_xv8pj"]
+[ext_resource type="PackedScene" uid="uid://d1qrw8doltj2c" path="res://scenes/Environment/Key Door/key.tscn" id="9_4jch8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlw8d"]
-albedo_texture = ExtResource("6_sljee")
+albedo_texture = ExtResource("2_4g7wo")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj05j"]
-albedo_texture = ExtResource("2_sf2hv")
+albedo_texture = ExtResource("3_sfsmw")
 uv1_triplanar = true
 
-[node name="Level 1" type="Node3D"]
+[node name="Level1" type="Node3D"]
 
-[node name="Goal" parent="." instance=ExtResource("2_gc3x8")]
+[node name="Goal" parent="." instance=ExtResource("1_77ynm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.753, -0.15, -2.285)
 
 [node name="Map" type="Node3D" parent="."]
@@ -46,7 +46,7 @@ collision_layer = 5
 collision_mask = 5
 size = Vector3(7, 1, 6)
 
-[node name="water" parent="Map/floor" instance=ExtResource("5_c3fwd")]
+[node name="water" parent="Map/floor" instance=ExtResource("4_qj0fe")]
 
 [node name="hole" type="CSGBox3D" parent="Map/floor"]
 transform = Transform3D(1.0014, 0, 0, 0, 1.0014, 0, 0, 0, 1.0014, -3.09328, 0.0949707, 2.66486)
@@ -66,24 +66,24 @@ size = Vector3(2.24274, 2, 2.4)
 
 [node name="Environment" type="Node3D" parent="."]
 
-[node name="Moving Platform" parent="Environment" instance=ExtResource("5_q88c1")]
+[node name="Moving Platform" parent="Environment" instance=ExtResource("5_g13wn")]
 transform = Transform3D(-1.0014, 0, 8.75453e-08, 0, 1.0014, 0, -8.75453e-08, 0, -1.0014, -2.73429, -0.30545, 2.26486)
 reset = true
 direction = 1
 speed = 2.0
 distance = 1.5
 
-[node name="Button" parent="Environment" instance=ExtResource("8_frley")]
+[node name="Button" parent="Environment" instance=ExtResource("6_og76t")]
 transform = Transform3D(-6.63389e-05, -0.000296216, -0.2, 0.000141901, 0.2, -0.000296264, 0.2, -0.000142001, -6.61246e-05, 2.25475, -0.022063, -1.95611)
 
 [node name="Laser" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0, 0)
 
-[node name="Door" parent="Environment" instance=ExtResource("10_tsu3p")]
+[node name="Door" parent="Environment" instance=ExtResource("7_w21ar")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 0.5, 3)
 
-[node name="box3" parent="Environment" groups=["FloatingObject"] instance=ExtResource("11_3b4fj")]
+[node name="box3" parent="Environment" groups=["FloatingObject"] instance=ExtResource("8_xv8pj")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 2.5, 0, 4.1)
 
-[node name="Key" parent="Environment" instance=ExtResource("12_6g2hc")]
+[node name="Key" parent="Environment" instance=ExtResource("9_4jch8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24925, 1.6, 2.20946)

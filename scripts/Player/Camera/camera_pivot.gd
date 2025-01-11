@@ -6,11 +6,13 @@ extends Node3D
 # Jogadores
 var player: Node = null
 var player_2: Node = null
+
+var in_goal := false
 # Parâmetros de zoom
 @export var min_zoom: float = 8.0
 @export var max_zoom: float = 0.8
 # Parâmetros de altura
-@export var min_height: float = 1.0
+@export var min_height: float = 1.2
 @export var max_height: float = 2.0
 # Parâmetros de anglo
 @export var min_angle: float = -40.0
@@ -63,12 +65,18 @@ func _physics_process(_delta: float) -> void:
 	camera_mount.spring_length = lerp(camera_mount.spring_length, target_zoom, zoom_speed)
 	
 	# Ajusta a altura da câmera dinamicamente com base na distância
-	var target_height = clamp(player_distance, min_height, max_height)
-	camera_mount.position.y = lerp(camera_mount.position.y, target_height, zoom_speed)
+	if not in_goal:
+		var target_height = clamp(player_distance, min_height, max_height)
+		camera_mount.position.y = lerp(camera_mount.position.y, target_height, zoom_speed)
+	else:
+		camera_mount.position.y = lerp(camera_mount.position.y, 1.5, zoom_speed)
 	
 	# Ajusta o ângulo da câmera dinamicamente com base na distância
-	var angle_range = deg_to_rad(max_angle - min_angle)  # Intervalo em radianos
-	var normalized_distance = clamp(player_distance / min_zoom, 0, 1)  # Normaliza entre 0 e 1
-	var target_angle = deg_to_rad(min_angle) + normalized_distance * angle_range  # Calcula o ângulo com base na distância
-	# Suaviza a rotação no eixo X
-	camera_3d.rotation.x = lerp(camera_3d.rotation.x, target_angle, zoom_speed)
+	if not in_goal:
+		var angle_range = deg_to_rad(max_angle - min_angle)  # Intervalo em radianos
+		var normalized_distance = clamp(player_distance / min_zoom, 0, 1)  # Normaliza entre 0 e 1
+		var target_angle = deg_to_rad(min_angle) + normalized_distance * angle_range  # Calcula o ângulo com base na distância
+		# Suaviza a rotação no eixo X
+		camera_3d.rotation.x = lerp(camera_3d.rotation.x, target_angle, zoom_speed)
+	if in_goal:
+		camera_3d.rotation.x = lerp(camera_3d.rotation.x, deg_to_rad(-15.0), zoom_speed)
