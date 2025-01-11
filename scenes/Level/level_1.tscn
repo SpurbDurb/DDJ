@@ -1,9 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhm5qap6dwcak"]
+[gd_scene load_steps=20 format=3 uid="uid://bofxl222mptfq"]
 
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_2tp6o"]
 [ext_resource type="Texture2D" uid="uid://c6w7772t1tdo8" path="res://assets/grid textures/Red/texture_08.png" id="2_hodai"]
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_sf2hv"]
-[ext_resource type="PackedScene" uid="uid://djc0oimbvpqwb" path="res://scenes/Environment/water.tscn" id="5_c3fwd"]
+[ext_resource type="PackedScene" path="res://scenes/Environment/water.tscn" id="5_c3fwd"]
 [ext_resource type="PackedScene" uid="uid://jqklhb314c0c" path="res://scenes/Environment/Platform/moving_platform.tscn" id="5_q88c1"]
 [ext_resource type="Texture2D" uid="uid://dyshw81wmob45" path="res://assets/grid textures/Green/texture_10.png" id="6_sljee"]
 [ext_resource type="PackedScene" uid="uid://dst42qoje3div" path="res://scenes/Environment/Button/Button.tscn" id="8_frley"]

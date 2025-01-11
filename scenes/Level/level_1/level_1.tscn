@@ -1,0 +1,203 @@
+[gd_scene load_steps=25 format=3 uid="uid://13wkx3vxu7r7"]
+
+[ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_fgdvw"]
+[ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="2_x8hc4"]
+[ext_resource type="Texture2D" uid="uid://d13b2glpd6eax" path="res://assets/grid textures/Light/texture_05.png" id="3_rids1"]
+[ext_resource type="Script" path="res://scripts/Environment/Floor/water.gd" id="4_hqqsg"]
+[ext_resource type="PackedScene" uid="uid://jqklhb314c0c" path="res://scenes/Environment/Platform/moving_platform.tscn" id="5_j3gcn"]
+[ext_resource type="Texture2D" uid="uid://dyshw81wmob45" path="res://assets/grid textures/Green/texture_10.png" id="6_gvxer"]
+[ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="7_e8kcu"]
+[ext_resource type="PackedScene" uid="uid://dmxb0jvnh5l4j" path="res://scenes/Environment/Key Door/door.tscn" id="8_3lgdr"]
+[ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="9_h0oru"]
+[ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="10_ngs4p"]
+[ext_resource type="PackedScene" uid="uid://d1qrw8doltj2c" path="res://scenes/Environment/Key Door/key.tscn" id="11_6nwio"]
+[ext_resource type="Script" path="res://scripts/Environment/Button/multiple_button.gd" id="12_8djt3"]
+[ext_resource type="PackedScene" uid="uid://dst42qoje3div" path="res://scenes/Environment/Button/Button.tscn" id="13_mkl4l"]
+[ext_resource type="PackedScene" uid="uid://dmcij0x5t53sp" path="res://scenes/Environment/Laser/laser.tscn" id="14_jqiym"]
+[ext_resource type="PackedScene" uid="uid://bliw3i7dpd38m" path="res://scenes/Environment/box.tscn" id="15_tadwg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n3rkm"]
+shader = ExtResource("1_fgdvw")
+shader_parameter/color_top = Color(0.529953, 0.0531767, 1, 1)
+shader_parameter/color_horizon = Color(1.2899e-05, 0.382083, 0.940329, 1)
+shader_parameter/color_bottom = Color(0.34902, 0.588235, 1, 1)
+shader_parameter/exponent_factor_top = 1.0
+shader_parameter/exponent_factor_bottom = 1.0
+shader_parameter/intensity_amp = 1.0
+
+[sub_resource type="Sky" id="Sky_pua8o"]
+sky_material = SubResource("ShaderMaterial_n3rkm")
+
+[sub_resource type="Environment" id="Environment_qxgvh"]
+background_mode = 2
+sky = SubResource("Sky_pua8o")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.748908, 0.773225, 0.811435, 1)
+fog_sky_affect = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4801"]
+albedo_texture = ExtResource("2_x8hc4")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj05j"]
+albedo_texture = ExtResource("2_x8hc4")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlijl"]
+transparency = 1
+albedo_color = Color(1.03962e-05, 0.775491, 0.915915, 0.572549)
+albedo_texture = ExtResource("3_rids1")
+
+[sub_resource type="BoxMesh" id="BoxMesh_1fk22"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wgcu6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vewg5"]
+albedo_texture = ExtResource("6_gvxer")
+uv1_triplanar = true
+
+[node name="Proto Throw" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0109477, 0.00565386, 0.0646338)
+
+[node name="Sky" type="Node" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Sky"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -0.0230083, 0, 0.0563135)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Sky"]
+environment = SubResource("Environment_qxgvh")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Floor2" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1.4, 2.17038, -0.488139, 1.95849)
+material_override = SubResource("StandardMaterial3D_f4801")
+use_collision = true
+collision_layer = 5
+collision_mask = 5
+
+[node name="floor" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0692139, -0.5, 0.5)
+material_override = SubResource("StandardMaterial3D_mj05j")
+use_collision = true
+collision_layer = 5
+collision_mask = 5
+size = Vector3(6.13843, 1, 5)
+
+[node name="water_hole" type="CSGBox3D" parent="Map/floor"]
+transform = Transform3D(1.4336, 0, 0, 0, 1, 0, 0, 0, 0.98812, 1.59137, 0.0949707, 0.990719)
+material_override = SubResource("StandardMaterial3D_mj05j")
+operation = 2
+use_collision = true
+size = Vector3(2, 0.810059, 3)
+
+[node name="water" type="Node3D" parent="Map/floor/water_hole"]
+transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 3.00001, 0, 0.0190223, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Map/floor/water_hole/water"]
+material_override = SubResource("StandardMaterial3D_tlijl")
+mesh = SubResource("BoxMesh_1fk22")
+
+[node name="Area3D" type="Area3D" parent="Map/floor/water_hole/water"]
+collision_mask = 5
+script = ExtResource("4_hqqsg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/floor/water_hole/water/Area3D"]
+shape = SubResource("BoxShape3D_wgcu6")
+
+[node name="Node" type="Node" parent="Map/floor"]
+
+[node name="Platforms" type="Node3D" parent="Map"]
+
+[node name="Moving Platform3" parent="Map/Platforms" instance=ExtResource("5_j3gcn")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.73658, -0.3, -2)
+connection_id = 2
+speed = 2.0
+
+[node name="Floor3" type="CSGBox3D" parent="Map/Platforms"]
+transform = Transform3D(3.9, 0, 0, 0, 1, 0, 0, 0, 5.01944, -12.7005, -0.543807, -0.134487)
+material_override = SubResource("StandardMaterial3D_f4801")
+use_collision = true
+collision_layer = 5
+collision_mask = 5
+size = Vector3(2, 1, 1)
+
+[node name="Stage2" type="Node3D" parent="Map"]
+
+[node name="Bridge" type="Node3D" parent="Map/Stage2"]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Map/Stage2/Bridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
+material_override = SubResource("StandardMaterial3D_vewg5")
+use_collision = true
+collision_layer = 5
+collision_mask = 5
+polygon = PackedVector2Array(-1.5, 0.5, 0.5, 0.5, 2.1, 0, -1.5, 0)
+depth = 2.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Map/Stage2/Bridge"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 0, -1)
+material_override = SubResource("StandardMaterial3D_vewg5")
+use_collision = true
+collision_layer = 5
+collision_mask = 5
+polygon = PackedVector2Array(-1.5, 0.5, 0.5, 0.5, 2.1, 0, -1.5, 0)
+depth = 2.0
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Multiple Button" type="Node3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, -0.02, 0)
+script = ExtResource("12_8djt3")
+
+[node name="Button" parent="Environment/Multiple Button" instance=ExtResource("13_mkl4l")]
+transform = Transform3D(0.2, -0.000142001, -6.61159e-05, 0.000141901, 0.2, -0.000296264, 6.63302e-05, 0.000296216, 0.2, 1.99884, -0.00206303, -3.11927)
+multiple = true
+
+[node name="Button2" parent="Environment/Multiple Button" instance=ExtResource("13_mkl4l")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, -0.00953841, 0)
+multiple = true
+
+[node name="ButtonMPlatform3" parent="Environment" instance=ExtResource("13_mkl4l")]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -6.46274, 0.494532, 0.0356324)
+
+[node name="Laser" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0, 0)
+
+[node name="Laser1" parent="Environment/Laser" instance=ExtResource("14_jqiym")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+beam_size = 8.0
+
+[node name="Laser2" parent="Environment/Laser" instance=ExtResource("14_jqiym")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 0)
+beam_size = 8.0
+
+[node name="Door" parent="Environment" instance=ExtResource("8_3lgdr")]
+
+[node name="box3" parent="Environment" groups=["FloatingObject"] instance=ExtResource("15_tadwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.86265e-09, 0.39761)
+
+[node name="box4" parent="Environment" groups=["FloatingObject"] instance=ExtResource("15_tadwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.86265e-09, 1.88308)
+
+[node name="Key" parent="Environment" instance=ExtResource("11_6nwio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48697, 0.763063, 0.0604177)
+
+[node name="camera_pivot" parent="." instance=ExtResource("7_e8kcu")]
+max_zoom = 1.5
+min_angle = -35.0
+max_rotation_speed = 0.05
+
+[node name="Player_W" parent="." instance=ExtResource("9_h0oru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21836, 0.614489, -0.113974)
+collision_layer = 3
+
+[node name="Player_B" parent="." instance=ExtResource("10_ngs4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.30914, 0.618121, 0.115865)
+
+[connection signal="body_entered" from="Map/floor/water_hole/water/Area3D" to="Map/floor/water_hole/water/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Map/floor/water_hole/water/Area3D" to="Map/floor/water_hole/water/Area3D" method="_on_body_exited"]
