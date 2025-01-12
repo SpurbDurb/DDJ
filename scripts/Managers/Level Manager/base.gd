@@ -6,6 +6,7 @@ extends Node3D
 var goal_node
 
 func _ready() -> void:
+	LevelManager.init()
 	LevelManager.connect("level_spawned", Callable(self, "_on_level_spawned"))
 	#temp
 	open_level(1)

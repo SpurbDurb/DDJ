@@ -2,16 +2,22 @@ extends Node
 
 signal level_spawned
 
-const LEVELS = preload("res://scripts/Managers/Level Manager/levels.tres")
-var level := 1
+const LEVELS = preload("res://scenes/Level/Level System/levels.tres")
+var level := 0
 var level_position := Vector3.ZERO
 var level_up_offset := 15.0
-var spawn_delay := 0
-var base_level_node
-var new_level_instance
+var base_level_node : Node
+var new_level_instance : Node
+#var spawn_delay := 0
 
-func _ready() -> void:
+func init() -> void:
 	base_level_node = get_tree().root.get_node("Base/Level")
+
+func reset() -> void:
+	level = 0
+	level_position = Vector3.ZERO
+	base_level_node = null
+	new_level_instance = null
 
 func level_up():
 	level_position.y += level_up_offset

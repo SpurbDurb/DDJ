@@ -16,7 +16,6 @@ func _ready():
 	water_height = global_position.y + water_height_offset
 
 func _on_body_entered(body: Node) -> void:
-	print("enter")
 	if body.is_in_group("FloatingObject"):
 		objects_in_water.append(body)
 	if body.is_in_group("Player"):
