@@ -21,3 +21,6 @@ func emit_connection_signal(connection_id, emitter = null):
 func connect_to_signal(connection_id, callable):
 	register_signal(connection_id)  # Assegura que a conexão existe
 	connections[connection_id].append(callable)  # Adiciona o listener
+
+func clean_all_connections():
+	connections.clear()

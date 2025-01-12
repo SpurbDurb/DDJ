@@ -24,6 +24,9 @@ func quick_spawn_level(new_level: int):
 	var level_scene = LEVELS.level_list[level - 1]
 	if not level_scene: return
 	
+	if new_level_instance:
+		SignalManager.clean_all_connections()
+	
 	new_level_instance = level_scene.instantiate()
 	new_level_instance.position = level_position
 	base_level_node.add_child(new_level_instance)

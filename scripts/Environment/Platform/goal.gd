@@ -6,16 +6,15 @@ var lock := false
 var player_count := 0
 
 @export var duration: float = 10  #(duration of the tween)
-@onready var distance  = LevelManager.level_up_offset
 var initial_position: Vector3
 var target_position: Vector3
 var tween
 
-func _move() -> void:
-	# Update positions
+func _ready() -> void:
 	initial_position = global_transform.origin
-	target_position = initial_position + Vector3(0, distance, 0)
+	target_position = initial_position + Vector3(0, LevelManager.level_up_offset, 0)
 
+func _move() -> void:
 	# Start moving with Tween
 	tween = create_tween()
 	tween.tween_property(self, "global_position", target_position, duration)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy8e7sle0xnds"]
+[gd_scene load_steps=7 format=3 uid="uid://dy8e7sle0xnds"]
 
 [ext_resource type="PackedScene" uid="uid://dr14hf45qnik0" path="res://scenes/Environment/sky.tscn" id="1_83ij8"]
 [ext_resource type="Script" path="res://scenes/base.gd" id="1_hl5x1"]
+[ext_resource type="PackedScene" uid="uid://bhm5qap6dwcak" path="res://scenes/Level/Level1.tscn" id="3_d4g1t"]
 [ext_resource type="PackedScene" uid="uid://brspoype2rxdh" path="res://scenes/camera.tscn" id="11_jce26"]
 [ext_resource type="PackedScene" uid="uid://dhkm8sofbow5v" path="res://scenes/Player/w_player.tscn" id="12_ihgry"]
 [ext_resource type="PackedScene" uid="uid://ci4aatp43nomr" path="res://scenes/Player/b_player.tscn" id="13_1pbj4"]
@@ -12,6 +13,8 @@ script = ExtResource("1_hl5x1")
 [node name="Sky" parent="." instance=ExtResource("1_83ij8")]
 
 [node name="Level" type="Node3D" parent="."]
+
+[node name="Level1" parent="Level" instance=ExtResource("3_d4g1t")]
 
 [node name="camera_pivot" parent="." instance=ExtResource("11_jce26")]
 max_zoom = 1.5
