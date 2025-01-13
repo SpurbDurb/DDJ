@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bct44mrl5uhta"
-path="res://.godot/imported/SE_PM_POLE_STAND.wav-93a3c4552f9985d8238f18ba9eee9824.sample"
+path="res://.godot/imported/SE_PM_POLE_STAND.wav-a910210a2da7290e40ec30238c6732dc.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_POLE_STAND.wav"
-dest_files=["res://.godot/imported/SE_PM_POLE_STAND.wav-93a3c4552f9985d8238f18ba9eee9824.sample"]
+source_file="res://assets/sfx/SE_PM_POLE_STAND.wav"
+dest_files=["res://.godot/imported/SE_PM_POLE_STAND.wav-a910210a2da7290e40ec30238c6732dc.sample"]
 
 [params]
 

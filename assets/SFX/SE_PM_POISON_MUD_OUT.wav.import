@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://do42hvnetgbca"
-path="res://.godot/imported/SE_PM_POISON_MUD_OUT.wav-9fbd1aba06dd9e026ed251f80e4344ab.sample"
+path="res://.godot/imported/SE_PM_POISON_MUD_OUT.wav-a6f700b6c03543663bcff611bc49c9c7.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_POISON_MUD_OUT.wav"
-dest_files=["res://.godot/imported/SE_PM_POISON_MUD_OUT.wav-9fbd1aba06dd9e026ed251f80e4344ab.sample"]
+source_file="res://assets/sfx/SE_PM_POISON_MUD_OUT.wav"
+dest_files=["res://.godot/imported/SE_PM_POISON_MUD_OUT.wav-a6f700b6c03543663bcff611bc49c9c7.sample"]
 
 [params]
 

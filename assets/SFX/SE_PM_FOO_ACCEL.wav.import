@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dhkbuqr3bf15p"
-path="res://.godot/imported/SE_PM_FOO_ACCEL.wav-56533a756e55a299ee3b693692619471.sample"
+path="res://.godot/imported/SE_PM_FOO_ACCEL.wav-46f4c2e8489a0f2009b835767f8ac64e.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_FOO_ACCEL.wav"
-dest_files=["res://.godot/imported/SE_PM_FOO_ACCEL.wav-56533a756e55a299ee3b693692619471.sample"]
+source_file="res://assets/sfx/SE_PM_FOO_ACCEL.wav"
+dest_files=["res://.godot/imported/SE_PM_FOO_ACCEL.wav-46f4c2e8489a0f2009b835767f8ac64e.sample"]
 
 [params]
 

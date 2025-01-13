@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b1snt0kgp3lry"
-path="res://.godot/imported/SE_PM_LV_TORNADE_FLYING.wav-9a233f09168450a2f72369fd006716fb.sample"
+path="res://.godot/imported/SE_PM_LV_TORNADE_FLYING.wav-c1cd23a3a17dde86c3868d3a19442576.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_LV_TORNADE_FLYING.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_TORNADE_FLYING.wav-9a233f09168450a2f72369fd006716fb.sample"]
+source_file="res://assets/sfx/SE_PM_LV_TORNADE_FLYING.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_TORNADE_FLYING.wav-c1cd23a3a17dde86c3868d3a19442576.sample"]
 
 [params]
 

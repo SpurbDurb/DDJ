@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bmrrootf6lrpy"
-path="res://.godot/imported/SE_PM_SWIM_ACCEL_IN_WATER.wav-efe55710a013e066705138a94d50223c.sample"
+path="res://.godot/imported/SE_PM_SWIM_ACCEL_IN_WATER.wav-d808f5a16f39ea3c8415656df1dc9027.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_SWIM_ACCEL_IN_WATER.wav"
-dest_files=["res://.godot/imported/SE_PM_SWIM_ACCEL_IN_WATER.wav-efe55710a013e066705138a94d50223c.sample"]
+source_file="res://assets/sfx/SE_PM_SWIM_ACCEL_IN_WATER.wav"
+dest_files=["res://.godot/imported/SE_PM_SWIM_ACCEL_IN_WATER.wav-d808f5a16f39ea3c8415656df1dc9027.sample"]
 
 [params]
 

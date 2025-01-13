@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://y1os54q2tlxc"
-path="res://.godot/imported/SE_PM_LV_MUD_SINK_FORCE.wav-036841dc5e799861b2a92ad48aa52f76.sample"
+path="res://.godot/imported/SE_PM_LV_MUD_SINK_FORCE.wav-5835d1e3a01297839a7617b1c90893b8.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_LV_MUD_SINK_FORCE.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_MUD_SINK_FORCE.wav-036841dc5e799861b2a92ad48aa52f76.sample"]
+source_file="res://assets/sfx/SE_PM_LV_MUD_SINK_FORCE.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_MUD_SINK_FORCE.wav-5835d1e3a01297839a7617b1c90893b8.sample"]
 
 [params]
 

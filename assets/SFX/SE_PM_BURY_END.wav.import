@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://8s55ejbdexsi"
-path="res://.godot/imported/SE_PM_BURY_END.wav-03a09f67a31e2a6d7407b74d2efcdf25.sample"
+path="res://.godot/imported/SE_PM_BURY_END.wav-6ab1b0f729b9aeb0ff979490d48beabc.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_BURY_END.wav"
-dest_files=["res://.godot/imported/SE_PM_BURY_END.wav-03a09f67a31e2a6d7407b74d2efcdf25.sample"]
+source_file="res://assets/sfx/SE_PM_BURY_END.wav"
+dest_files=["res://.godot/imported/SE_PM_BURY_END.wav-6ab1b0f729b9aeb0ff979490d48beabc.sample"]
 
 [params]
 

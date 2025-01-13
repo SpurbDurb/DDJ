@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://deeswl4vn4epp"
-path="res://.godot/imported/SE_PM_WARP_STRAIGHT_END.wav-7514a8d590f1c6407d802994c5b81803.sample"
+path="res://.godot/imported/SE_PM_WARP_STRAIGHT_END.wav-a75da473d21f2c7fab160795df7c4876.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_WARP_STRAIGHT_END.wav"
-dest_files=["res://.godot/imported/SE_PM_WARP_STRAIGHT_END.wav-7514a8d590f1c6407d802994c5b81803.sample"]
+source_file="res://assets/sfx/SE_PM_WARP_STRAIGHT_END.wav"
+dest_files=["res://.godot/imported/SE_PM_WARP_STRAIGHT_END.wav-a75da473d21f2c7fab160795df7c4876.sample"]
 
 [params]
 

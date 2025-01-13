@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ccvmho5rua0wh"
-path="res://.godot/imported/SE_PM_POISON_MUD_DAMAGE.wav-cd26a62474dce3966e8f5c6a17507fff.sample"
+path="res://.godot/imported/SE_PM_POISON_MUD_DAMAGE.wav-8f77c2a1cbcb8dbd27ecfafc99cd0ca2.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_POISON_MUD_DAMAGE.wav"
-dest_files=["res://.godot/imported/SE_PM_POISON_MUD_DAMAGE.wav-cd26a62474dce3966e8f5c6a17507fff.sample"]
+source_file="res://assets/sfx/SE_PM_POISON_MUD_DAMAGE.wav"
+dest_files=["res://.godot/imported/SE_PM_POISON_MUD_DAMAGE.wav-8f77c2a1cbcb8dbd27ecfafc99cd0ca2.sample"]
 
 [params]
 

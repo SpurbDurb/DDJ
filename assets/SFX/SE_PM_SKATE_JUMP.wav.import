@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dnkm4qc0bgr81"
-path="res://.godot/imported/SE_PM_SKATE_JUMP.wav-dc9d9d0dfcda136df128019ac85e3879.sample"
+path="res://.godot/imported/SE_PM_SKATE_JUMP.wav-18a427dd0fbeba6605a1df6564996cfa.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_SKATE_JUMP.wav"
-dest_files=["res://.godot/imported/SE_PM_SKATE_JUMP.wav-dc9d9d0dfcda136df128019ac85e3879.sample"]
+source_file="res://assets/sfx/SE_PM_SKATE_JUMP.wav"
+dest_files=["res://.godot/imported/SE_PM_SKATE_JUMP.wav-18a427dd0fbeba6605a1df6564996cfa.sample"]
 
 [params]
 

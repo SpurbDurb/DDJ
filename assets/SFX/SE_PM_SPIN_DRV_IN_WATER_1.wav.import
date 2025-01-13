@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bcv3oxics8vnn"
-path="res://.godot/imported/SE_PM_SPIN_DRV_IN_WATER_1.wav-b0d1f01e7f609f2dc2b5e7895132b27f.sample"
+path="res://.godot/imported/SE_PM_SPIN_DRV_IN_WATER_1.wav-bfdcbba04d7a3c001d4e2a28a7a0d810.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_SPIN_DRV_IN_WATER_1.wav"
-dest_files=["res://.godot/imported/SE_PM_SPIN_DRV_IN_WATER_1.wav-b0d1f01e7f609f2dc2b5e7895132b27f.sample"]
+source_file="res://assets/sfx/SE_PM_SPIN_DRV_IN_WATER_1.wav"
+dest_files=["res://.godot/imported/SE_PM_SPIN_DRV_IN_WATER_1.wav-bfdcbba04d7a3c001d4e2a28a7a0d810.sample"]
 
 [params]
 

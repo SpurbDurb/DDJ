@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://lg0ohfghivw2"
-path="res://.godot/imported/SE_PM_GRAB_OBJ.wav-d7b78c6f629975a43a3626e35e462e16.sample"
+path="res://.godot/imported/SE_PM_GRAB_OBJ.wav-2b317e67f233419dfa4b63807f4a67bf.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_GRAB_OBJ.wav"
-dest_files=["res://.godot/imported/SE_PM_GRAB_OBJ.wav-d7b78c6f629975a43a3626e35e462e16.sample"]
+source_file="res://assets/sfx/SE_PM_GRAB_OBJ.wav"
+dest_files=["res://.godot/imported/SE_PM_GRAB_OBJ.wav-2b317e67f233419dfa4b63807f4a67bf.sample"]
 
 [params]
 

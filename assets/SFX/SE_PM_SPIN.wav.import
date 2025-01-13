@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bfqlghxq73tdd"
-path="res://.godot/imported/SE_PM_SPIN.wav-c7eec504be69f4b27b237597f70093c3.sample"
+path="res://.godot/imported/SE_PM_SPIN.wav-e0d25dd72aded5dd70fc66503082e962.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_SPIN.wav"
-dest_files=["res://.godot/imported/SE_PM_SPIN.wav-c7eec504be69f4b27b237597f70093c3.sample"]
+source_file="res://assets/sfx/SE_PM_SPIN.wav"
+dest_files=["res://.godot/imported/SE_PM_SPIN.wav-e0d25dd72aded5dd70fc66503082e962.sample"]
 
 [params]
 

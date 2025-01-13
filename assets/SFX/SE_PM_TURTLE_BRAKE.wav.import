@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dp6sgshp5d0y6"
-path="res://.godot/imported/SE_PM_TURTLE_BRAKE.wav-22ff34bce375da0e9c4d7880dd91b19e.sample"
+path="res://.godot/imported/SE_PM_TURTLE_BRAKE.wav-d6ede4898b2a136a9e0cfb8ee48dfece.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_TURTLE_BRAKE.wav"
-dest_files=["res://.godot/imported/SE_PM_TURTLE_BRAKE.wav-22ff34bce375da0e9c4d7880dd91b19e.sample"]
+source_file="res://assets/sfx/SE_PM_TURTLE_BRAKE.wav"
+dest_files=["res://.godot/imported/SE_PM_TURTLE_BRAKE.wav-d6ede4898b2a136a9e0cfb8ee48dfece.sample"]
 
 [params]
 

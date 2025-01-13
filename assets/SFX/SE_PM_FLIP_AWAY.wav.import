@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bhev17hiefsrh"
-path="res://.godot/imported/SE_PM_FLIP_AWAY.wav-b293ffeaa35cab6b8e814f4406200ce9.sample"
+path="res://.godot/imported/SE_PM_FLIP_AWAY.wav-e6df1619026c3eb8ac9d702dba75f1ce.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_FLIP_AWAY.wav"
-dest_files=["res://.godot/imported/SE_PM_FLIP_AWAY.wav-b293ffeaa35cab6b8e814f4406200ce9.sample"]
+source_file="res://assets/sfx/SE_PM_FLIP_AWAY.wav"
+dest_files=["res://.godot/imported/SE_PM_FLIP_AWAY.wav-e6df1619026c3eb8ac9d702dba75f1ce.sample"]
 
 [params]
 

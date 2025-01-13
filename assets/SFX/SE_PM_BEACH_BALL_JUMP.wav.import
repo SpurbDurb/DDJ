@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c5i128qfmraki"
-path="res://.godot/imported/SE_PM_BEACH_BALL_JUMP.wav-db8d482d18575ec5699966e4c50b9dff.sample"
+path="res://.godot/imported/SE_PM_BEACH_BALL_JUMP.wav-38a80116d81903baabeebfcce0255fbb.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_BEACH_BALL_JUMP.wav"
-dest_files=["res://.godot/imported/SE_PM_BEACH_BALL_JUMP.wav-db8d482d18575ec5699966e4c50b9dff.sample"]
+source_file="res://assets/sfx/SE_PM_BEACH_BALL_JUMP.wav"
+dest_files=["res://.godot/imported/SE_PM_BEACH_BALL_JUMP.wav-38a80116d81903baabeebfcce0255fbb.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://co420csf8cs3e"
-path="res://.godot/imported/SE_PM_GRAV_LIGHT_DRAWN_ST.wav-73321a13ed94c35adf0deaf51fa99b05.sample"
+path="res://.godot/imported/SE_PM_GRAV_LIGHT_DRAWN_ST.wav-5cfd82554ed2ee019e95029dd5124bfd.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_GRAV_LIGHT_DRAWN_ST.wav"
-dest_files=["res://.godot/imported/SE_PM_GRAV_LIGHT_DRAWN_ST.wav-73321a13ed94c35adf0deaf51fa99b05.sample"]
+source_file="res://assets/sfx/SE_PM_GRAV_LIGHT_DRAWN_ST.wav"
+dest_files=["res://.godot/imported/SE_PM_GRAV_LIGHT_DRAWN_ST.wav-5cfd82554ed2ee019e95029dd5124bfd.sample"]
 
 [params]
 

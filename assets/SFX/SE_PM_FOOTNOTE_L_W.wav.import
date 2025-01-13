@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgtstpockyawr"
-path="res://.godot/imported/SE_PM_FOOTNOTE_L_W.wav-29c3ef326ee447b4f9f756f522602bb3.sample"
+path="res://.godot/imported/SE_PM_FOOTNOTE_L_W.wav-1a87538a6432c7c819524252b2364ce1.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_FOOTNOTE_L_W.wav"
-dest_files=["res://.godot/imported/SE_PM_FOOTNOTE_L_W.wav-29c3ef326ee447b4f9f756f522602bb3.sample"]
+source_file="res://assets/sfx/SE_PM_FOOTNOTE_L_W.wav"
+dest_files=["res://.godot/imported/SE_PM_FOOTNOTE_L_W.wav-1a87538a6432c7c819524252b2364ce1.sample"]
 
 [params]
 

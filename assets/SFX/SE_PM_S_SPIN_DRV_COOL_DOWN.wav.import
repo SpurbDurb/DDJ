@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dssl82o8ibn5n"
-path="res://.godot/imported/SE_PM_S_SPIN_DRV_COOL_DOWN.wav-1cd7c8b287e3438c21e779ec864ed6c7.sample"
+path="res://.godot/imported/SE_PM_S_SPIN_DRV_COOL_DOWN.wav-203678e41a415776f7474d0abdc81fa1.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_S_SPIN_DRV_COOL_DOWN.wav"
-dest_files=["res://.godot/imported/SE_PM_S_SPIN_DRV_COOL_DOWN.wav-1cd7c8b287e3438c21e779ec864ed6c7.sample"]
+source_file="res://assets/sfx/SE_PM_S_SPIN_DRV_COOL_DOWN.wav"
+dest_files=["res://.godot/imported/SE_PM_S_SPIN_DRV_COOL_DOWN.wav-203678e41a415776f7474d0abdc81fa1.sample"]
 
 [params]
 

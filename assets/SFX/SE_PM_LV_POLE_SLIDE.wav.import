@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bunj7mcgg2j11"
-path="res://.godot/imported/SE_PM_LV_POLE_SLIDE.wav-9841d2f232bedb69d969fb52c73279e1.sample"
+path="res://.godot/imported/SE_PM_LV_POLE_SLIDE.wav-a78c83004de6d1482048e29eb6678b09.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_LV_POLE_SLIDE.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_POLE_SLIDE.wav-9841d2f232bedb69d969fb52c73279e1.sample"]
+source_file="res://assets/sfx/SE_PM_LV_POLE_SLIDE.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_POLE_SLIDE.wav-a78c83004de6d1482048e29eb6678b09.sample"]
 
 [params]
 

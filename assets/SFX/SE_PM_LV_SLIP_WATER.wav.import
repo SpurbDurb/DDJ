@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dvpf6v2qmdwhk"
-path="res://.godot/imported/SE_PM_LV_SLIP_WATER.wav-6df6c074d04ccb62082151f6cb24bb0d.sample"
+path="res://.godot/imported/SE_PM_LV_SLIP_WATER.wav-fae75110df87186f6194348a31df3a30.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_LV_SLIP_WATER.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_SLIP_WATER.wav-6df6c074d04ccb62082151f6cb24bb0d.sample"]
+source_file="res://assets/sfx/SE_PM_LV_SLIP_WATER.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_SLIP_WATER.wav-fae75110df87186f6194348a31df3a30.sample"]
 
 [params]
 

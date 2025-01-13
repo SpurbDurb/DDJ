@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ceakh7y3jrd2c"
-path="res://.godot/imported/SE_PM_LV_WATERFALL_HIT.wav-1eb235fdbd254a07bcf8215855313c90.sample"
+path="res://.godot/imported/SE_PM_LV_WATERFALL_HIT.wav-c309c264494dbeaa0358f20ddfc868d3.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_LV_WATERFALL_HIT.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_WATERFALL_HIT.wav-1eb235fdbd254a07bcf8215855313c90.sample"]
+source_file="res://assets/sfx/SE_PM_LV_WATERFALL_HIT.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_WATERFALL_HIT.wav-c309c264494dbeaa0358f20ddfc868d3.sample"]
 
 [params]
 

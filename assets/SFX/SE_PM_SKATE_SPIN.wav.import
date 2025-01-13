@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c7wj7jww2qkbp"
-path="res://.godot/imported/SE_PM_SKATE_SPIN.wav-2674ce64c5cd6f5b941d32e58fbb4655.sample"
+path="res://.godot/imported/SE_PM_SKATE_SPIN.wav-fa4e53807444af9a8d65542a9eeed31e.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_SKATE_SPIN.wav"
-dest_files=["res://.godot/imported/SE_PM_SKATE_SPIN.wav-2674ce64c5cd6f5b941d32e58fbb4655.sample"]
+source_file="res://assets/sfx/SE_PM_SKATE_SPIN.wav"
+dest_files=["res://.godot/imported/SE_PM_SKATE_SPIN.wav-fa4e53807444af9a8d65542a9eeed31e.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c4ygau4gkajj7"
-path="res://.godot/imported/SE_PM_BEE_WALL_LAND.wav-40a990029911aa6d9a4df4a3dd18a94e.sample"
+path="res://.godot/imported/SE_PM_BEE_WALL_LAND.wav-0316463f68e4612f47ad782cae6f213f.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_BEE_WALL_LAND.wav"
-dest_files=["res://.godot/imported/SE_PM_BEE_WALL_LAND.wav-40a990029911aa6d9a4df4a3dd18a94e.sample"]
+source_file="res://assets/sfx/SE_PM_BEE_WALL_LAND.wav"
+dest_files=["res://.godot/imported/SE_PM_BEE_WALL_LAND.wav-0316463f68e4612f47ad782cae6f213f.sample"]
 
 [params]
 

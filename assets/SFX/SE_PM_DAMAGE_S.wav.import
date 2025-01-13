@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dp6rnpiqn0icl"
-path="res://.godot/imported/SE_PM_DAMAGE_S.wav-8785acec1095a9693f1b9cc59bef79a2.sample"
+path="res://.godot/imported/SE_PM_DAMAGE_S.wav-ed9e56adb8bb2035249f84c3387f38e3.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_DAMAGE_S.wav"
-dest_files=["res://.godot/imported/SE_PM_DAMAGE_S.wav-8785acec1095a9693f1b9cc59bef79a2.sample"]
+source_file="res://assets/sfx/SE_PM_DAMAGE_S.wav"
+dest_files=["res://.godot/imported/SE_PM_DAMAGE_S.wav-ed9e56adb8bb2035249f84c3387f38e3.sample"]
 
 [params]
 

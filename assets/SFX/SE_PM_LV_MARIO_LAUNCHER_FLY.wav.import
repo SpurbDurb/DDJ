@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cqokyg784gv7u"
-path="res://.godot/imported/SE_PM_LV_MARIO_LAUNCHER_FLY.wav-f96b719d1e14e950104e5afc244d9e53.sample"
+path="res://.godot/imported/SE_PM_LV_MARIO_LAUNCHER_FLY.wav-335f450f2598768e5612dc274a0c08b0.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_LV_MARIO_LAUNCHER_FLY.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_MARIO_LAUNCHER_FLY.wav-f96b719d1e14e950104e5afc244d9e53.sample"]
+source_file="res://assets/sfx/SE_PM_LV_MARIO_LAUNCHER_FLY.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_MARIO_LAUNCHER_FLY.wav-335f450f2598768e5612dc274a0c08b0.sample"]
 
 [params]
 

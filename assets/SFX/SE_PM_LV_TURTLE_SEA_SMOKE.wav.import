@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cliekevignurd"
-path="res://.godot/imported/SE_PM_LV_TURTLE_SEA_SMOKE.wav-35864a50bbfd26a62155ab1aec12afb0.sample"
+path="res://.godot/imported/SE_PM_LV_TURTLE_SEA_SMOKE.wav-ee1333ab3b823b9b6828641545df1eda.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_LV_TURTLE_SEA_SMOKE.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_TURTLE_SEA_SMOKE.wav-35864a50bbfd26a62155ab1aec12afb0.sample"]
+source_file="res://assets/sfx/SE_PM_LV_TURTLE_SEA_SMOKE.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_TURTLE_SEA_SMOKE.wav-ee1333ab3b823b9b6828641545df1eda.sample"]
 
 [params]
 

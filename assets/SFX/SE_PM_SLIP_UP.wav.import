@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b3my5s1aljd24"
-path="res://.godot/imported/SE_PM_SLIP_UP.wav-2fd52e6e634e01f1876d34d2c12f70d8.sample"
+path="res://.godot/imported/SE_PM_SLIP_UP.wav-83b87a5ec34e415fcd0dafc65664389a.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_SLIP_UP.wav"
-dest_files=["res://.godot/imported/SE_PM_SLIP_UP.wav-2fd52e6e634e01f1876d34d2c12f70d8.sample"]
+source_file="res://assets/sfx/SE_PM_SLIP_UP.wav"
+dest_files=["res://.godot/imported/SE_PM_SLIP_UP.wav-83b87a5ec34e415fcd0dafc65664389a.sample"]
 
 [params]
 

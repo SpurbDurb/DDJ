@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cw5ark5icwp8p"
-path="res://.godot/imported/SE_PM_WARP_POD_IN.wav-cd0f43c1d117317527e73a30d514372b.sample"
+path="res://.godot/imported/SE_PM_WARP_POD_IN.wav-5d1345010aca90bf8191ef7d296b12d9.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_WARP_POD_IN.wav"
-dest_files=["res://.godot/imported/SE_PM_WARP_POD_IN.wav-cd0f43c1d117317527e73a30d514372b.sample"]
+source_file="res://assets/sfx/SE_PM_WARP_POD_IN.wav"
+dest_files=["res://.godot/imported/SE_PM_WARP_POD_IN.wav-5d1345010aca90bf8191ef7d296b12d9.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://j7uhimpp8igv"
-path="res://.godot/imported/SE_PM_BURY_END_SPIN.wav-d4fe98809c507caa67ed2a4934a11211.sample"
+path="res://.godot/imported/SE_PM_BURY_END_SPIN.wav-223e329e5f8ce3a6395cf682e69ba9a2.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_BURY_END_SPIN.wav"
-dest_files=["res://.godot/imported/SE_PM_BURY_END_SPIN.wav-d4fe98809c507caa67ed2a4934a11211.sample"]
+source_file="res://assets/sfx/SE_PM_BURY_END_SPIN.wav"
+dest_files=["res://.godot/imported/SE_PM_BURY_END_SPIN.wav-223e329e5f8ce3a6395cf682e69ba9a2.sample"]
 
 [params]
 

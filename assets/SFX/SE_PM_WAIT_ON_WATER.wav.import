@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bbt8wo5n7a7v0"
-path="res://.godot/imported/SE_PM_WAIT_ON_WATER.wav-9d423ad1d59a09ea1d7db9d84a4fef9d.sample"
+path="res://.godot/imported/SE_PM_WAIT_ON_WATER.wav-68a7b0991ff105e375d0c91a861bdf59.sample"
 
 [deps]
 
-source_file="res://assets/SFX/SE_PM_WAIT_ON_WATER.wav"
-dest_files=["res://.godot/imported/SE_PM_WAIT_ON_WATER.wav-9d423ad1d59a09ea1d7db9d84a4fef9d.sample"]
+source_file="res://assets/sfx/SE_PM_WAIT_ON_WATER.wav"
+dest_files=["res://.godot/imported/SE_PM_WAIT_ON_WATER.wav-68a7b0991ff105e375d0c91a861bdf59.sample"]
 
 [params]
 
