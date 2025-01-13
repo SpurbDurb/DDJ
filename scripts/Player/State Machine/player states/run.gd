@@ -1,6 +1,6 @@
 extends Player_State
 
-@export var SPRINT_SPEED: float = 2.8
+@export var SPRINT_SPEED: float = 3.0
 @export var stamina_bar : ProgressBar
 var direction: Vector3
 var camera_pivot

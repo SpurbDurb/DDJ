@@ -2,6 +2,7 @@ extends Node3D
 
 @export_range(1,9) var connection_id: int = 1
 @export var active: bool = true
+@export var lock: bool = false
 @export var reset: bool = false
 
 enum Direction { Horizontal, Vertical }
@@ -32,6 +33,12 @@ func _ready() -> void:
 	add_child(pause_timer)
 
 func _on_connection_triggered():
+	if lock: 
+		if not active:
+			active = true
+			SignalManager.emit_camera_event(global_position)
+		return
+		
 	active = not active
 	if not active and reset: 
 		go_back = not go_back
@@ -62,6 +69,8 @@ func get_local_displacement(delta: float):
 	if go_back:
 		var direction_to_initial = (initial_position - global_transform.origin).normalized()
 		displacement = speed * delta
+		if direction == Direction.Horizontal:
+			displacement = -displacement
 		return direction_to_initial * displacement
 	
 	displacement = speed * delta

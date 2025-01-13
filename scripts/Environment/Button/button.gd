@@ -48,7 +48,8 @@ func _on_area_3d_body_exited(_body: Node3D) -> void:
 		emit_signal("exited")
 		return
 	
-	SignalManager.emit_connection_signal(connection_id, self)
+	if not call_back:
+		SignalManager.emit_connection_signal(connection_id, self)
 
 func _on_connection_triggered() -> void:
 	locked = false

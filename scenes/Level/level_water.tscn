@@ -25,12 +25,12 @@ shader_parameter/exponent_factor_top = 1.0
 shader_parameter/exponent_factor_bottom = 1.0
 shader_parameter/intensity_amp = 1.0
 
-[sub_resource type="Sky" id="Sky_pua8o"]
+[sub_resource type="Sky" id="Sky_cj3ag"]
 sky_material = SubResource("ShaderMaterial_n3rkm")
 
 [sub_resource type="Environment" id="Environment_qxgvh"]
 background_mode = 2
-sky = SubResource("Sky_pua8o")
+sky = SubResource("Sky_cj3ag")
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
@@ -116,7 +116,12 @@ shape = SubResource("BoxShape3D_wgcu6")
 [node name="Moving Platform3" parent="Map/Platforms" instance=ExtResource("5_j3gcn")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.73658, -0.3, -2)
 connection_id = 2
+lock = null
+reset = null
+direction = null
 speed = 2.0
+distance = null
+pause_duration = null
 
 [node name="Floor3" type="CSGBox3D" parent="Map/Platforms"]
 transform = Transform3D(3.9, 0, 0, 0, 1, 0, 0, 0, 5.01944, -12.7005, -0.543807, -0.134487)

@@ -1,4 +1,5 @@
 extends Node
+signal camera_event(global_position: Vector3)
 
 # Dicionário para armazenar listas de objetos que devem responder aos sinais
 var connections = {}
@@ -24,3 +25,6 @@ func connect_to_signal(connection_id, callable):
 
 func clean_all_connections():
 	connections.clear()
+
+func emit_camera_event(global_position: Vector3):
+	emit_signal("camera_event", global_position)
