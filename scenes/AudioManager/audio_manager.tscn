@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8tbtllbkhwio"]
+[gd_scene load_steps=5 format=3 uid="uid://c8tbtllbkhwio"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/AudioManager.gd" id="1_d5qgc"]
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="2_t17x2"]
-[ext_resource type="Resource" uid="uid://rsil3y3ooyyo" path="res://scenes/AudioManager/SFX/test.tres" id="3_njfwf"]
+[ext_resource type="Resource" uid="uid://rsil3y3ooyyo" path="res://scenes/AudioManager/SFX/land_w.tres" id="3_njfwf"]
+[ext_resource type="Resource" uid="uid://b0x64tujvwykn" path="res://scenes/AudioManager/SFX/jump.tres" id="4_veyeo"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_d5qgc")
-sound_effects = Array[ExtResource("2_t17x2")]([ExtResource("3_njfwf")])
+sound_effects = Array[ExtResource("2_t17x2")]([ExtResource("4_veyeo"), ExtResource("3_njfwf")])

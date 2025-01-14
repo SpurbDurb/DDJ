@@ -416,11 +416,8 @@ beam_size = 8.0
 transform = Transform3D(-1.0014, 0, 8.75453e-08, 0, 1.0014, 0, -8.75453e-08, 0, -1.0014, -7.24552, -0.296095, -2.33514)
 connection_id = 2
 lock = true
-reset = null
-direction = null
 speed = 2.0
 distance = 6.5
-pause_duration = null
 
 [node name="Button" parent="Environment" instance=ExtResource("7_4j754")]
 transform = Transform3D(-6.63389e-05, -0.000296216, -0.2, 0.000141901, 0.2, -0.000296264, 0.2, -0.000142001, -6.61246e-05, -5.34525, -0.022063, -2.31052)
