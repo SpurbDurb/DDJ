@@ -40,7 +40,7 @@ func _on_connection_triggered():
 	visibility_timer.start(visible_duration) 
 	switch_visibility()
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# Faz a transição de transparência com `lerp`
 	if abs(current_alpha - target_alpha) < 0.1:
 		csg_box_3d.visible = is_viseble
