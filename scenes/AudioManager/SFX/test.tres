@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=2 format=3 uid="uid://rsil3y3ooyyo"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_nrcw7"]
+
+[resource]
+script = ExtResource("1_nrcw7")
+limit = 5
+type = 0
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
