@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bym35eqhdrf46"
-path="res://.godot/imported/SE_PM_LV_SAND_SINK.wav-2133b214319c10c708829e4aef83786b.sample"
+path="res://.godot/imported/SE_PM_LV_SAND_SINK.wav-bc68753ba6a3cfc3298eba3b53060864.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_SAND_SINK.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_SAND_SINK.wav-2133b214319c10c708829e4aef83786b.sample"]
+source_file="res://assets/SFX/SE_PM_LV_SAND_SINK.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_SAND_SINK.wav-bc68753ba6a3cfc3298eba3b53060864.sample"]
 
 [params]
 

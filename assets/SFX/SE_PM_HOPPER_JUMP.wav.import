@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cf4crvk83e1l4"
-path="res://.godot/imported/SE_PM_HOPPER_JUMP.wav-3893ebf0ed993963ed6d479486857118.sample"
+path="res://.godot/imported/SE_PM_HOPPER_JUMP.wav-4ccdcc14b012d65780fb719c4147acc8.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_HOPPER_JUMP.wav"
-dest_files=["res://.godot/imported/SE_PM_HOPPER_JUMP.wav-3893ebf0ed993963ed6d479486857118.sample"]
+source_file="res://assets/SFX/SE_PM_HOPPER_JUMP.wav"
+dest_files=["res://.godot/imported/SE_PM_HOPPER_JUMP.wav-4ccdcc14b012d65780fb719c4147acc8.sample"]
 
 [params]
 

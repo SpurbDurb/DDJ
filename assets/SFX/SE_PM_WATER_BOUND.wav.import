@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://7pyo4ylp77v8"
-path="res://.godot/imported/SE_PM_WATER_BOUND.wav-f8e2728f8bd50dbd906b96acc723fe53.sample"
+path="res://.godot/imported/SE_PM_WATER_BOUND.wav-f93f88dc46d894b79a2ab32353661d32.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_WATER_BOUND.wav"
-dest_files=["res://.godot/imported/SE_PM_WATER_BOUND.wav-f8e2728f8bd50dbd906b96acc723fe53.sample"]
+source_file="res://assets/SFX/SE_PM_WATER_BOUND.wav"
+dest_files=["res://.godot/imported/SE_PM_WATER_BOUND.wav-f93f88dc46d894b79a2ab32353661d32.sample"]
 
 [params]
 

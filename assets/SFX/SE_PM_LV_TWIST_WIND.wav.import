@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c6g21oiia2njs"
-path="res://.godot/imported/SE_PM_LV_TWIST_WIND.wav-ce8165dbb98a4f62441d6c2fc9a9c7a2.sample"
+path="res://.godot/imported/SE_PM_LV_TWIST_WIND.wav-31c536827884a4992447e0fd7765f938.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_TWIST_WIND.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_TWIST_WIND.wav-ce8165dbb98a4f62441d6c2fc9a9c7a2.sample"]
+source_file="res://assets/SFX/SE_PM_LV_TWIST_WIND.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_TWIST_WIND.wav-31c536827884a4992447e0fd7765f938.sample"]
 
 [params]
 

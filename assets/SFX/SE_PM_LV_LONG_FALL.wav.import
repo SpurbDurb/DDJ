@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://jxn153idh0ev"
-path="res://.godot/imported/SE_PM_LV_LONG_FALL.wav-32677a54812947c00e4662a4f1c11c40.sample"
+path="res://.godot/imported/SE_PM_LV_LONG_FALL.wav-784871ef60844a66abf871fa925ee4cf.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_LONG_FALL.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_LONG_FALL.wav-32677a54812947c00e4662a4f1c11c40.sample"]
+source_file="res://assets/SFX/SE_PM_LV_LONG_FALL.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_LONG_FALL.wav-784871ef60844a66abf871fa925ee4cf.sample"]
 
 [params]
 

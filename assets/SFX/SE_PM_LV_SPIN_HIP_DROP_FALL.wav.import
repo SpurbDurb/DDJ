@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://iqxeqaw6aej8"
-path="res://.godot/imported/SE_PM_LV_SPIN_HIP_DROP_FALL.wav-44f599e75e65ae047942516f86f90790.sample"
+path="res://.godot/imported/SE_PM_LV_SPIN_HIP_DROP_FALL.wav-8be174faa167c101c536acd635a9173b.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_SPIN_HIP_DROP_FALL.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_SPIN_HIP_DROP_FALL.wav-44f599e75e65ae047942516f86f90790.sample"]
+source_file="res://assets/SFX/SE_PM_LV_SPIN_HIP_DROP_FALL.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_SPIN_HIP_DROP_FALL.wav-8be174faa167c101c536acd635a9173b.sample"]
 
 [params]
 

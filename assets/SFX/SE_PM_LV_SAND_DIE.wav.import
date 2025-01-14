@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bl3828tgq40kw"
-path="res://.godot/imported/SE_PM_LV_SAND_DIE.wav-99c90226e47c58823bd16f900e3660a7.sample"
+path="res://.godot/imported/SE_PM_LV_SAND_DIE.wav-cf4c1bfd528f75df8e5641f254ac38ec.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_SAND_DIE.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_SAND_DIE.wav-99c90226e47c58823bd16f900e3660a7.sample"]
+source_file="res://assets/SFX/SE_PM_LV_SAND_DIE.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_SAND_DIE.wav-cf4c1bfd528f75df8e5641f254ac38ec.sample"]
 
 [params]
 

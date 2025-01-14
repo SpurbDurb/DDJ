@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bpwpkoid52fqg"
-path="res://.godot/imported/SE_PM_TERESA_MARIO_BOUND.wav-e65869c8ffa2ffb0ffe1affc401c3195.sample"
+path="res://.godot/imported/SE_PM_TERESA_MARIO_BOUND.wav-575128e07a98d654dceb64c2bb512f72.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_TERESA_MARIO_BOUND.wav"
-dest_files=["res://.godot/imported/SE_PM_TERESA_MARIO_BOUND.wav-e65869c8ffa2ffb0ffe1affc401c3195.sample"]
+source_file="res://assets/SFX/SE_PM_TERESA_MARIO_BOUND.wav"
+dest_files=["res://.godot/imported/SE_PM_TERESA_MARIO_BOUND.wav-575128e07a98d654dceb64c2bb512f72.sample"]
 
 [params]
 

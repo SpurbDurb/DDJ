@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bvijnjd38hd7e"
-path="res://.godot/imported/SE_PM_LV_PULL_BACK_FLY.wav-28fd8251cb0b013b199eafbc21aaa5eb.sample"
+path="res://.godot/imported/SE_PM_LV_PULL_BACK_FLY.wav-7416aec2f3943c8caf5fa575d4ad672b.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_PULL_BACK_FLY.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_PULL_BACK_FLY.wav-28fd8251cb0b013b199eafbc21aaa5eb.sample"]
+source_file="res://assets/SFX/SE_PM_LV_PULL_BACK_FLY.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_PULL_BACK_FLY.wav-7416aec2f3943c8caf5fa575d4ad672b.sample"]
 
 [params]
 

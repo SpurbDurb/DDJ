@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dpvqorsar6gxd"
-path="res://.godot/imported/SE_PM_LV_FOO_FLYING.wav-ff99b376df5e5ce113d90bb0cca755b0.sample"
+path="res://.godot/imported/SE_PM_LV_FOO_FLYING.wav-fedb205ac6a586852d5abdfa33a632ed.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_FOO_FLYING.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_FOO_FLYING.wav-ff99b376df5e5ce113d90bb0cca755b0.sample"]
+source_file="res://assets/SFX/SE_PM_LV_FOO_FLYING.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_FOO_FLYING.wav-fedb205ac6a586852d5abdfa33a632ed.sample"]
 
 [params]
 

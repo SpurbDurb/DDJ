@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b8143txdhtlnd"
-path="res://.godot/imported/SE_PM_LV_FLIP_DAMAGE_TURN.wav-c2efe31aae45cda5dfd949fc4446a67c.sample"
+path="res://.godot/imported/SE_PM_LV_FLIP_DAMAGE_TURN.wav-81fac43e8f93dfbbd148d03703b010b9.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_FLIP_DAMAGE_TURN.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_FLIP_DAMAGE_TURN.wav-c2efe31aae45cda5dfd949fc4446a67c.sample"]
+source_file="res://assets/SFX/SE_PM_LV_FLIP_DAMAGE_TURN.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_FLIP_DAMAGE_TURN.wav-81fac43e8f93dfbbd148d03703b010b9.sample"]
 
 [params]
 

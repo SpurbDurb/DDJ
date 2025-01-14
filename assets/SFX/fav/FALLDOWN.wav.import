@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cicdvykjq1ndq"
-path="res://.godot/imported/FALLDOWN.wav-87c8593fcd3edaae72f8d289294d8c51.sample"
+path="res://.godot/imported/FALLDOWN.wav-ea6147d18f008ce90a24da8a7aba6967.sample"
 
 [deps]
 
-source_file="res://assets/sfx/fav/FALLDOWN.wav"
-dest_files=["res://.godot/imported/FALLDOWN.wav-87c8593fcd3edaae72f8d289294d8c51.sample"]
+source_file="res://assets/SFX/fav/FALLDOWN.wav"
+dest_files=["res://.godot/imported/FALLDOWN.wav-ea6147d18f008ce90a24da8a7aba6967.sample"]
 
 [params]
 

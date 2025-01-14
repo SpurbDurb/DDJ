@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://u4oi0u6mbg35"
-path="res://.godot/imported/SE_PM_LV_MUD_DIE.wav-ad83fd4942f754b8008c3b4e51ed9bef.sample"
+path="res://.godot/imported/SE_PM_LV_MUD_DIE.wav-cf89b63030b53a685744e743368feddd.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_MUD_DIE.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_MUD_DIE.wav-ad83fd4942f754b8008c3b4e51ed9bef.sample"]
+source_file="res://assets/SFX/SE_PM_LV_MUD_DIE.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_MUD_DIE.wav-cf89b63030b53a685744e743368feddd.sample"]
 
 [params]
 

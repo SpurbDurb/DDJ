@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bb54xskjkkijr"
-path="res://.godot/imported/SE_PM_BURY_WAIT.wav-1693c9d4fcf6d96a7a487316a3564073.sample"
+path="res://.godot/imported/SE_PM_BURY_WAIT.wav-f8a13674aaa6663d2e2059b323418e8e.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_BURY_WAIT.wav"
-dest_files=["res://.godot/imported/SE_PM_BURY_WAIT.wav-1693c9d4fcf6d96a7a487316a3564073.sample"]
+source_file="res://assets/SFX/SE_PM_BURY_WAIT.wav"
+dest_files=["res://.godot/imported/SE_PM_BURY_WAIT.wav-f8a13674aaa6663d2e2059b323418e8e.sample"]
 
 [params]
 

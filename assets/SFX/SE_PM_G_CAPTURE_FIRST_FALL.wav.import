@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://crmoaxnavqxat"
-path="res://.godot/imported/SE_PM_G_CAPTURE_FIRST_FALL.wav-e550c41f41d3ab44bd80783c86bd1824.sample"
+path="res://.godot/imported/SE_PM_G_CAPTURE_FIRST_FALL.wav-e0b63baba36725f8a058018d1a86e3c5.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_G_CAPTURE_FIRST_FALL.wav"
-dest_files=["res://.godot/imported/SE_PM_G_CAPTURE_FIRST_FALL.wav-e550c41f41d3ab44bd80783c86bd1824.sample"]
+source_file="res://assets/SFX/SE_PM_G_CAPTURE_FIRST_FALL.wav"
+dest_files=["res://.godot/imported/SE_PM_G_CAPTURE_FIRST_FALL.wav-e0b63baba36725f8a058018d1a86e3c5.sample"]
 
 [params]
 

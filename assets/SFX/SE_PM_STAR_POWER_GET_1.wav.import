@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b2j026gi61u1n"
-path="res://.godot/imported/SE_PM_STAR_POWER_GET_1.wav-a7a3665c9188ed6dd716b0fc0e6ba720.sample"
+path="res://.godot/imported/SE_PM_STAR_POWER_GET_1.wav-21df96f8ecf9329634221e537666f43e.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_STAR_POWER_GET_1.wav"
-dest_files=["res://.godot/imported/SE_PM_STAR_POWER_GET_1.wav-a7a3665c9188ed6dd716b0fc0e6ba720.sample"]
+source_file="res://assets/SFX/SE_PM_STAR_POWER_GET_1.wav"
+dest_files=["res://.godot/imported/SE_PM_STAR_POWER_GET_1.wav-21df96f8ecf9329634221e537666f43e.sample"]
 
 [params]
 

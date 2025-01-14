@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bonypeoo1s0pp"
-path="res://.godot/imported/SE_PM_BLACK_HOLE_IN.wav-eb7fb63f828c3248d5a40b32041b8748.sample"
+path="res://.godot/imported/SE_PM_BLACK_HOLE_IN.wav-d6c09211b1f093712f2924aa54a818a0.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_BLACK_HOLE_IN.wav"
-dest_files=["res://.godot/imported/SE_PM_BLACK_HOLE_IN.wav-eb7fb63f828c3248d5a40b32041b8748.sample"]
+source_file="res://assets/SFX/SE_PM_BLACK_HOLE_IN.wav"
+dest_files=["res://.godot/imported/SE_PM_BLACK_HOLE_IN.wav-d6c09211b1f093712f2924aa54a818a0.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://di8sg2rspl8ov"
-path="res://.godot/imported/SE_PM_RACE_START_DASH_L.wav-543769a40fed19ef8cbf13b98f65ba76.sample"
+path="res://.godot/imported/SE_PM_RACE_START_DASH_L.wav-b3b0faab6f96e56100694354f066a28b.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_RACE_START_DASH_L.wav"
-dest_files=["res://.godot/imported/SE_PM_RACE_START_DASH_L.wav-543769a40fed19ef8cbf13b98f65ba76.sample"]
+source_file="res://assets/SFX/SE_PM_RACE_START_DASH_L.wav"
+dest_files=["res://.godot/imported/SE_PM_RACE_START_DASH_L.wav-b3b0faab6f96e56100694354f066a28b.sample"]
 
 [params]
 

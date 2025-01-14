@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c5qi7jj00x4a0"
-path="res://.godot/imported/VANISH.wav-2bbf1b147f4082c41ede485df677cfc8.sample"
+path="res://.godot/imported/VANISH.wav-8f7bb379655971eb662bfd44fcec174c.sample"
 
 [deps]
 
-source_file="res://assets/sfx/fav/VANISH.wav"
-dest_files=["res://.godot/imported/VANISH.wav-2bbf1b147f4082c41ede485df677cfc8.sample"]
+source_file="res://assets/SFX/fav/VANISH.wav"
+dest_files=["res://.godot/imported/VANISH.wav-8f7bb379655971eb662bfd44fcec174c.sample"]
 
 [params]
 

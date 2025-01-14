@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bxf3n0ptaher6"
-path="res://.godot/imported/SE_PM_PUNCH_SHOOT.wav-ddc0111090d668c5b9ca2e63336866c6.sample"
+path="res://.godot/imported/SE_PM_PUNCH_SHOOT.wav-faffafcfc2455703552f919197ed52db.sample"
 
 [deps]
 
-source_file="res://assets/sfx/fav/SE_PM_PUNCH_SHOOT.wav"
-dest_files=["res://.godot/imported/SE_PM_PUNCH_SHOOT.wav-ddc0111090d668c5b9ca2e63336866c6.sample"]
+source_file="res://assets/SFX/fav/SE_PM_PUNCH_SHOOT.wav"
+dest_files=["res://.godot/imported/SE_PM_PUNCH_SHOOT.wav-faffafcfc2455703552f919197ed52db.sample"]
 
 [params]
 

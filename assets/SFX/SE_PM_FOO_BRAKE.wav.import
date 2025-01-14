@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dx25yc4g3uika"
-path="res://.godot/imported/SE_PM_FOO_BRAKE.wav-8612bd54e101ffbc0ac2bde6ea9fe8a1.sample"
+path="res://.godot/imported/SE_PM_FOO_BRAKE.wav-30c2c99c6393fe8cc960aaa22c80a769.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_FOO_BRAKE.wav"
-dest_files=["res://.godot/imported/SE_PM_FOO_BRAKE.wav-8612bd54e101ffbc0ac2bde6ea9fe8a1.sample"]
+source_file="res://assets/SFX/SE_PM_FOO_BRAKE.wav"
+dest_files=["res://.godot/imported/SE_PM_FOO_BRAKE.wav-30c2c99c6393fe8cc960aaa22c80a769.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://chd61gilww3ib"
-path="res://.godot/imported/SE_PM_WALL_HIT_BODY.wav-506b1790f1cda670cbf0de46e7208672.sample"
+path="res://.godot/imported/SE_PM_WALL_HIT_BODY.wav-ec98dbc0cb25493706869a0c12c42832.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_WALL_HIT_BODY.wav"
-dest_files=["res://.godot/imported/SE_PM_WALL_HIT_BODY.wav-506b1790f1cda670cbf0de46e7208672.sample"]
+source_file="res://assets/SFX/SE_PM_WALL_HIT_BODY.wav"
+dest_files=["res://.godot/imported/SE_PM_WALL_HIT_BODY.wav-ec98dbc0cb25493706869a0c12c42832.sample"]
 
 [params]
 

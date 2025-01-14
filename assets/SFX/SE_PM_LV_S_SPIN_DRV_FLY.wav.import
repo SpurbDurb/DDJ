@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cfdrdykuln1ni"
-path="res://.godot/imported/SE_PM_LV_S_SPIN_DRV_FLY.wav-990deebbffa466bbcec9d6e7cb8c34ec.sample"
+path="res://.godot/imported/SE_PM_LV_S_SPIN_DRV_FLY.wav-de1963803e87bcaa83e69b54553e3014.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_S_SPIN_DRV_FLY.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_S_SPIN_DRV_FLY.wav-990deebbffa466bbcec9d6e7cb8c34ec.sample"]
+source_file="res://assets/SFX/SE_PM_LV_S_SPIN_DRV_FLY.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_S_SPIN_DRV_FLY.wav-de1963803e87bcaa83e69b54553e3014.sample"]
 
 [params]
 

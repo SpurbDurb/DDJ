@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dd3ix7vo02d1u"
-path="res://.godot/imported/SE_PM_DM_MEET_TICO_STAND_UP.wav-0fb763b3065f2f3ab3de6738560a570d.sample"
+path="res://.godot/imported/SE_PM_DM_MEET_TICO_STAND_UP.wav-c968f542f5724c0f63eab5faf8834690.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_DM_MEET_TICO_STAND_UP.wav"
-dest_files=["res://.godot/imported/SE_PM_DM_MEET_TICO_STAND_UP.wav-0fb763b3065f2f3ab3de6738560a570d.sample"]
+source_file="res://assets/SFX/SE_PM_DM_MEET_TICO_STAND_UP.wav"
+dest_files=["res://.godot/imported/SE_PM_DM_MEET_TICO_STAND_UP.wav-c968f542f5724c0f63eab5faf8834690.sample"]
 
 [params]
 

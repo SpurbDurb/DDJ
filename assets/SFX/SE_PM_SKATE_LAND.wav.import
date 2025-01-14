@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cboossvdc4bpi"
-path="res://.godot/imported/SE_PM_SKATE_LAND.wav-bfc7a68492659e903467a3fe1d02d50a.sample"
+path="res://.godot/imported/SE_PM_SKATE_LAND.wav-eeb707e1759fd7c9fc58e5c0ec6a74e5.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_SKATE_LAND.wav"
-dest_files=["res://.godot/imported/SE_PM_SKATE_LAND.wav-bfc7a68492659e903467a3fe1d02d50a.sample"]
+source_file="res://assets/SFX/SE_PM_SKATE_LAND.wav"
+dest_files=["res://.godot/imported/SE_PM_SKATE_LAND.wav-eeb707e1759fd7c9fc58e5c0ec6a74e5.sample"]
 
 [params]
 

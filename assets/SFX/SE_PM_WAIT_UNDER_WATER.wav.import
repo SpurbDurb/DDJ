@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cjedh2gpghk4d"
-path="res://.godot/imported/SE_PM_WAIT_UNDER_WATER.wav-9b7656cf2f8a66319b4abff3664dd8b0.sample"
+path="res://.godot/imported/SE_PM_WAIT_UNDER_WATER.wav-5c49e4d33d63d4b35c52aa13d4391138.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_WAIT_UNDER_WATER.wav"
-dest_files=["res://.godot/imported/SE_PM_WAIT_UNDER_WATER.wav-9b7656cf2f8a66319b4abff3664dd8b0.sample"]
+source_file="res://assets/SFX/SE_PM_WAIT_UNDER_WATER.wav"
+dest_files=["res://.godot/imported/SE_PM_WAIT_UNDER_WATER.wav-5c49e4d33d63d4b35c52aa13d4391138.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://jllye6j70fqe"
-path="res://.godot/imported/DROWINING.wav-d73108a0ed1c15683ccd43f0313b998b.sample"
+path="res://.godot/imported/DROWINING.wav-49570cc5b4f2975cf5300258dc261ef1.sample"
 
 [deps]
 
-source_file="res://assets/sfx/fav/DROWINING.wav"
-dest_files=["res://.godot/imported/DROWINING.wav-d73108a0ed1c15683ccd43f0313b998b.sample"]
+source_file="res://assets/SFX/fav/DROWINING.wav"
+dest_files=["res://.godot/imported/DROWINING.wav-49570cc5b4f2975cf5300258dc261ef1.sample"]
 
 [params]
 

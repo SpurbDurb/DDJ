@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://v4uwgmn1onyp"
-path="res://.godot/imported/SE_PM_LAND.wav-ed05d632fa74d9d8a2b343f5f59519eb.sample"
+path="res://.godot/imported/SE_PM_LAND.wav-c954fb2407708132bf34f1fcc7b0fe85.sample"
 
 [deps]
 
-source_file="res://assets/sfx/fav/SE_PM_LAND.wav"
-dest_files=["res://.godot/imported/SE_PM_LAND.wav-ed05d632fa74d9d8a2b343f5f59519eb.sample"]
+source_file="res://assets/SFX/fav/SE_PM_LAND.wav"
+dest_files=["res://.godot/imported/SE_PM_LAND.wav-c954fb2407708132bf34f1fcc7b0fe85.sample"]
 
 [params]
 

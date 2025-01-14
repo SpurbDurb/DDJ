@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bcmjw5b0rdigg"
-path="res://.godot/imported/SE_PM_LV_TERESA_MARIO_FLY.wav-eb1fda65d36652c8396685965471f491.sample"
+path="res://.godot/imported/SE_PM_LV_TERESA_MARIO_FLY.wav-23feed41eb06c0f22d25135035af90c9.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_TERESA_MARIO_FLY.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_TERESA_MARIO_FLY.wav-eb1fda65d36652c8396685965471f491.sample"]
+source_file="res://assets/SFX/SE_PM_LV_TERESA_MARIO_FLY.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_TERESA_MARIO_FLY.wav-23feed41eb06c0f22d25135035af90c9.sample"]
 
 [params]
 

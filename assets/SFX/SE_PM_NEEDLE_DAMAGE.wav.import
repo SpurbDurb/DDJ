@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgoc7lkich2di"
-path="res://.godot/imported/SE_PM_NEEDLE_DAMAGE.wav-d95e4463f4ad47e257eedb959ac4a5f1.sample"
+path="res://.godot/imported/SE_PM_NEEDLE_DAMAGE.wav-8109bb27515523d5c17c01150e28e2da.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_NEEDLE_DAMAGE.wav"
-dest_files=["res://.godot/imported/SE_PM_NEEDLE_DAMAGE.wav-d95e4463f4ad47e257eedb959ac4a5f1.sample"]
+source_file="res://assets/SFX/SE_PM_NEEDLE_DAMAGE.wav"
+dest_files=["res://.godot/imported/SE_PM_NEEDLE_DAMAGE.wav-8109bb27515523d5c17c01150e28e2da.sample"]
 
 [params]
 

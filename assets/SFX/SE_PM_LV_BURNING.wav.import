@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b5uywdrujhn5k"
-path="res://.godot/imported/SE_PM_LV_BURNING.wav-9c8300e3d172089b49cbf34d6d75f691.sample"
+path="res://.godot/imported/SE_PM_LV_BURNING.wav-c8e611c6b493c8f127ee0db02b715db5.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_BURNING.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_BURNING.wav-9c8300e3d172089b49cbf34d6d75f691.sample"]
+source_file="res://assets/SFX/SE_PM_LV_BURNING.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_BURNING.wav-c8e611c6b493c8f127ee0db02b715db5.sample"]
 
 [params]
 

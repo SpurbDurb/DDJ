@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://l4ixnkkhh3do"
-path="res://.godot/imported/SE_PM_KAMECK_BARRIER_BOUND.wav-1d9e73a05bd5586de6507191d2948d0d.sample"
+path="res://.godot/imported/SE_PM_KAMECK_BARRIER_BOUND.wav-338b1ffaa8fd8c7c4c6932ea355c27e3.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_KAMECK_BARRIER_BOUND.wav"
-dest_files=["res://.godot/imported/SE_PM_KAMECK_BARRIER_BOUND.wav-1d9e73a05bd5586de6507191d2948d0d.sample"]
+source_file="res://assets/SFX/SE_PM_KAMECK_BARRIER_BOUND.wav"
+dest_files=["res://.godot/imported/SE_PM_KAMECK_BARRIER_BOUND.wav-338b1ffaa8fd8c7c4c6932ea355c27e3.sample"]
 
 [params]
 

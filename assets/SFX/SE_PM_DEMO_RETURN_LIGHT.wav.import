@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dfujg7cdhmneq"
-path="res://.godot/imported/SE_PM_DEMO_RETURN_LIGHT.wav-a0f00062e93346dd7cbfee4d527b31a9.sample"
+path="res://.godot/imported/SE_PM_DEMO_RETURN_LIGHT.wav-6b7bb1f6d4e18aad21c96e2926636e00.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_DEMO_RETURN_LIGHT.wav"
-dest_files=["res://.godot/imported/SE_PM_DEMO_RETURN_LIGHT.wav-a0f00062e93346dd7cbfee4d527b31a9.sample"]
+source_file="res://assets/SFX/SE_PM_DEMO_RETURN_LIGHT.wav"
+dest_files=["res://.godot/imported/SE_PM_DEMO_RETURN_LIGHT.wav-6b7bb1f6d4e18aad21c96e2926636e00.sample"]
 
 [params]
 

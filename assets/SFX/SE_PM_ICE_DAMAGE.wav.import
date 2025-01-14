@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://wfdrxepceaun"
-path="res://.godot/imported/SE_PM_ICE_DAMAGE.wav-2af4adfac6bc7fad2b57ca6c9f5ffdc9.sample"
+path="res://.godot/imported/SE_PM_ICE_DAMAGE.wav-d9a4b18abffd36ba32c41fe200e02490.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_ICE_DAMAGE.wav"
-dest_files=["res://.godot/imported/SE_PM_ICE_DAMAGE.wav-2af4adfac6bc7fad2b57ca6c9f5ffdc9.sample"]
+source_file="res://assets/SFX/SE_PM_ICE_DAMAGE.wav"
+dest_files=["res://.godot/imported/SE_PM_ICE_DAMAGE.wav-d9a4b18abffd36ba32c41fe200e02490.sample"]
 
 [params]
 

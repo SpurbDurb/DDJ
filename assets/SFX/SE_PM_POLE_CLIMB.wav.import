@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bht83lmujrfif"
-path="res://.godot/imported/SE_PM_POLE_CLIMB.wav-5481b53b92f95c7e9ad706ae395408b6.sample"
+path="res://.godot/imported/SE_PM_POLE_CLIMB.wav-5cfbc0965a163f890c1bc581bc0eea53.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_POLE_CLIMB.wav"
-dest_files=["res://.godot/imported/SE_PM_POLE_CLIMB.wav-5481b53b92f95c7e9ad706ae395408b6.sample"]
+source_file="res://assets/SFX/SE_PM_POLE_CLIMB.wav"
+dest_files=["res://.godot/imported/SE_PM_POLE_CLIMB.wav-5cfbc0965a163f890c1bc581bc0eea53.sample"]
 
 [params]
 

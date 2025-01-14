@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bdl4av1qrvv6i"
-path="res://.godot/imported/SE_PM_LV_BEE_MARIO_FLY.wav-32e58eb10c9cfb2a1a6c0ebd846fef5b.sample"
+path="res://.godot/imported/SE_PM_LV_BEE_MARIO_FLY.wav-3400e36f035d8681c2f99e4044a28f65.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_BEE_MARIO_FLY.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_BEE_MARIO_FLY.wav-32e58eb10c9cfb2a1a6c0ebd846fef5b.sample"]
+source_file="res://assets/SFX/SE_PM_LV_BEE_MARIO_FLY.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_BEE_MARIO_FLY.wav-3400e36f035d8681c2f99e4044a28f65.sample"]
 
 [params]
 

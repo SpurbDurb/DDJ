@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c3d23gdmqtsv3"
-path="res://.godot/imported/SE_PM_HAND.wav-4ae35a62dfb018dca2c11bd119a40cc0.sample"
+path="res://.godot/imported/SE_PM_HAND.wav-b567000dc6a4ea968ad9d31c549d7fbc.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_HAND.wav"
-dest_files=["res://.godot/imported/SE_PM_HAND.wav-4ae35a62dfb018dca2c11bd119a40cc0.sample"]
+source_file="res://assets/SFX/SE_PM_HAND.wav"
+dest_files=["res://.godot/imported/SE_PM_HAND.wav-b567000dc6a4ea968ad9d31c549d7fbc.sample"]
 
 [params]
 

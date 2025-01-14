@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://crpfnhmqthk2w"
-path="res://.godot/imported/SE_PM_LV_SLIP_SLIP_CODE.wav-afb0a669b73e4aecf40eb47a1b713c48.sample"
+path="res://.godot/imported/SE_PM_LV_SLIP_SLIP_CODE.wav-a246907a9540e9c9e011b9054c909266.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_SLIP_SLIP_CODE.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_SLIP_SLIP_CODE.wav-afb0a669b73e4aecf40eb47a1b713c48.sample"]
+source_file="res://assets/SFX/SE_PM_LV_SLIP_SLIP_CODE.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_SLIP_SLIP_CODE.wav-a246907a9540e9c9e011b9054c909266.sample"]
 
 [params]
 

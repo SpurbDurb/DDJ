@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bgde3ilcefx4h"
-path="res://.godot/imported/SE_PM_LV_TORNADE_ON_WATER.wav-8c0149356b160616fab84ce54fec9b7f.sample"
+path="res://.godot/imported/SE_PM_LV_TORNADE_ON_WATER.wav-48cbd914b000138c0c9f7ceee8287202.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_TORNADE_ON_WATER.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_TORNADE_ON_WATER.wav-8c0149356b160616fab84ce54fec9b7f.sample"]
+source_file="res://assets/SFX/SE_PM_LV_TORNADE_ON_WATER.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_TORNADE_ON_WATER.wav-48cbd914b000138c0c9f7ceee8287202.sample"]
 
 [params]
 

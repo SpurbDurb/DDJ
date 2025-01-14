@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b2ivxcfk73nes"
-path="res://.godot/imported/SE_PM_LV_LUIGI_WALK_SLIP.wav-1f261cb162a2111f1ed3166f2f48343f.sample"
+path="res://.godot/imported/SE_PM_LV_LUIGI_WALK_SLIP.wav-b79cc36699ee58bab003a8751eb38cbc.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_LUIGI_WALK_SLIP.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_LUIGI_WALK_SLIP.wav-1f261cb162a2111f1ed3166f2f48343f.sample"]
+source_file="res://assets/SFX/SE_PM_LV_LUIGI_WALK_SLIP.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_LUIGI_WALK_SLIP.wav-b79cc36699ee58bab003a8751eb38cbc.sample"]
 
 [params]
 

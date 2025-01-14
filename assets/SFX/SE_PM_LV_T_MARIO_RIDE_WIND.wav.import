@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://2eqf6tkkf2el"
-path="res://.godot/imported/SE_PM_LV_T_MARIO_RIDE_WIND.wav-b343db08dfbcada33d3ed01b41c49c75.sample"
+path="res://.godot/imported/SE_PM_LV_T_MARIO_RIDE_WIND.wav-3213cc36140b0e7876e66988effbb929.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_T_MARIO_RIDE_WIND.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_T_MARIO_RIDE_WIND.wav-b343db08dfbcada33d3ed01b41c49c75.sample"]
+source_file="res://assets/SFX/SE_PM_LV_T_MARIO_RIDE_WIND.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_T_MARIO_RIDE_WIND.wav-3213cc36140b0e7876e66988effbb929.sample"]
 
 [params]
 

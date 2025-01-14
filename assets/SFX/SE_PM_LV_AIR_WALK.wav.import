@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c5hp31e4ajw7f"
-path="res://.godot/imported/SE_PM_LV_AIR_WALK.wav-6195dcf35f91bd2cc7e106264d7bf4e6.sample"
+path="res://.godot/imported/SE_PM_LV_AIR_WALK.wav-0f65d8e9d16d43770ebfd9ec81f8cd82.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_LV_AIR_WALK.wav"
-dest_files=["res://.godot/imported/SE_PM_LV_AIR_WALK.wav-6195dcf35f91bd2cc7e106264d7bf4e6.sample"]
+source_file="res://assets/SFX/SE_PM_LV_AIR_WALK.wav"
+dest_files=["res://.godot/imported/SE_PM_LV_AIR_WALK.wav-0f65d8e9d16d43770ebfd9ec81f8cd82.sample"]
 
 [params]
 

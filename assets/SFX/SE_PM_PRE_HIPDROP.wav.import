@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://hr7qgjelpanw"
-path="res://.godot/imported/SE_PM_PRE_HIPDROP.wav-2c9a20724cd3e1fee792b6be4188b96a.sample"
+path="res://.godot/imported/SE_PM_PRE_HIPDROP.wav-75e7846bd97cb77c4819f7f9e19d192b.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_PRE_HIPDROP.wav"
-dest_files=["res://.godot/imported/SE_PM_PRE_HIPDROP.wav-2c9a20724cd3e1fee792b6be4188b96a.sample"]
+source_file="res://assets/SFX/SE_PM_PRE_HIPDROP.wav"
+dest_files=["res://.godot/imported/SE_PM_PRE_HIPDROP.wav-75e7846bd97cb77c4819f7f9e19d192b.sample"]
 
 [params]
 
