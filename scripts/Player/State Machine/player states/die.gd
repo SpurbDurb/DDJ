@@ -9,8 +9,7 @@ func enter():
 func _on_animation_finished(anim_name):
 	animation_player.disconnect("animation_finished", Callable(self,"_on_animation_finished"))
 	if anim_name == "dye":
-		player.global_transform.origin = player.spawn_position
-		player.reset()
+		player.spawn_player()
 
 func exit_condition() -> bool:
 	return false

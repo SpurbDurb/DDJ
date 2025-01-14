@@ -6,10 +6,14 @@ extends Area3D
 @export var water_angular_drag := 0.1
 
 var water_height := 0.0
+var water_height_offset = 0.5
 
 var player_in_water: bool = false
 var submerged: bool = false
 var objects_in_water = []  
+
+func _ready():
+	water_height = global_position.y + water_height_offset
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("FloatingObject"):

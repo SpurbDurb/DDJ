@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var throw_force: float = 1.6
+@export var throw_force: float = 0.7
 @export var up_force: float = 1
 @export var player : CharacterBody3D
 @export var pause_duration: float = 0.8
@@ -23,6 +23,11 @@ func _on_pause_timer_timeout() -> void:
 	throawable = null
 	throwing = false
 	
+	# Check if any body is already in the area
+	var overlapping_bodies = get_overlapping_bodies()
+	for body in overlapping_bodies:
+		_on_body_entered(body)
+
 func throw_object() -> void:
 	throawable.sleeping = false 
 	throawable.gravity_scale = 1
@@ -44,9 +49,8 @@ func _on_body_entered(body: Node3D) -> void:
 		throawable.sleeping = true
 		throawable.gravity_scale = 0
 		throawable.rotation = Vector3(0, 0, 0)
-		set_deferred("monitoring", false)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not throawable: return
 	if player.get_current_state().name == "die":
 		reset_respawn()

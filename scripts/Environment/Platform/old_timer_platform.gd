@@ -4,15 +4,15 @@ extends Node3D
 @export var is_emitter: bool = true
 @export var is_viseble: bool = false
 
-#@onready var body: CharacterBody3D = $Body3D
-#@onready var collision: CollisionShape3D = $Body3D/CollisionShape3D
-@onready var csg_box_3d: CSGBox3D = $CSGBox3D
+@onready var body: CharacterBody3D = $Body3D
+@onready var collision: CollisionShape3D = $Body3D/CollisionShape3D
+@onready var csg_box_3d: CSGBox3D = $Body3D/CSGBox3D
 @onready var visibility_timer: Timer = Timer.new()
 
 var current_alpha: float = 0.0  # Transparência atual do material
 var target_alpha: float = 0.0  # Transparência alvo
 @export var fade_speed: float = 5.0  # Velocidade da transição
-@export var visible_duration: float = 5.0
+@export var visible_duration: int = 5
 
 var locked: bool = false
 
@@ -21,8 +21,8 @@ func _ready() -> void:
 	if csg_box_3d.material:
 		csg_box_3d.material = csg_box_3d.material.duplicate()
 	
-	csg_box_3d.visible = is_viseble
-	csg_box_3d.use_collision = is_viseble
+	body.visible = is_viseble
+	collision.disabled = not is_viseble
 	reset_alpha()
 	
 	# Conecta e regista sinal
@@ -43,8 +43,8 @@ func _on_connection_triggered():
 func _process(delta: float) -> void:
 	# Faz a transição de transparência com `lerp`
 	if abs(current_alpha - target_alpha) < 0.1:
-		csg_box_3d.visible = is_viseble
-		csg_box_3d.use_collision = is_viseble
+		body.visible = is_viseble
+		collision.disabled = not is_viseble
 		reset_alpha()
 	else:
 		current_alpha = lerp(current_alpha, target_alpha, fade_speed * delta)
@@ -63,11 +63,10 @@ func switch_visibility():
 	else:
 		current_alpha = 0.0
 		target_alpha = 1.0
-		csg_box_3d.use_collision = true
 	is_viseble = not is_viseble
 	
 	if is_viseble:
-		csg_box_3d.visible = true
+		body.visible = true
 
 func reset_alpha():
 	# Reinicia o alpha para o estado atual

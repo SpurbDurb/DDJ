@@ -6,11 +6,21 @@ extends Node3D
 # Jogadores
 var player: Node = null
 var player_2: Node = null
+
+# camera events -----
+var in_goal := false
+
+var in_event:= false
+var event_global_position : Vector3
+@export var camera_event_speed: float = 0.05
+@export var event_zoom: float = 2.8
+# camera events -----
+
 # Parâmetros de zoom
 @export var min_zoom: float = 8.0
 @export var max_zoom: float = 0.8
 # Parâmetros de altura
-@export var min_height: float = 1.0
+@export var min_height: float = 1.2
 @export var max_height: float = 2.0
 # Parâmetros de anglo
 @export var min_angle: float = -40.0
@@ -24,7 +34,10 @@ var player_2: Node = null
 
 func _ready() -> void:
 	# Listen for spawned players
-	get_tree().connect("node_added", Callable(self, "_on_node_added"))	
+	get_tree().connect("node_added", Callable(self, "_on_node_added"))
+	
+	# Connect to signals for camera events
+	SignalManager.connect("camera_event", Callable(self, "_on_camera_event"))
 
 	
 func _on_node_added(node: Node) -> void:
@@ -36,15 +49,22 @@ func _on_node_added(node: Node) -> void:
 	if player != null and player_2 != null:
 		_physics_process(0)  # Run physics processing again
 
+func _on_camera_event(global_position: Vector3):
+	event_global_position = global_position
+	in_event = true
 
 func _physics_process(_delta: float) -> void:
-	if player == null:
-		player = get_node_or_null("../Player_W")
-	if player_2 == null:
-		player_2 = get_node_or_null("../Player_B")
-	if player == null or player_2 == null:
+	if player == null: player = get_node_or_null("../Player_W")
+	if player_2 == null: player_2 = get_node_or_null("../Player_B")
+	if player == null or player_2 == null: return
+	
+	if in_event:
+		handle_event(_delta)
 		return
 	
+	handle_players(_delta)
+
+func handle_players(_delta: float) -> void:
 	var player_distance = player.global_transform.origin.distance_to(player_2.global_transform.origin)
 	
 	# Posição central dos dois jogadores
@@ -63,12 +83,29 @@ func _physics_process(_delta: float) -> void:
 	camera_mount.spring_length = lerp(camera_mount.spring_length, target_zoom, zoom_speed)
 	
 	# Ajusta a altura da câmera dinamicamente com base na distância
-	var target_height = clamp(player_distance, min_height, max_height)
-	camera_mount.position.y = lerp(camera_mount.position.y, target_height, zoom_speed)
+	if not in_goal:
+		var target_height = clamp(player_distance, min_height, max_height)
+		camera_mount.position.y = lerp(camera_mount.position.y, target_height, zoom_speed)
+	else:
+		camera_mount.position.y = lerp(camera_mount.position.y, 1.5, zoom_speed)
 	
 	# Ajusta o ângulo da câmera dinamicamente com base na distância
-	var angle_range = deg_to_rad(max_angle - min_angle)  # Intervalo em radianos
-	var normalized_distance = clamp(player_distance / min_zoom, 0, 1)  # Normaliza entre 0 e 1
-	var target_angle = deg_to_rad(min_angle) + normalized_distance * angle_range  # Calcula o ângulo com base na distância
-	# Suaviza a rotação no eixo X
-	camera_3d.rotation.x = lerp(camera_3d.rotation.x, target_angle, zoom_speed)
+	if not in_goal:
+		var angle_range = deg_to_rad(max_angle - min_angle)  # Intervalo em radianos
+		var normalized_distance = clamp(player_distance / min_zoom, 0, 1)  # Normaliza entre 0 e 1
+		var target_angle = deg_to_rad(min_angle) + normalized_distance * angle_range  # Calcula o ângulo com base na distância
+		# Suaviza a rotação no eixo X
+		camera_3d.rotation.x = lerp(camera_3d.rotation.x, target_angle, zoom_speed)
+	if in_goal:
+		camera_3d.rotation.x = lerp(camera_3d.rotation.x, deg_to_rad(-15.0), zoom_speed)
+
+func handle_event(_delta: float) -> void:
+	# Move the camera towards the event_global_position
+	global_transform.origin = lerp(global_transform.origin, event_global_position, camera_speed)
+	# Ajusta o zoom 
+	camera_mount.spring_length = lerp(camera_mount.spring_length, event_zoom , zoom_speed)
+
+	# Check if the camera is close enough to the event position
+	if global_transform.origin.distance_to(event_global_position) < 0.05:
+		# End the event
+		in_event = false

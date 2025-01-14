@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8sm1shogleoq"]
 
-[ext_resource type="Script" path="res://scripts/Environment/Platform/timer_platform.gd" id="1_xca3r"]
+[ext_resource type="Script" path="res://scripts/Environment/Platform/old_timer_platform.gd" id="1_xca3r"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://assets/grid textures/Purple/texture_09.png" id="2_jmnrd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkjbj"]
