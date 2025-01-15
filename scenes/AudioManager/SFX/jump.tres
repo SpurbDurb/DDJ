@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://b0x64tujvwykn"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_33j4v"]
-[ext_resource type="AudioStream" uid="uid://sqoksb42xlgl" path="res://assets/SFX/fav/JUMP.wav" id="2_gbpux"]
+[ext_resource type="AudioStream" uid="uid://sqoksb42xlgl" path="res://assets/SFX/main/JUMP.wav" id="2_gbpux"]
 
 [resource]
 script = ExtResource("1_33j4v")
