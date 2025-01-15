@@ -18,8 +18,10 @@ func _ready():
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("FloatingObject"):
 		objects_in_water.append(body)
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Land_w)
 	if body.is_in_group("Player"):
 		handle_player_on_water(body)
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Land_w)
 
 func _on_body_exited(body: Node) -> void:
 	if body.is_in_group("Player") and body.character == "Black":

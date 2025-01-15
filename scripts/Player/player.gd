@@ -45,6 +45,7 @@ func _physics_process(delta: float) -> void:
 	#fall death
 	if global_transform.origin.y < fall_threshold:
 		spawn_player()
+		spawn_throwable()
 	#move
 	move_and_slide()
 
@@ -52,6 +53,11 @@ func spawn_player():
 	velocity = Vector3.ZERO
 	global_transform.origin = spawn_position
 	reset()
+
+func spawn_throwable():
+	if character == "White": return
+	if $Grab.throawable == null: return
+	$Grab.reset_respawn()
 
 func die() -> void:
 	if spawn_protected: return
