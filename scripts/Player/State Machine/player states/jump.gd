@@ -29,7 +29,6 @@ func move():
 
 func enter_condition() -> bool:
 	if not player.is_on_floor() and not player.is_in_water: return true
-	var will_jump = false
 	# Handling jump input and start of the jump
 	if character == "White" and player.is_on_floor() and Input.is_action_just_pressed("jump"):
 		animation_player.speed_scale = 1

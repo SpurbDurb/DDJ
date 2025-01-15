@@ -21,7 +21,7 @@ func exit() -> void:
 
 func update(_deta:float):
 	if character == "White":
-		if Input.is_action_pressed("sprint") and stamina_bar.value > 0:
+		if Input.is_action_pressed("sprint") and stamina_bar.value > 0 and not $"../../StaminaBarSprite".is_recovering:
 			player_speed = SPRINT_SPEED
 			animation_player.speed_scale = 1.5
 		else:

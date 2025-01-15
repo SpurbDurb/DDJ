@@ -3,7 +3,7 @@ extends Sprite3D
 @export var player: Node3D
 @export var progressBar: ProgressBar
 @export var staminaIncreaseSpeed : int = 50
-@export var staminaDecreaseSpeed : int = 50
+@export var staminaDecreaseSpeed : int = 45
 
 
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
@@ -12,23 +12,25 @@ extends Sprite3D
 
 var hide_stamina_bar_timer: float = 0
 var is_bar_visible: bool = false  
-var is_progressing: bool = false
+var is_recovering: bool = false
 
 func _ready() -> void:
 	modulate.a = 0
 	hide()
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var is_player_state_run = player.get_current_state().name == "run"
 	var is_player_state_die = player.get_current_state().name == "die"
 	var is_player_sprinting = is_player_state_run and Input.is_action_pressed("sprint")
+	if Input.is_action_just_pressed("sprint"):
+		is_recovering = false
 	if player:
 		global_position = player.global_position
 
 	if camera:
 		look_at(camera.global_position, Vector3.UP)
 
-	if is_player_sprinting:
+	if is_player_sprinting and not is_recovering:
 		decrease_stamina_bar(delta)
 		show_stamina_bar()
 	elif is_player_state_die:
@@ -50,6 +52,8 @@ func decrease_stamina_bar(delta: float) -> void:
 		progressBar.value -= delta * staminaDecreaseSpeed
 		if progressBar.value < 0:
 			progressBar.value = 0
+	else:
+		is_recovering = true
 
 func show_stamina_bar() -> void:
 	if not is_bar_visible:
