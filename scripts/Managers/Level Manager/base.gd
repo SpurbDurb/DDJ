@@ -32,7 +32,7 @@ func _on_entered_goal() -> void:
 	$camera_pivot.in_goal = true
 	goal_node._move()
 	LevelManager.level_up()
-	set_player_spawn_pos_by_level(LevelManager.level)
+	update_spawn_pos()
 
 func _on_exited_goal() -> void:
 	LevelManager.quick_despawn_level()
@@ -52,6 +52,10 @@ func disconnect_start() -> void:
 	if goal_node:
 		goal_node.disconnect("entered_goal", Callable(self, "_on_entered_goal"))
 		goal_node.disconnect("exited_goal", Callable(self, "_on_exited_goal"))
+
+func update_spawn_pos() -> void:
+	player_w.spawn_position = goal_node.target_position + Vector3(0.3, 1.5, 0) 
+	player_b.spawn_position = goal_node.target_position + Vector3(-0.3, 1.5, 0)
 
 func set_player_spawn_pos_by_level(level: int) -> void:
 	player_w.spawn_position = start_position_list[level-1] + Vector3(0.3, 1.5, 0) 
