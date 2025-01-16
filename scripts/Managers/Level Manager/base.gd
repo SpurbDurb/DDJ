@@ -1,6 +1,7 @@
 extends Node3D
 
 const Start = preload("res://scenes/Environment/goal.tscn")
+const WIND_AMBIENCE_14720 = preload("res://assets/wind-ambience-14720.mp3")
 @onready var player_w: CharacterBody3D = $Player_W
 @onready var player_b: CharacterBody3D = $Player_B
 var goal_node
@@ -9,6 +10,7 @@ var start_position_list = [Vector3(2, 0, 0.5), Vector3(-2.753, -0.3, -2.285), Ve
 func _ready() -> void:
 	LevelManager.init()
 	LevelManager.connect("level_spawned", Callable(self, "_on_level_spawned"))
+	AudioManager.play_music(WIND_AMBIENCE_14720, "sfx_alt2", -14, 30)
 	#temp
 	open_level(1)
 
