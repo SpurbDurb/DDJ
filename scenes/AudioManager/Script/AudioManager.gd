@@ -5,6 +5,7 @@ var sound_effect_dict: Dictionary = {} ## Loads all registered SoundEffects on r
 
 @export var sound_effects: Array[SoundEffect] ## Stores all possible SoundEffects that can be played.
 
+
 func _ready() -> void:
 	for sound_effect: SoundEffect in sound_effects:
 		sound_effect_dict[sound_effect.type] = sound_effect
@@ -24,5 +25,6 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			new_audio.finished.connect(sound_effect.on_audio_finished)
 			new_audio.finished.connect(new_audio.queue_free)
 			new_audio.play()
+			
 	else:
 		push_error("Audio Manager failed to find setting for type ", type)

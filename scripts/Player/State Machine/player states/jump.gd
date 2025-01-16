@@ -2,6 +2,7 @@ extends Player_State
 
 var direction: Vector3
 var camera_pivot
+var is_walking: bool = false
 
 func _ready() -> void:
 	call_deferred("_deferred_ready")
@@ -21,11 +22,12 @@ func update(_delta: float):
 
 func move():
 	var input_dir := get_input()
-	direction = (camera_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	direction = (camera_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()	
+	if direction: 
 		player.look_at(player.position + direction)
 		player.velocity.x = direction.x * SPEED
 		player.velocity.z = direction.z * SPEED
+
 
 func enter_condition() -> bool:
 	if not player.is_on_floor() and not player.is_in_water: return true

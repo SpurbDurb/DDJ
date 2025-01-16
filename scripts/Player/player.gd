@@ -17,6 +17,8 @@ var spawn_protected: bool = false
 @onready var timer: Timer = Timer.new()
 var spawn_cooldown = 1
 var is_in_water: bool = false
+var was_moving: bool = false  # Tracks whether the player was moving in the last frame
+
 
 func _ready() -> void:
 	#Spawn
@@ -46,8 +48,16 @@ func _physics_process(delta: float) -> void:
 	if global_transform.origin.y < fall_threshold:
 		spawn_player()
 		spawn_throwable()
-	#move
+
 	move_and_slide()
+	handle_walking_sound()
+
+func handle_walking_sound() -> void:
+	var is_moving = velocity.length() > 0.1  # Check if the player is moving
+	if is_moving and is_on_floor():
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Walking)
+
+
 
 func spawn_player():
 	velocity = Vector3.ZERO

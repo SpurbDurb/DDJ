@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://b7xqcm4u2mqu6"
-path="res://.godot/imported/SE_PM_JUMP.wav-cb4314d5f9e3ccfe4647a4ad95654bfa.sample"
+uid="uid://6ewml3qtwd65"
+path="res://.godot/imported/FOOTSTEPS.wav-460b9ccdeef25cdc7402403e59245a1d.sample"
 
 [deps]
 
-source_file="res://assets/sfx/SE_PM_JUMP.wav"
-dest_files=["res://.godot/imported/SE_PM_JUMP.wav-cb4314d5f9e3ccfe4647a4ad95654bfa.sample"]
+source_file="res://assets/SFX/main/FOOTSTEPS.wav"
+dest_files=["res://.godot/imported/FOOTSTEPS.wav-460b9ccdeef25cdc7402403e59245a1d.sample"]
 
 [params]
 
