@@ -10,12 +10,12 @@ uv1_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_hd2rg"]
 
 [node name="Goal" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
 material_override = SubResource("StandardMaterial3D_jf558")
 use_collision = true
 collision_layer = 7
-size = Vector3(1.4, 0.3, 1.4)
+size = Vector3(1.4, 0.6, 1.4)
 script = ExtResource("2_ex6e5")
-duration = 5.0
 
 [node name="Area3D" type="Area3D" parent="."]
 

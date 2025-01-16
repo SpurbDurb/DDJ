@@ -3880,6 +3880,7 @@ initial_state = NodePath("idle")
 
 [node name="run" type="Node" parent="state machine" node_paths=PackedStringArray("stamina_bar")]
 script = ExtResource("3_vgyyq")
+SPRINT_SPEED = 3.2
 stamina_bar = NodePath("../../StaminaBarSprite/SubViewport/Control/StaminaBar")
 
 [node name="idle" type="Node" parent="state machine"]

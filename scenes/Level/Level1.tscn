@@ -21,7 +21,7 @@ uv1_triplanar = true
 [node name="Level1" type="Node3D"]
 
 [node name="Goal" parent="." instance=ExtResource("1_77ynm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.753, -0.15, -2.285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.753, -0.306285, -2.285)
 
 [node name="Map" type="Node3D" parent="."]
 
