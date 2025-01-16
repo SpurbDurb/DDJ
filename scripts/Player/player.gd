@@ -51,13 +51,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func play_walk_r() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Move_r)
-
-func play_walk_l() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Move_l)
-
-
 func spawn_player():
 	velocity = Vector3.ZERO
 	global_transform.origin = spawn_position
@@ -90,3 +83,15 @@ func get_current_state():
 	
 func set_is_in_water(value:bool) -> void:
 	is_in_water = value
+
+
+##AUDIO##
+
+func play_walk_r() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Move_r)
+
+func play_walk_l() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Move_l)
+
+func play_push() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Push)

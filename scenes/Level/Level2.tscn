@@ -281,11 +281,15 @@ connection_id = 4
 transform = Transform3D(-0.2, 0.000142001, 6.61334e-05, 0.000141901, 0.2, -0.000296264, -6.63477e-05, -0.000296216, -0.2, -6.98951, -0.00953837, -10.4486)
 connection_id = 4
 multiple = true
+one_time = null
+call_back = null
 
 [node name="Button2" parent="Map/Multiple Button" instance=ExtResource("7_4j754")]
 transform = Transform3D(-0.2, 0, 1.74846e-08, 0, 0.2, 0, -1.74846e-08, 0, -0.2, -8.98951, -0.00953837, -10.4486)
 connection_id = 4
 multiple = true
+one_time = null
+call_back = null
 
 [node name="Laser" type="Node3D" parent="Map"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.275, 0, -11.525)
@@ -421,21 +425,33 @@ distance = 6.5
 
 [node name="Button" parent="Environment" instance=ExtResource("7_4j754")]
 transform = Transform3D(-6.63389e-05, -0.000296216, -0.2, 0.000141901, 0.2, -0.000296264, 0.2, -0.000142001, -6.61246e-05, -4.84525, -0.022063, -2.31052)
+connection_id = null
+multiple = null
+one_time = null
+call_back = null
 
 [node name="Button3" parent="Environment" instance=ExtResource("7_4j754")]
 transform = Transform3D(-0.2, 0.000142001, 6.61333e-05, 0.000141901, 0.2, -0.000296264, -6.63476e-05, -0.000296216, -0.2, -0.77971, -0.022063, -2.3021)
 connection_id = 3
+multiple = null
+one_time = null
 call_back = true
 texture = ExtResource("15_l530w")
 
 [node name="Button2" parent="Environment" instance=ExtResource("7_4j754")]
 transform = Transform3D(6.63564e-05, 0.000296216, 0.2, 0.000141901, 0.2, -0.000296264, -0.2, 0.000142001, 6.61421e-05, 5.29889, -0.022063, 2.8547)
 connection_id = 2
+multiple = null
+one_time = null
+call_back = null
 texture = ExtResource("16_glfby")
 
 [node name="Button4" parent="Environment" instance=ExtResource("7_4j754")]
 transform = Transform3D(6.63564e-05, 0.000296216, 0.2, 0.000141901, 0.2, -0.000296264, -0.2, 0.000142001, 6.61421e-05, 5.29889, -0.022063, -0.1453)
 connection_id = 5
+multiple = null
+one_time = null
+call_back = null
 texture = ExtResource("17_06pav")
 
 [node name="Door" parent="Environment" instance=ExtResource("18_npcbg")]

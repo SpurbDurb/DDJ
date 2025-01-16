@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://811deu0cgvk4"
+path="res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - Error - 1.wav-71630dbd2be894d15c6a81d89f9af3fc.sample"
+
+[deps]
+
+source_file="res://assets/Audio/UI/pack1/JDSherbert - Ultimate UI SFX Pack - Error - 1.wav"
+dest_files=["res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - Error - 1.wav-71630dbd2be894d15c6a81d89f9af3fc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -97,11 +97,17 @@ script = ExtResource("10_eeyea")
 
 [node name="Button" parent="Multiple Button" instance=ExtResource("10_j1v4n")]
 transform = Transform3D(0.2, -0.000142001, -6.61159e-05, 0.000141901, 0.2, -0.000296264, 6.63302e-05, 0.000296216, 0.2, -2, -0.00953841, 0)
+connection_id = null
 multiple = true
+one_time = null
+call_back = null
 
 [node name="Button2" parent="Multiple Button" instance=ExtResource("10_j1v4n")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2, -0.00953841, 0)
+connection_id = null
 multiple = true
+one_time = null
+call_back = null
 
 [node name="Laser" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0, 0)

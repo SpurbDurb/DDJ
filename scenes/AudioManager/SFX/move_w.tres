@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://dnfl13iq1ncnf"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_lb2y8"]
-[ext_resource type="AudioStream" uid="uid://cx15i438yqq38" path="res://assets/SFX/main/SWIM_ON_WATER.wav" id="2_e3f35"]
+[ext_resource type="AudioStream" uid="uid://cx15i438yqq38" path="res://assets/Audio/main/SWIM_ON_WATER.wav" id="2_e3f35"]
 
 [resource]
 script = ExtResource("1_lb2y8")

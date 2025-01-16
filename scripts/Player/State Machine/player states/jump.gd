@@ -49,6 +49,8 @@ func enter_condition() -> bool:
 
 func exit_condition() -> bool:
 	if player.velocity.y == 0 or (player.is_in_water and player.velocity.y <= 0):
+		if not player.is_in_water:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Land)
 		return true
 	return false
 

@@ -30,6 +30,7 @@ func _on_area_3d_body_entered(_body: Node3D) -> void:
 		locked = true
 	is_pressed = true
 	anim.play("pressdown")
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Press_Down)
 	
 	if multiple: 
 		emit_signal("entered")
@@ -43,6 +44,7 @@ func _on_area_3d_body_exited(_body: Node3D) -> void:
 	
 	is_pressed = false
 	anim.play("pressup")
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Press_Up)
 	
 	if multiple: 
 		emit_signal("exited")

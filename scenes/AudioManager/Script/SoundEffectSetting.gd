@@ -11,7 +11,13 @@ enum SOUND_EFFECT_TYPE {
 	Move_sub_r,
 	Move_sub_l,
 	Move_w,
+	Land,
 	Land_w,
+	Press_Down,
+	Press_Up,
+	Push,
+	Pick_up,
+	Throw
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.
@@ -20,6 +26,8 @@ enum SOUND_EFFECT_TYPE {
 @export_range(-40, 20) var volume: float = 0 ## The volume of the [member sound_effect].
 @export_range(0.0, 4.0,.01) var pitch_scale: float = 1.0 ## The pitch scale of the [member sound_effect].
 @export_range(0.0, 1.0,.01) var pitch_randomness: float = 0.0 ## The pitch randomness setting of the [member sound_effect].
+@export_enum("Master", "Music", "SFX", "SFX_alt" ,"SFX_alt2")
+var bus: String = "SFX"
 
 var audio_count: int = 0 ## The instances of this [AudioStreamMP3] currently playing.
 
