@@ -14,7 +14,6 @@ var moving := false
 func _ready() -> void:
 	initial_position = global_transform.origin
 	target_position = initial_position + Vector3(0, LevelManager.level_up_offset, 0)
-	print(initial_position)
 
 func _physics_process(delta: float) -> void:
 	if moving:
