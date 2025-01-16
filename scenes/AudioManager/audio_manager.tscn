@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8tbtllbkhwio"]
+[gd_scene load_steps=18 format=3 uid="uid://c8tbtllbkhwio"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/AudioManager.gd" id="1_d5qgc"]
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="2_t17x2"]
@@ -13,6 +13,8 @@
 [ext_resource type="Resource" uid="uid://bay1ee7buheho" path="res://scenes/AudioManager/SFX/press_up.tres" id="11_bml46"]
 [ext_resource type="Resource" uid="uid://cm8ngnfvtducw" path="res://scenes/AudioManager/SFX/land.tres" id="12_pvnru"]
 [ext_resource type="Resource" uid="uid://c4tumhfpm4wjg" path="res://scenes/AudioManager/SFX/push.tres" id="13_y83ob"]
+[ext_resource type="Resource" uid="uid://b1qnhaeoboivx" path="res://scenes/AudioManager/SFX/grab.tres" id="14_4jcv8"]
+[ext_resource type="Resource" uid="uid://b4tbtrwchqs63" path="res://scenes/AudioManager/SFX/throw.tres" id="15_mhfsn"]
 
 [sub_resource type="Resource" id="Resource_0g3wt"]
 script = ExtResource("2_t17x2")
@@ -36,4 +38,4 @@ bus = "SFX"
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_d5qgc")
-sound_effects = Array[ExtResource("2_t17x2")]([ExtResource("4_veyeo"), ExtResource("3_njfwf"), ExtResource("5_jwcr2"), ExtResource("5_l7yyr"), ExtResource("6_8cji7"), SubResource("Resource_0g3wt"), SubResource("Resource_2imo4"), ExtResource("10_4kkq4"), ExtResource("11_bml46"), ExtResource("12_pvnru"), ExtResource("13_y83ob")])
+sound_effects = Array[ExtResource("2_t17x2")]([ExtResource("4_veyeo"), ExtResource("3_njfwf"), ExtResource("5_jwcr2"), ExtResource("5_l7yyr"), ExtResource("6_8cji7"), SubResource("Resource_0g3wt"), SubResource("Resource_2imo4"), ExtResource("10_4kkq4"), ExtResource("11_bml46"), ExtResource("12_pvnru"), ExtResource("13_y83ob"), ExtResource("14_4jcv8"), ExtResource("15_mhfsn")])

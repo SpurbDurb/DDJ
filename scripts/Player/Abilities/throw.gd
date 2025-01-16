@@ -40,6 +40,7 @@ func throw_object() -> void:
 	throawable.apply_central_impulse(throw_direction * throw_force)
 	
 	throwing = true
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Throw)
 	pause_timer.start()
 
 func _on_body_entered(body: Node3D) -> void:
@@ -49,6 +50,7 @@ func _on_body_entered(body: Node3D) -> void:
 		throawable.sleeping = true
 		throawable.gravity_scale = 0
 		throawable.rotation = Vector3(0, 0, 0)
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Grab)
 
 func _physics_process(_delta: float) -> void:
 	if not throawable: return

@@ -95,3 +95,6 @@ func play_walk_l() -> void:
 
 func play_push() -> void:
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Push)
+
+func play_move_w() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Move_w)

@@ -16,8 +16,8 @@ enum SOUND_EFFECT_TYPE {
 	Press_Down,
 	Press_Up,
 	Push,
-	Pick_up,
-	Throw
+	Grab,
+	Throw,
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.
