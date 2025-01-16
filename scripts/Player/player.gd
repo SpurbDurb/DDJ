@@ -50,12 +50,12 @@ func _physics_process(delta: float) -> void:
 		spawn_throwable()
 
 	move_and_slide()
-	handle_walking_sound()
 
-func handle_walking_sound() -> void:
-	var is_moving = velocity.length() > 0.1  # Check if the player is moving
-	if is_moving and is_on_floor():
-		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Move)
+func play_walk_r() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Move_r)
+
+func play_walk_l() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Move_l)
 
 
 func spawn_player():

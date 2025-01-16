@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://bjt3wbcgne8fj"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_t1i0c"]
+[ext_resource type="AudioStream" uid="uid://dduvodp3jdudf" path="res://scenes/Level/SMG_Player_Motion_Sounds/SE_PM_FOOTNOTE_L.wav" id="2_14kcx"]
+
+[resource]
+script = ExtResource("1_t1i0c")
+limit = 1
+type = 2
+sound_effect = ExtResource("2_14kcx")
+volume = -10.0
+pitch_scale = 1.2
+pitch_randomness = 0.2

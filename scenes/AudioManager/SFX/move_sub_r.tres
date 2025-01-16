@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://dtxvdlc5dwxs3"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_kyiru"]
+[ext_resource type="AudioStream" uid="uid://dd5rxqw60r0d4" path="res://assets/SFX/other/SE_PM_FOOTNOTE_SUB_R.wav" id="2_w3ggs"]
+
+[resource]
+script = ExtResource("1_kyiru")
+limit = 10
+type = 3
+sound_effect = ExtResource("2_w3ggs")
+volume = -10.0
+pitch_scale = 1.2
+pitch_randomness = 0.2
