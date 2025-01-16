@@ -10,7 +10,7 @@ var start_position_list = [Vector3(2, 0, 0.5), Vector3(-2.753, -0.3, -2.285), Ve
 func _ready() -> void:
 	LevelManager.init()
 	LevelManager.connect("level_spawned", Callable(self, "_on_level_spawned"))
-	AudioManager.play_music(WIND_AMBIENCE_14720, "sfx_alt2", -14, 10)
+	AudioManager.play_music(WIND_AMBIENCE_14720, "sfx_alt2", -10, 10)
 	#temp
 	open_level(1)
 

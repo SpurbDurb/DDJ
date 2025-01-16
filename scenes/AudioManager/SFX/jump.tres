@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_33j4v")
-limit = 5
+limit = 2
 type = 0
 sound_effect = ExtResource("2_mtl6i")
 volume = -4.0
-pitch_scale = 1.2
+pitch_scale = 0.9
 pitch_randomness = 0.1
-bus = "SFX_alt"
+bus = "SFX_alt2"
