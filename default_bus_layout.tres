@@ -8,7 +8,7 @@ band_db/10000_hz = -25.8
 
 [sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_fgegk"]
 resource_name = "Phaser"
-depth = 0.1
+depth = 0.2
 
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_ytnlp"]
 resource_name = "EQ"
