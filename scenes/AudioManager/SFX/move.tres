@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://cyv6a08snhbc3"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_neiq7"]
+[ext_resource type="AudioStream" uid="uid://6ewml3qtwd65" path="res://assets/SFX/main/FOOTSTEPS.wav" id="2_uqpco"]
+
+[resource]
+script = ExtResource("1_neiq7")
+limit = 5
+type = 1
+sound_effect = ExtResource("2_uqpco")
+volume = -5.0
+pitch_scale = 0.8
+pitch_randomness = 0.2
