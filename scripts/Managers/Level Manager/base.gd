@@ -12,7 +12,7 @@ func _ready() -> void:
 	LevelManager.connect("level_spawned", Callable(self, "_on_level_spawned"))
 	AudioManager.play_music(WIND_AMBIENCE_14720, "sfx_alt2", -10, 10)
 	#temp
-	open_level(3)
+	open_level(1)
 
 func open_level(level:int) -> void:
 	freeze_player(player_w)

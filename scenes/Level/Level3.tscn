@@ -269,20 +269,20 @@ script = ExtResource("4_rgsxk")
 shape = SubResource("BoxShape3D_w723h")
 
 [node name="floor3" type="CSGBox3D" parent="Map"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.1807, 0.4, 10.2623)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.1807, 0.4, 10.2123)
 material_override = SubResource("StandardMaterial3D_mj05j")
 use_collision = true
 collision_layer = 5
 collision_mask = 5
-size = Vector3(3.6, 1, 2)
+size = Vector3(3.5, 1, 2)
 
 [node name="floor8" type="CSGBox3D" parent="Map"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.4307, 0.4, 10.2623)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.4307, 0.4, 10.2123)
 material_override = SubResource("StandardMaterial3D_mj05j")
 use_collision = true
 collision_layer = 5
 collision_mask = 5
-size = Vector3(3.6, 1, 2.1)
+size = Vector3(3.5, 1, 2.1)
 
 [node name="floor4" type="CSGBox3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4138, -0.3, 4.2)
@@ -423,12 +423,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 1, 6)
 transform = Transform3D(-1.0014, 0, 8.75453e-08, 0, 1.0014, 0, -8.75453e-08, 0, -1.0014, -2.23051, 0.89455, 9.86486)
 
 [node name="Laser1" parent="Environment/Laser" instance=ExtResource("14_q8dgk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.399441)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.350981)
 connection_id = 3
 beam_size = 8.0
 
 [node name="Laser2" parent="Environment/Laser" instance=ExtResource("14_q8dgk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.494847, -0.399441)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.494847, -0.350981)
 connection_id = 3
 beam_size = 8.0
 
