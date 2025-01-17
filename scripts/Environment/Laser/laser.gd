@@ -26,13 +26,15 @@ func _ready() -> void:
 	SignalManager.connect_to_signal(connection_id, Callable(self, "_on_connection_triggered"))
 
 func _on_connection_triggered():
-	if activated: 
+	if activated:
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Laser)
 		beam.active = false
 		beam_2.active = false
 		beam.deactivate()
 		beam_2.deactivate()
 		activated = false
 	else:
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Laser)
 		beam.active = true
 		beam_2.active = true
 		beam.activate()
@@ -52,4 +54,6 @@ func check_for_player_collision() -> void:
 	if activated and beam.is_colliding():
 		var collided_obj = beam.get_collider()
 		if collided_obj and collided_obj.is_in_group("Player"):
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Laser_Death)
 			collided_obj.die()
+			

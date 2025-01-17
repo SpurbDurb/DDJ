@@ -63,6 +63,7 @@ size = Vector3(0.25, 0.75, 2)
 [node name="Door" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 1, 0)
 script = ExtResource("1_5kqfx")
+fade_speed = null
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 4

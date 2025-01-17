@@ -31,8 +31,11 @@ func _physics_process(delta: float) -> void:
 
 func _move() -> void:
 	moving = true  # Start moving
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
+
 
 func _on_move_finished():
+	AudioManager.fade_out_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
 	emit_signal("exited_goal")
 	lock = true
 

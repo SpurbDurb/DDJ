@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 	key.global_transform.origin = key.global_transform.origin.lerp(target_position, 0.1)
 	
 	if key.global_transform.origin.distance_to(lock.global_transform.origin) < 0.2:
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Door)
 		$CollisionShape3D.disabled = true
 		current_alpha = lerp(current_alpha, 0.0, fade_speed * delta)
 		lock_material.albedo_color.a = current_alpha

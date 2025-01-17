@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=4 uid="uid://bjt3wbcgne8fj"]
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=4 uid="uid://ebv2id2b4ixb"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_t1i0c"]
 

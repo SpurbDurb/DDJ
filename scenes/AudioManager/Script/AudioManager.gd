@@ -5,6 +5,7 @@ const EQUATORIAL_COMPLEX = preload("res://assets/Audio/music/Equatorial Complex.
 const SPACE_JAZZ = preload("res://assets/Audio/music/Space Jazz.mp3")
 
 var sound_effect_dict: Dictionary = {} ## Loads all registered SoundEffects on ready as a reference.
+var active_audio_players: Dictionary = {} # Stores lists of active AudioStreamPlayers by type
 
 @export var sound_effects: Array[SoundEffect] ## Stores all possible SoundEffects that can be played.
 
@@ -13,13 +14,12 @@ func _ready() -> void:
 		sound_effect_dict[sound_effect.type] = sound_effect
 	play_music(EQUATORIAL_COMPLEX, "Music", -18, 30)
 
-
-func play_music(audio_stream: AudioStream, bus_name: String, volume: int , delay: float) -> void:
+func play_music(audio_stream: AudioStream, bus_name: String, volume: int, delay: float) -> void:
 	var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 	add_child(music_player)
-	music_player.stream = audio_stream 
-	music_player.bus = bus_name 
-	music_player.autoplay = false 
+	music_player.stream = audio_stream
+	music_player.bus = bus_name
+	music_player.autoplay = false
 	music_player.volume_db = volume
 	music_player.play()
 	
@@ -55,5 +55,38 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			new_audio.finished.connect(new_audio.queue_free)
 			new_audio.play()
 			
+			if not active_audio_players.has(type):
+				active_audio_players[type] = []
+			active_audio_players[type].append(new_audio)
+			
 	else:
 		push_error("Audio Manager failed to find setting for type ", type)
+
+func fade_out_audio(type: SoundEffect.SOUND_EFFECT_TYPE, duration: float = 2.0) -> void:
+	if not active_audio_players.has(type):
+		push_error("No active AudioStreamPlayer instances found for type: ", type)
+		return
+
+	var players_to_fade = active_audio_players[type].duplicate() # Copy the list to avoid modification issues
+	var steps = 10 # Number of fade steps
+
+	# Start fading out each player
+	for audio_player in players_to_fade:
+		if not audio_player.is_queued_for_deletion(): # Ensure the player is still valid
+			var fade_timer = Timer.new()
+			add_child(fade_timer)
+			fade_timer.wait_time = duration / steps
+			fade_timer.one_shot = false
+
+			var initial_volume = audio_player.volume_db
+			var step_volume_decrease = (initial_volume + 80) / steps
+
+			fade_timer.connect("timeout", func() -> void:
+				audio_player.volume_db -= step_volume_decrease
+				if audio_player.volume_db <= -80: # Fully faded out
+					audio_player.stop()
+					audio_player.queue_free()
+					active_audio_players[type].erase(audio_player)
+					fade_timer.queue_free()
+			)
+			fade_timer.start()
