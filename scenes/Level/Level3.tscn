@@ -433,7 +433,7 @@ connection_id = 3
 beam_size = 8.0
 
 [node name="Goal" parent="." instance=ExtResource("21_ag27m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.753, -0.306005, -0.766918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19411, 0.593995, 12.7331)
 
 [node name="box2" parent="." instance=ExtResource("8_mx70p")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.44932, 0.3, 0.86815)
