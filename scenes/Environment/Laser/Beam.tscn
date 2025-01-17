@@ -27,12 +27,12 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Curve" id="Curve_wdvdp"]
+[sub_resource type="Curve" id="Curve_537k2"]
 _data = [Vector2(0, 0.549574), 0.0, 0.0, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_6ympn"]
-curve = SubResource("Curve_wdvdp")
+curve = SubResource("Curve_537k2")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6c2co"]
 resource_local_to_scene = true
@@ -57,12 +57,12 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Curve" id="Curve_g8k47"]
+[sub_resource type="Curve" id="Curve_dw7pv"]
 _data = [Vector2(0, 0.459488), 0.0, 0.0, 0, 0, Vector2(0.304945, 0.979211), 0.0, 0.0, 0, 0, Vector2(0.884615, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_rjsst"]
-curve = SubResource("Curve_g8k47")
+curve = SubResource("Curve_dw7pv")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v2nhf"]
 resource_local_to_scene = true

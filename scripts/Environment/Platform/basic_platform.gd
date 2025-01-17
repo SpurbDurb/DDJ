@@ -33,13 +33,13 @@ func _on_connection_triggered():
 		target_alpha = 0.0
 	else:
 		target_alpha = 1.0
-		csg_box_3d.use_collision = is_viseble
+		csg_box_3d.use_collision = true
 	is_viseble = not is_viseble
 	
 	if is_viseble:
 		csg_box_3d.visible = true
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# Faz a transição de transparência com `lerp`
 	if abs(current_alpha - target_alpha) < 0.1:
 		csg_box_3d.visible = is_viseble

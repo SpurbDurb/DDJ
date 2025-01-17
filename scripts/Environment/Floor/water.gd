@@ -35,7 +35,6 @@ func handle_player_on_water(body: PhysicsBody3D) -> void:
 	if depth <= 0: return # podem tocar na agua sem mudar o estado
 	
 	if body.character == "Black":
-		#AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Move_w)
 		body.set_is_in_water(true)
 		
 	elif body.character == "White":
