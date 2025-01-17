@@ -75,10 +75,6 @@ distance = 1.5
 
 [node name="Button" parent="Environment" instance=ExtResource("6_og76t")]
 transform = Transform3D(-6.63389e-05, -0.000296216, -0.2, 0.000141901, 0.2, -0.000296264, 0.2, -0.000142001, -6.61246e-05, 2.25475, -0.022063, -1.95611)
-connection_id = null
-multiple = null
-one_time = null
-call_back = null
 
 [node name="Door" parent="Environment" instance=ExtResource("7_w21ar")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 0.5, 3)

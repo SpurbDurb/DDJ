@@ -49,8 +49,8 @@ func _on_node_added(node: Node) -> void:
 	if player != null and player_2 != null:
 		_physics_process(0)  # Run physics processing again
 
-func _on_camera_event(global_position: Vector3):
-	event_global_position = global_position
+func _on_camera_event(global_position_for_event: Vector3):
+	event_global_position = global_position_for_event
 	in_event = true
 
 func _physics_process(_delta: float) -> void:

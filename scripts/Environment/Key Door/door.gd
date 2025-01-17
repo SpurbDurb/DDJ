@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 	var target_position = lock.global_transform.origin + offset_from_lock
 	key.global_transform.origin = key.global_transform.origin.lerp(target_position, 0.1)
 	
-	if key.global_transform.origin.distance_to(lock.global_transform.origin) < 0.1:
+	if key.global_transform.origin.distance_to(lock.global_transform.origin) < 0.2:
 		$CollisionShape3D.disabled = true
 		current_alpha = lerp(current_alpha, 0.0, fade_speed * delta)
 		lock_material.albedo_color.a = current_alpha

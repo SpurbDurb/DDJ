@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://cm8ngnfvtducw"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_11ve5"]
-[ext_resource type="AudioStream" uid="uid://v4uwgmn1onyp" path="res://assets/Audio/main/SE_PM_LAND.wav" id="2_mr5go"]
+[ext_resource type="AudioStream" uid="uid://v4uwgmn1onyp" path="res://assets/Audio/main/SE_PM_LAND.wav" id="2_kxw5s"]
 
 [resource]
 script = ExtResource("1_11ve5")
 limit = 2
 type = 6
-sound_effect = ExtResource("2_mr5go")
+sound_effect = ExtResource("2_kxw5s")
 volume = 2.0
 pitch_scale = 1.0
 pitch_randomness = 0.1

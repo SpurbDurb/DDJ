@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://dnfl13iq1ncnf"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_lb2y8"]
-[ext_resource type="AudioStream" uid="uid://dt8p1ayj4ognv" path="res://assets/Audio/other/SE_PM_SWIM_ACCEL_ON_WATER.wav" id="2_qisxc"]
+[ext_resource type="AudioStream" uid="uid://dt8p1ayj4ognv" path="res://assets/Audio/other/SE_PM_SWIM_ACCEL_ON_WATER.wav" id="2_pmc48"]
 
 [resource]
 script = ExtResource("1_lb2y8")
 limit = 1
 type = 5
-sound_effect = ExtResource("2_qisxc")
+sound_effect = ExtResource("2_pmc48")
 volume = -10.0
 pitch_scale = 1.0
 pitch_randomness = 0.1

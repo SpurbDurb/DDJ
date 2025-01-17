@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://c4tumhfpm4wjg"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_qj272"]
-[ext_resource type="AudioStream" uid="uid://bu40o7j2ron52" path="res://assets/Audio/main/PUSHING_OBJ.wav" id="2_hksa6"]
+[ext_resource type="AudioStream" uid="uid://bu40o7j2ron52" path="res://assets/Audio/main/PUSHING_OBJ.wav" id="2_gd6f2"]
 
 [resource]
 script = ExtResource("1_qj272")
 limit = 1
 type = 10
-sound_effect = ExtResource("2_hksa6")
+sound_effect = ExtResource("2_gd6f2")
 volume = -10.0
 pitch_scale = 0.7
 pitch_randomness = 0.1

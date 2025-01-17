@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://bay1ee7buheho"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_w2ysm"]
-[ext_resource type="AudioStream" uid="uid://vee1y6k8sm4l" path="res://assets/Audio/UI/pack2/Wood Block2.wav" id="2_cwn5r"]
+[ext_resource type="AudioStream" uid="uid://vee1y6k8sm4l" path="res://assets/Audio/UI/pack2/Wood Block2.wav" id="2_b6x1q"]
 
 [resource]
 script = ExtResource("1_w2ysm")
 limit = 5
 type = 9
-sound_effect = ExtResource("2_cwn5r")
+sound_effect = ExtResource("2_b6x1q")
 volume = -14.0
 pitch_scale = 0.9
 pitch_randomness = 0.0

@@ -179,60 +179,66 @@ size = Vector3(1.49198, 2, 1.4759)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.532, -0.5, -2.7)
 
 [node name="lf1" type="CSGBox3D" parent="Map/Lazer floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0, -1.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0.25, -1.1)
 material_override = SubResource("StandardMaterial3D_mj05j")
 use_collision = true
 collision_layer = 5
 collision_mask = 5
+size = Vector3(1, 0.5, 1)
 
 [node name="lf2" type="CSGBox3D" parent="Map/Lazer floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0, 1.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0.25, 1.9)
 material_override = SubResource("StandardMaterial3D_mj05j")
 use_collision = true
 collision_layer = 5
 collision_mask = 5
+size = Vector3(1, 0.5, 1)
 
 [node name="Lazer floor2" type="Node3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.532, -0.5, -2.7)
 
 [node name="lf1" type="CSGBox3D" parent="Map/Lazer floor2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0, -1.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0.25, -1.8)
 material_override = SubResource("StandardMaterial3D_mj05j")
 use_collision = true
 collision_layer = 5
 collision_mask = 5
+size = Vector3(1, 0.5, 1)
 
 [node name="lf2" type="CSGBox3D" parent="Map/Lazer floor2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0, 2.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0.25, 2.6)
 material_override = SubResource("StandardMaterial3D_mj05j")
 use_collision = true
 collision_layer = 5
 collision_mask = 5
+size = Vector3(1, 0.5, 1)
 
 [node name="Lazer floor3" type="Node3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.532, -0.5, -2.7)
 
 [node name="lf1" type="CSGBox3D" parent="Map/Lazer floor3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0, -1.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0.25, -1.1)
 material_override = SubResource("StandardMaterial3D_mj05j")
 use_collision = true
 collision_layer = 5
 collision_mask = 5
+size = Vector3(1, 0.5, 1)
 
 [node name="lf2" type="CSGBox3D" parent="Map/Lazer floor3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0, 1.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91821e-05, 0.25, 1.9)
 material_override = SubResource("StandardMaterial3D_mj05j")
 use_collision = true
 collision_layer = 5
 collision_mask = 5
+size = Vector3(1, 0.5, 1)
 
 [node name="floor2" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5319, -0.5, -2.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2819, -0.25, -2.3)
 material_override = SubResource("StandardMaterial3D_mj05j")
 use_collision = true
 collision_layer = 5
 collision_mask = 5
-size = Vector3(2, 1, 2)
+size = Vector3(1.5, 0.5, 1.5)
 
 [node name="Auto Dissapear Platform2" type="Node3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0.777704, -0.3, -1.73725)
@@ -281,15 +287,11 @@ connection_id = 4
 transform = Transform3D(-0.2, 0.000142001, 6.61334e-05, 0.000141901, 0.2, -0.000296264, -6.63477e-05, -0.000296216, -0.2, -6.98951, -0.00953837, -10.4486)
 connection_id = 4
 multiple = true
-one_time = null
-call_back = null
 
 [node name="Button2" parent="Map/Multiple Button" instance=ExtResource("7_4j754")]
 transform = Transform3D(-0.2, 0, 1.74846e-08, 0, 0.2, 0, -1.74846e-08, 0, -0.2, -8.98951, -0.00953837, -10.4486)
 connection_id = 4
 multiple = true
-one_time = null
-call_back = null
 
 [node name="Laser" type="Node3D" parent="Map"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.275, 0, -11.525)
@@ -422,43 +424,32 @@ connection_id = 2
 lock = true
 speed = 2.0
 distance = 6.5
+pause_duration = 1.8
 
 [node name="Button" parent="Environment" instance=ExtResource("7_4j754")]
 transform = Transform3D(-6.63389e-05, -0.000296216, -0.2, 0.000141901, 0.2, -0.000296264, 0.2, -0.000142001, -6.61246e-05, -4.84525, -0.022063, -2.31052)
-connection_id = null
-multiple = null
-one_time = null
-call_back = null
 
 [node name="Button3" parent="Environment" instance=ExtResource("7_4j754")]
 transform = Transform3D(-0.2, 0.000142001, 6.61333e-05, 0.000141901, 0.2, -0.000296264, -6.63476e-05, -0.000296216, -0.2, -0.77971, -0.022063, -2.3021)
 connection_id = 3
-multiple = null
-one_time = null
 call_back = true
 texture = ExtResource("15_l530w")
 
 [node name="Button2" parent="Environment" instance=ExtResource("7_4j754")]
 transform = Transform3D(6.63564e-05, 0.000296216, 0.2, 0.000141901, 0.2, -0.000296264, -0.2, 0.000142001, 6.61421e-05, 5.29889, -0.022063, 2.8547)
 connection_id = 2
-multiple = null
-one_time = null
-call_back = null
 texture = ExtResource("16_glfby")
 
 [node name="Button4" parent="Environment" instance=ExtResource("7_4j754")]
 transform = Transform3D(6.63564e-05, 0.000296216, 0.2, 0.000141901, 0.2, -0.000296264, -0.2, 0.000142001, 6.61421e-05, 5.29889, -0.022063, -0.1453)
 connection_id = 5
-multiple = null
-one_time = null
-call_back = null
 texture = ExtResource("17_06pav")
 
 [node name="Door" parent="Environment" instance=ExtResource("18_npcbg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74925, 0.5, -0.132184)
 
 [node name="Key" parent="Environment" instance=ExtResource("19_h8mwa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5492, 0.1, -2.39054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2676, 0.1, -2.28825)
 
 [node name="Basic Platform" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.677252, -0.3, -7)
@@ -468,6 +459,18 @@ fade_speed = 3.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Basic Platform"]
 transform = Transform3D(-0.999977, -1.02496e-07, -0.000312778, 1.69577e-11, 0.999984, -0.000327634, 0.000312777, -0.000327645, -0.999983, 6.03061, 1.09049, 4.79705)
+size = Vector3(1.6, 0.3, 1.3)
+material = SubResource("StandardMaterial3D_fiuhp")
+
+[node name="Basic Platform" type="Node3D" parent="Environment/Basic Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42275, 0.148164, 6)
+script = ExtResource("20_7cx53")
+connection_id = 2
+lock = true
+fade_speed = 3.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Basic Platform/Basic Platform"]
+transform = Transform3D(-0.999977, -1.02496e-07, -0.000312778, 1.69577e-11, 0.999984, -0.000327634, 0.000312777, -0.000327645, -0.999983, 0.4, 0, 0)
 size = Vector3(1.6, 0.3, 1.3)
 material = SubResource("StandardMaterial3D_fiuhp")
 
