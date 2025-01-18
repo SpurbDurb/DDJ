@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=3 uid="uid://qf2eb0uc7yy5"]
+
+[ext_resource type="Script" path="res://scripts/Main Menu/main_menu.gd" id="1_l6oyc"]
+[ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="2_bnmhx"]
+[ext_resource type="FontFile" uid="uid://dpm3atig5yq6m" path="res://assets/ui/NexaRustSans-Black.otf" id="3_orp74"]
+[ext_resource type="StyleBox" uid="uid://co4i0qidpqixn" path="res://assets/ui/button.tres" id="4_3y2l3"]
+[ext_resource type="Script" path="res://scripts/Main Menu/button_animation.gd" id="7_mwwb5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8jx3"]
+shader = ExtResource("2_bnmhx")
+shader_parameter/color_top = Color(0.432615, 0.229111, 1, 1)
+shader_parameter/color_horizon = Color(0, 0.380392, 0.941176, 1)
+shader_parameter/color_bottom = Color(0.34902, 0.588235, 1, 1)
+shader_parameter/exponent_factor_top = 1.0
+shader_parameter/exponent_factor_bottom = 1.0
+shader_parameter/intensity_amp = 1.0
+
+[sub_resource type="Sky" id="Sky_pduks"]
+sky_material = SubResource("ShaderMaterial_o8jx3")
+
+[sub_resource type="Environment" id="Environment_cbtom"]
+background_mode = 2
+sky = SubResource("Sky_pduks")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.748908, 0.773225, 0.811435, 1)
+fog_sky_affect = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ahtw"]
+bg_color = Color(1, 1, 0.913725, 1)
+border_width_bottom = 6
+border_color = Color(0.882353, 0.882353, 0.882353, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_mct8e"]
+Button/colors/font_color = Color(0.513234, 0.513232, 0.513233, 1)
+Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 0)
+Button/colors/font_focus_color = Color(0.513726, 0.513726, 0.513726, 1)
+Button/colors/font_hover_color = Color(0.513726, 0.513726, 0.513726, 1)
+Button/colors/font_hover_pressed_color = Color(0.513726, 0.513726, 0.513726, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.513726, 0.513726, 0.513726, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 18
+Button/fonts/font = ExtResource("3_orp74")
+Button/styles/disabled = SubResource("StyleBoxFlat_6ahtw")
+Button/styles/focus = ExtResource("4_3y2l3")
+Button/styles/hover = ExtResource("4_3y2l3")
+Button/styles/normal = ExtResource("4_3y2l3")
+Button/styles/pressed = ExtResource("4_3y2l3")
+
+[node name="Main Menu" type="CanvasLayer"]
+script = ExtResource("1_l6oyc")
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background"]
+environment = SubResource("Environment_cbtom")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Background/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Background/SubViewportContainer/SubViewport"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_mct8e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+modulate = Color(1, 1, 1, 0.741176)
+self_modulate = Color(1, 1, 1, 0.196078)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -249.0
+offset_top = 36.0
+offset_right = -49.0
+offset_bottom = 86.0
+grow_horizontal = 0
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="play_button" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "sETTINGS"
+script = ExtResource("7_mwwb5")
+trans_type = 6
+ease_type = 1
+
+[connection signal="mouse_entered" from="Control/VBoxContainer/VBoxContainer/play_button" to="Control/VBoxContainer/VBoxContainer/play_button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/VBoxContainer/play_button" to="Control/VBoxContainer/VBoxContainer/play_button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/VBoxContainer/VBoxContainer/play_button" to="." method="play"]
