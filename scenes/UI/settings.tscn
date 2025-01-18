@@ -1,0 +1,141 @@
+[gd_scene load_steps=6 format=3 uid="uid://vck1assmruh7"]
+
+[ext_resource type="Script" path="res://scripts/Settings Menu/settings.gd" id="1_mjl7e"]
+[ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="2_u2i06"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8jx3"]
+shader = ExtResource("2_u2i06")
+shader_parameter/color_top = Color(0.432615, 0.229111, 1, 1)
+shader_parameter/color_horizon = Color(0, 0.380392, 0.941176, 1)
+shader_parameter/color_bottom = Color(0.34902, 0.588235, 1, 1)
+shader_parameter/exponent_factor_top = 1.0
+shader_parameter/exponent_factor_bottom = 1.0
+shader_parameter/intensity_amp = 1.0
+
+[sub_resource type="Sky" id="Sky_pduks"]
+sky_material = SubResource("ShaderMaterial_o8jx3")
+
+[sub_resource type="Environment" id="Environment_cbtom"]
+background_mode = 2
+sky = SubResource("Sky_pduks")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.748908, 0.773225, 0.811435, 1)
+fog_sky_affect = 0.0
+
+[node name="Settings Menu" type="CanvasLayer"]
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background"]
+environment = SubResource("Environment_cbtom")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00148, 1.04163)
+
+[node name="SubViewport" type="SubViewport" parent="Background/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Background/SubViewportContainer/SubViewport"]
+
+[node name="Settings" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mjl7e")
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer"]
+layout_mode = 2
+
+[node name="Master" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MaterLabel" type="Label" parent="Settings/MarginContainer/VBoxContainer/Master/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Master Volume"
+
+[node name="Master" type="HSlider" parent="Settings/MarginContainer/VBoxContainer/Master/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="MuteMaster" type="CheckBox" parent="Settings/MarginContainer/VBoxContainer/Master"]
+layout_mode = 2
+text = "Mute"
+
+[node name="Music" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MusicLabel" type="Label" parent="Settings/MarginContainer/VBoxContainer/Music/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Music Volume"
+
+[node name="Music" type="HSlider" parent="Settings/MarginContainer/VBoxContainer/Music/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="MuteMusic" type="CheckBox" parent="Settings/MarginContainer/VBoxContainer/Music"]
+layout_mode = 2
+text = "Mute"
+
+[node name="SFX" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer/SFX"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFXLabel" type="Label" parent="Settings/MarginContainer/VBoxContainer/SFX/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "SFX Volume"
+
+[node name="SFX" type="HSlider" parent="Settings/MarginContainer/VBoxContainer/SFX/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="MuteSFX" type="CheckBox" parent="Settings/MarginContainer/VBoxContainer/SFX"]
+layout_mode = 2
+text = "Mute"
+
+[connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/Master/HBoxContainer/Master" to="Settings" method="_on_master_value_changed"]
+[connection signal="toggled" from="Settings/MarginContainer/VBoxContainer/Master/MuteMaster" to="Settings" method="_on_mute_master_toggled"]
+[connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/Music/HBoxContainer/Music" to="Settings" method="_on_music_value_changed"]
+[connection signal="toggled" from="Settings/MarginContainer/VBoxContainer/Music/MuteMusic" to="Settings" method="_on_mute_music_toggled"]
+[connection signal="value_changed" from="Settings/MarginContainer/VBoxContainer/SFX/HBoxContainer/SFX" to="Settings" method="_on_sfx_value_changed"]
+[connection signal="toggled" from="Settings/MarginContainer/VBoxContainer/SFX/MuteSFX" to="Settings" method="_on_mute_sfx_toggled"]
