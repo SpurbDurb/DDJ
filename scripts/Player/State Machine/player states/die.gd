@@ -6,8 +6,10 @@ func enter():
 	animation_player.play("dye")
 	animation_player.connect("animation_finished", Callable(self,"_on_animation_finished"))
 
-func _on_animation_finished(anim_name):
+func exit():
 	animation_player.disconnect("animation_finished", Callable(self,"_on_animation_finished"))
+
+func _on_animation_finished(anim_name):
 	if anim_name == "dye":
 		player.spawn_player()
 
