@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://3mcvo8d4bdki"]
 
-[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_bklpv"]
-[ext_resource type="AudioStream" uid="uid://pd8bhpj8qrie" path="res://assets/Audio/main/LASER_ON.wav" id="2_i3xce"]
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_a3eyl"]
+[ext_resource type="AudioStream" uid="uid://pd8bhpj8qrie" path="res://assets/Audio/main/LASER_ON.wav" id="2_73qks"]
 
 [resource]
-script = ExtResource("1_bklpv")
-limit = 1
+script = ExtResource("1_a3eyl")
+limit = 2
 type = 16
-sound_effect = ExtResource("2_i3xce")
+sound_effect = ExtResource("2_73qks")
 volume = -18.0
 pitch_scale = 1.4
 pitch_randomness = 0.0

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_bru1f")
-limit = 1
+limit = 2
 type = 17
 sound_effect = ExtResource("2_kxdit")
 volume = -18.0
