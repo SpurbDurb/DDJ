@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://dwrxbo6l8syjw"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_bru1f"]
+[ext_resource type="AudioStream" uid="uid://pd8bhpj8qrie" path="res://assets/Audio/main/LASER_ON.wav" id="2_kxdit"]
+
+[resource]
+script = ExtResource("1_bru1f")
+limit = 1
+type = 17
+sound_effect = ExtResource("2_kxdit")
+volume = -18.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+bus = "SFX_alt2"

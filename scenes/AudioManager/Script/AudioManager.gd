@@ -62,7 +62,7 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 	else:
 		push_error("Audio Manager failed to find setting for type ", type)
 
-func fade_out_audio(type: SoundEffect.SOUND_EFFECT_TYPE, duration: float = 2.0) -> void:
+func fade_out_audio(type: SoundEffect.SOUND_EFFECT_TYPE, duration: float = 1.0) -> void:
 	if not active_audio_players.has(type):
 		push_error("No active AudioStreamPlayer instances found for type: ", type)
 		return

@@ -9,6 +9,6 @@ limit = 4
 type = 14
 sound_effect = ExtResource("2_rq443")
 volume = -12.0
-pitch_scale = 1.4
+pitch_scale = 1.2
 pitch_randomness = 0.1
 bus = "SFX_alt2"

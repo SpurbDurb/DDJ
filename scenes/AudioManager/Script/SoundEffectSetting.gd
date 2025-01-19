@@ -21,7 +21,8 @@ enum SOUND_EFFECT_TYPE {
 	Goal,
 	Laser_Death,
 	Door,
-	Laser
+	Laser_on,
+	Laser_off
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.

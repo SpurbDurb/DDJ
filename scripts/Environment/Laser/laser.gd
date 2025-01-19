@@ -7,6 +7,7 @@ extends Node3D
 @onready var beam: RayCast3D = $Beam
 @onready var beam_2: RayCast3D = $Beam2
 @onready var moving_barrier = $Barrier2
+var old_collided_obj
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,14 +28,14 @@ func _ready() -> void:
 
 func _on_connection_triggered():
 	if activated:
-		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Laser)
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Laser_off)
 		beam.active = false
 		beam_2.active = false
 		beam.deactivate()
 		beam_2.deactivate()
 		activated = false
 	else:
-		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Laser)
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Laser_on)
 		beam.active = true
 		beam_2.active = true
 		beam.activate()
@@ -52,8 +53,11 @@ func _process(_delta: float) -> void:
 	
 func check_for_player_collision() -> void:
 	if activated and beam.is_colliding():
-		var collided_obj = beam.get_collider()
-		if collided_obj and collided_obj.is_in_group("Player"):
+		var new_collided_obj = beam.get_collider()
+		if old_collided_obj == new_collided_obj:
+			return
+		else:
+			old_collided_obj = new_collided_obj
+		if new_collided_obj and new_collided_obj.is_in_group("Player"):
 			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Laser_Death)
-			collided_obj.die()
-			
+			new_collided_obj.die()
