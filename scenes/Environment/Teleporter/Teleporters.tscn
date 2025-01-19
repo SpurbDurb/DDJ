@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctbbx2jrst21m"]
+
+[ext_resource type="Script" path="res://scripts/Environment/Teleporter/teleport_manager.gd" id="1_aawx5"]
+[ext_resource type="PackedScene" uid="uid://c4hkjfn1ic4aj" path="res://scenes/Environment/Teleporter/Teleporter.tscn" id="1_tx0mw"]
+
+[node name="Teleporters" type="Node3D" node_paths=PackedStringArray("teleporter_1", "teleporter_2")]
+script = ExtResource("1_aawx5")
+teleporter_1 = NodePath("Teleporter_1")
+teleporter_2 = NodePath("Teleporter_2")
+
+[node name="Teleporter_1" parent="." instance=ExtResource("1_tx0mw")]
+transform = Transform3D(1.69, 0, 0, 0, 1, 0, 0, 0, 1.69, -1, 0, 0)
+
+[node name="Teleporter_2" parent="." instance=ExtResource("1_tx0mw")]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1.3, 1, 0, 0)

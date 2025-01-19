@@ -127,12 +127,12 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Curve" id="Curve_pivjw"]
+[sub_resource type="Curve" id="Curve_gax7e"]
 _data = [Vector2(0, 0.459488), 0.0, 0.0, 0, 0, Vector2(0.304945, 0.979211), 0.0, 0.0, 0, 0, Vector2(0.884615, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_v670n"]
-curve = SubResource("Curve_pivjw")
+curve = SubResource("Curve_gax7e")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pl27p"]
 resource_local_to_scene = true
