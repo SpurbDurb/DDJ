@@ -10,7 +10,7 @@ var character: String = "White"
 @export var SPEED = 2
 @export var SENS = 0.04
 #Spawn
-@export var fall_threshold: float = -10.0  
+@export var fall_threshold: float = -8.0  
 var spawn_position: Vector3 
 var spawn_offset: Vector3 = Vector3(0, 0.5, 0) 
 var spawn_protected: bool = false 

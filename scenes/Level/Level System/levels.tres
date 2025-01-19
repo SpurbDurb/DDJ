@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bhm5qap6dwcak" path="res://scenes/Level/Level1.tscn" id="1_ko5gc"]
 [ext_resource type="PackedScene" uid="uid://b14by1fu6cs02" path="res://scenes/Level/Level2.tscn" id="2_porxm"]
 [ext_resource type="Script" path="res://scripts/Managers/Level Manager/levels.gd" id="2_rnpwy"]
-[ext_resource type="PackedScene" uid="uid://dxrvuo6l5j0t2" path="res://scenes/Level/Level3.tscn" id="3_jtw3f"]
+[ext_resource type="PackedScene" uid="uid://deero57i8rjkx" path="res://scenes/Level/Level3.tscn" id="3_jtw3f"]
 
 [resource]
 script = ExtResource("2_rnpwy")

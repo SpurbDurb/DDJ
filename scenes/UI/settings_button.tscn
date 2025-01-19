@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://qf2eb0uc7yy5"]
 
-[ext_resource type="Script" path="res://scripts/Main Menu/main_menu.gd" id="1_l6oyc"]
+[ext_resource type="Script" path="res://scripts/UI/main_menu.gd" id="1_l6oyc"]
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="2_bnmhx"]
 [ext_resource type="FontFile" uid="uid://dpm3atig5yq6m" path="res://assets/ui/NexaRustSans-Black.otf" id="3_orp74"]
 [ext_resource type="StyleBox" uid="uid://co4i0qidpqixn" path="res://assets/ui/button.tres" id="4_3y2l3"]
-[ext_resource type="Script" path="res://scripts/Main Menu/button_animation.gd" id="7_mwwb5"]
+[ext_resource type="Script" path="res://scripts/UI/button_animation.gd" id="7_mwwb5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o8jx3"]
 shader = ExtResource("2_bnmhx")

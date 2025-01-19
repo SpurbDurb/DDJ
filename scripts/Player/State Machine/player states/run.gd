@@ -43,7 +43,8 @@ func enter_condition() -> bool:
 	var input_dir := get_input()
 	if input_dir.length() > 0 and player.is_on_floor() and !player.is_in_water:
 		return true
-	return false
+	#reuturn false
+	return player.velocity != Vector3.ZERO and player.is_on_floor() and !player.is_in_water
 
 func get_input() -> Vector2:
 	if character == "White":
