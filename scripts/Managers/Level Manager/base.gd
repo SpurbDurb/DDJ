@@ -91,8 +91,6 @@ func unpause_game() -> void:
 		get_tree().paused = false
 		pause_menu = null
 	is_game_paused = false
-	print(LevelManager.level_position)
-	print(player_b.fall_threshold)
 
 func restart() -> void:
 	select_level(LevelManager.level)
