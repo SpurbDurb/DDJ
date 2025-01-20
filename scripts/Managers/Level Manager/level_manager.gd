@@ -49,9 +49,13 @@ func despawn_old_level():
 	
 	old_level_instance.queue_free()
 
+#func total_despawn_level():
+	#var level_instance = base_level_node.get_node("Level%s" % level)
+	#level_instance.queue_free()
+
 func total_despawn_level():
-	var level_instance = base_level_node.get_node("Level%s" % level)
-	level_instance.queue_free()
+	for child in base_level_node.get_children():
+		child.queue_free()
 
 func respawn_level() -> void:
 	var level_instance = base_level_node.get_node("Level%s" % level)

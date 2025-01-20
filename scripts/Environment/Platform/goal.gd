@@ -15,6 +15,10 @@ func _ready() -> void:
 	initial_position = global_transform.origin
 	target_position = initial_position + Vector3(0, LevelManager.level_up_offset, 0)
 
+func reset() -> void:
+	lock = false
+	player_count = 0
+
 func _physics_process(delta: float) -> void:
 	if moving:
 		# Calculate the direction vector and normalize it
@@ -31,10 +35,8 @@ func _physics_process(delta: float) -> void:
 
 func _move() -> void:
 	moving = true  # Start moving
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
 
 func _on_move_finished():
-	AudioManager.fade_out_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
 	emit_signal("exited_goal")
 	lock = true
 

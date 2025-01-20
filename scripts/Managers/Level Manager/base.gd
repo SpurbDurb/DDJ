@@ -10,6 +10,8 @@ const WIND_AMBIENCE_14720 = preload("res://assets/wind-ambience-14720.mp3")
 @onready var player_w: CharacterBody3D = $Player_W
 @onready var player_b: CharacterBody3D = $Player_B
 var goal_node
+var in_goal := false
+var lock_goal := false
 var start_position_list = [Vector3(2, 0, 0.5), Vector3(-2.753, -0.3, -2.285), Vector3(-2.753, -0.3, 0.733082)]
 
 func _ready() -> void:
@@ -28,7 +30,8 @@ func open_level(level:int) -> void:
 	if level != 1:
 		spawn_start(level)
 	
-	if not goal_node: connect_goal()
+	if not goal_node: 
+		connect_goal()
 
 func _on_level_spawned() -> void:
 	#if is_respawning:
@@ -38,16 +41,23 @@ func _on_level_spawned() -> void:
 	unfreeze_player(player_b)
 
 func _on_entered_goal() -> void:
+	if lock_goal: return
+	in_goal = true
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
 	$camera_pivot.in_goal = true
 	goal_node._move()
 	LevelManager.level_up()
 	set_player_spawn_pos_by_level(LevelManager.level)
 
 func _on_exited_goal() -> void:
+	if not in_goal or lock_goal: return
+	in_goal = false
+	AudioManager.fade_out_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
 	LevelManager.despawn_old_level()
 	$camera_pivot.in_goal = false
 	disconnect_start()
 	connect_goal()
+	update_player_fall_threshold()
 
 
 #UI ----------------------------------------------------------------- pause menu
@@ -81,23 +91,47 @@ func unpause_game() -> void:
 		get_tree().paused = false
 		pause_menu = null
 	is_game_paused = false
+	print(LevelManager.level_position)
+	print(player_b.fall_threshold)
 
 func restart() -> void:
 	select_level(LevelManager.level)
 
 func select_level(level_given: int) -> void:
-	disconnect_goal()
+	handle_goal_lock(level_given)
+	if in_goal:
+		in_goal = false
+		$camera_pivot.in_goal = false
+		AudioManager.fade_out_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
+		disconnect_goal(LevelManager.level-1)
+	else:
+		disconnect_goal(LevelManager.level)
+	
 	freeze_player(player_w)
 	freeze_player(player_b)
 	LevelManager.total_despawn_level()
 	await get_tree().create_timer(0).timeout
 	open_level(level_given)
 	unpause_game()
-#UI ----------------------------------------------------------------- pause menu
-#UI ----------------------------------------------------------------- pause menu
 
-func disconnect_goal() -> void:
-	goal_node = get_node("Level/Level%s/Goal" % LevelManager.level)
+func handle_goal_lock(level_given: int) -> void:
+	if level_given != LevelManager.level -1: return
+	lock_goal = true
+	# Create and configure the timer
+	var timer = Timer.new()
+	timer.wait_time = 1.0
+	timer.one_shot = true
+	add_child(timer)
+	timer.connect("timeout", Callable (self, "_on_timer_timeout"))
+	timer.start()
+
+func _on_timer_timeout():
+	lock_goal = false
+	goal_node.reset()
+#UI ----------------------------------------------------------------- pause menu
+#UI ----------------------------------------------------------------- pause menu
+func disconnect_goal(level:int) -> void:
+	goal_node = get_node("Level/Level%s/Goal" % level)
 	goal_node.disconnect("entered_goal", Callable(self, "_on_entered_goal"))
 	goal_node.disconnect("exited_goal", Callable(self, "_on_exited_goal"))
 	goal_node = null
@@ -112,10 +146,10 @@ func disconnect_start() -> void:
 		goal_node.disconnect("entered_goal", Callable(self, "_on_entered_goal"))
 		goal_node.disconnect("exited_goal", Callable(self, "_on_exited_goal"))
 
-#func update_spawn_pos() -> void:
-	#player_w.spawn_position = goal_node.target_position + Vector3(0.3, 1.5, 0) + LevelManager.level_position
-	#
-	#player_b.spawn_position = goal_node.target_position + Vector3(-0.3, 1.5, 0) + LevelManager.level_position
+func update_player_fall_threshold() -> void:
+	player_w.fall_threshold = player_w.fall_threshold + LevelManager.level_position.y
+	
+	player_b.fall_threshold = player_b.fall_threshold + LevelManager.level_position.y
 
 func set_player_spawn_pos_by_level(level: int) -> void:
 	player_w.spawn_position = start_position_list[level-1] + Vector3(0.3, 1.5, 0) + LevelManager.level_position
