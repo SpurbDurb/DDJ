@@ -18,7 +18,7 @@ var event_global_position : Vector3
 
 # Parâmetros de zoom
 @export var min_zoom: float = 8.0
-@export var max_zoom: float = 0.8
+@export var max_zoom: float = 1.2
 # Parâmetros de altura
 @export var min_height: float = 1.2
 @export var max_height: float = 2.0
@@ -26,8 +26,8 @@ var event_global_position : Vector3
 @export var min_angle: float = -40.0
 @export var max_angle: float = -25.0
 # Speed
-@export var zoom_speed: float = 0.05
-@export var camera_speed: float = 0.07
+@export var zoom_speed: float = 0.08
+@export var camera_speed: float = 0.1
 @export var max_rotation_speed: float = 0.2
 @export var min_rotation_speed: float = 0.01
 
