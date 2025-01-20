@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c8tbtllbkhwio"]
+[gd_scene load_steps=25 format=3 uid="uid://c8tbtllbkhwio"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/AudioManager.gd" id="1_d5qgc"]
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="2_t17x2"]
@@ -20,6 +20,8 @@
 [ext_resource type="Resource" uid="uid://3mcvo8d4bdki" path="res://scenes/AudioManager/SFX/laser_on.tres" id="18_44uth"]
 [ext_resource type="Resource" uid="uid://bqc7fxaqrtskd" path="res://scenes/AudioManager/SFX/door.tres" id="19_spkoy"]
 [ext_resource type="Resource" uid="uid://dwrxbo6l8syjw" path="res://scenes/AudioManager/SFX/laser_off.tres" id="20_xpbqx"]
+[ext_resource type="Resource" uid="uid://dolyp75f38cn0" path="res://scenes/AudioManager/SFX/TP_start.tres" id="21_qw8vv"]
+[ext_resource type="Resource" uid="uid://cktg3d0lf3guo" path="res://scenes/AudioManager/SFX/TP_end.tres" id="22_7b6fm"]
 
 [sub_resource type="Resource" id="Resource_0g3wt"]
 script = ExtResource("2_t17x2")
@@ -43,4 +45,4 @@ bus = "SFX"
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_d5qgc")
-sound_effects = Array[ExtResource("2_t17x2")]([ExtResource("4_veyeo"), ExtResource("3_njfwf"), ExtResource("5_jwcr2"), ExtResource("5_l7yyr"), ExtResource("6_8cji7"), SubResource("Resource_0g3wt"), SubResource("Resource_2imo4"), ExtResource("10_4kkq4"), ExtResource("11_bml46"), ExtResource("12_pvnru"), ExtResource("13_y83ob"), ExtResource("14_4jcv8"), ExtResource("15_mhfsn"), ExtResource("16_rjghe"), ExtResource("17_tbrs4"), ExtResource("18_44uth"), ExtResource("19_spkoy"), ExtResource("20_xpbqx")])
+sound_effects = Array[ExtResource("2_t17x2")]([ExtResource("4_veyeo"), ExtResource("3_njfwf"), ExtResource("5_jwcr2"), ExtResource("5_l7yyr"), ExtResource("6_8cji7"), SubResource("Resource_0g3wt"), SubResource("Resource_2imo4"), ExtResource("10_4kkq4"), ExtResource("11_bml46"), ExtResource("12_pvnru"), ExtResource("13_y83ob"), ExtResource("14_4jcv8"), ExtResource("15_mhfsn"), ExtResource("16_rjghe"), ExtResource("17_tbrs4"), ExtResource("18_44uth"), ExtResource("19_spkoy"), ExtResource("20_xpbqx"), ExtResource("21_qw8vv"), ExtResource("22_7b6fm")])

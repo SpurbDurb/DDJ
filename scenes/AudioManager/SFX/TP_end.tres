@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://cktg3d0lf3guo"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_ce5x3"]
+[ext_resource type="AudioStream" uid="uid://if8lfvgl0bqa" path="res://assets/Audio/other/SE_PM_RACE_START_DASH_S.wav" id="2_wcdhs"]
+
+[resource]
+script = ExtResource("1_ce5x3")
+limit = 1
+type = 19
+sound_effect = ExtResource("2_wcdhs")
+volume = -26.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+bus = "SFX_alt2"

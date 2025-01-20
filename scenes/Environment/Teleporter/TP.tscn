@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=4 uid="uid://c4hkjfn1ic4aj"]
+[gd_scene load_steps=26 format=4 uid="uid://8l5pwykclg1s"]
 
-[ext_resource type="Script" path="res://scripts/Environment/Teleporter/teleport.gd" id="1_6pfxs"]
-[ext_resource type="Material" uid="uid://cpdtksbwt3key" path="res://assets/teleporter/new_shader_material.tres" id="2_r8eoe"]
+[ext_resource type="Script" path="res://scripts/Environment/Teleporter/teleport_manager.gd" id="1_53ssp"]
+[ext_resource type="Script" path="res://scripts/Environment/Teleporter/teleport.gd" id="2_7qwnh"]
+[ext_resource type="Material" uid="uid://cpdtksbwt3key" path="res://assets/teleporter/new_shader_material.tres" id="3_cnw7a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r66l"]
 resource_name = "Main"
@@ -113,9 +114,9 @@ top_radius = 0.08
 bottom_radius = 0.08
 height = 0.001
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf7jy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0tyg"]
 transparency = 1
-albedo_color = Color(0, 0.788235, 0.913725, 0.756863)
+albedo_color = Color(0, 0.788235, 0.913725, 0)
 emission_enabled = true
 emission = Color(0, 0.788235, 0.913725, 1)
 
@@ -139,7 +140,7 @@ point_count = 5
 [sub_resource type="CurveTexture" id="CurveTexture_1odd3"]
 curve = SubResource("Curve_53u50")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h3pvn"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cu0dl"]
 resource_local_to_scene = true
 emission_shape_scale = Vector3(1.6, 3, 1.6)
 emission_shape = 3
@@ -159,6 +160,45 @@ collision_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_c7y67"]
 size = Vector2(0.02, 0.02)
+
+[sub_resource type="Animation" id="Animation_gbpt4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BeamMesh:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.788235, 0.913725, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BeamParticles:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.05]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BeamParticles:amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
 
 [sub_resource type="Animation" id="Animation_gwha2"]
 resource_name = "start"
@@ -198,45 +238,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [10, 20]
-}
-
-[sub_resource type="Animation" id="Animation_gbpt4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BeamMesh:surface_material_override/0:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0.788235, 0.913725, 0.756863)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BeamParticles:speed_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.05]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("BeamParticles:amount")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
 }
 
 [sub_resource type="Animation" id="Animation_hs8nc"]
@@ -286,52 +287,80 @@ _data = {
 "stop": SubResource("Animation_hs8nc")
 }
 
-[node name="Teleporter" type="Node3D"]
-transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1.3, 0, 0, 0)
-script = ExtResource("1_6pfxs")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf7jy"]
+transparency = 1
+albedo_color = Color(0, 0.788235, 0.913725, 0)
+emission_enabled = true
+emission = Color(0, 0.788235, 0.913725, 1)
 
-[node name="Base" type="MeshInstance3D" parent="."]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vonya"]
+resource_local_to_scene = true
+emission_shape_scale = Vector3(1.6, 3, 1.6)
+emission_shape = 3
+emission_box_extents = Vector3(0.03, 0.1, 0.03)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_over_velocity_min = 1.0
+scale_over_velocity_max = 2.0
+scale_over_velocity_curve = SubResource("CurveTexture_1odd3")
+turbulence_noise_strength = 16.85
+turbulence_noise_scale = 10.0
+collision_mode = 2
+
+[node name="TP Manager" type="Node" node_paths=PackedStringArray("teleporter_1", "teleporter_2")]
+script = ExtResource("1_53ssp")
+teleporter_1 = NodePath("Teleporter_1")
+teleporter_2 = NodePath("Teleporter_2")
+
+[node name="Teleporter_1" type="Node3D" parent="." node_paths=PackedStringArray("manager")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.07, 0)
+script = ExtResource("2_7qwnh")
+manager = NodePath("..")
+
+[node name="Base" type="MeshInstance3D" parent="Teleporter_1"]
 transform = Transform3D(0.500659, 6.11671e-05, -2.6737e-12, -6.11671e-05, 0.500659, -4.37691e-08, -2.6737e-12, 4.37691e-08, 0.500659, -0.00723696, -0.00357055, 0.00103092)
 mesh = SubResource("ArrayMesh_nlt1e")
 skeleton = NodePath("")
 
-[node name="StaticCollider" type="Node3D" parent="Base"]
+[node name="StaticCollider" type="Node3D" parent="Teleporter_1/Base"]
 transform = Transform3D(-1.99737, 7.32979e-05, -1.06667e-11, -0.000244326, -0.59921, 1.74616e-07, 1.06931e-11, 5.23847e-08, 1.99737, 0.0144596, -0.0387586, -0.00205913)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Base/StaticCollider"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Teleporter_1/Base/StaticCollider"]
 transform = Transform3D(-1, -3.89414e-07, 4.54949e-24, 3.89414e-07, -1, -3.38813e-21, -1.32349e-23, -5.92923e-21, 1, -3.3705e-10, -0.00743788, -1.11022e-16)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Base/StaticCollider/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleporter_1/Base/StaticCollider/StaticBody3D"]
 transform = Transform3D(1, -6.65068e-12, -4.1359e-24, 1.27898e-13, 1, 3.38813e-21, 1.08195e-21, -1.94818e-19, 1, -1.14164e-12, 0.1, 0)
 shape = SubResource("BoxShape3D_if2fm")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Base/StaticCollider"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Teleporter_1/Base/StaticCollider"]
 transform = Transform3D(-1, -3.89414e-07, 4.1359e-25, 3.89414e-07, -1, 0, -6.61744e-24, -1.69407e-21, 1, 1.07191e-09, 0.0236546, 2.22045e-16)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Base/StaticCollider/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleporter_1/Base/StaticCollider/StaticBody3D2"]
 transform = Transform3D(1, -1.13971e-11, -4.1359e-24, 1.27898e-13, 1, 3.38813e-21, 1.86943e-21, -3.36272e-19, 1, -4.66706e-08, 0.235628, -1.33227e-15)
 shape = SubResource("BoxShape3D_su5dv")
 
-[node name="Collider" type="Node3D" parent="."]
+[node name="Collider" type="Node3D" parent="Teleporter_1"]
 transform = Transform3D(0.4, -2.87565e-14, 0, 3.8342e-14, 0.3, 0, 0, 0, 0.4, 0, 0.0715119, 0)
 
-[node name="Area3D" type="Area3D" parent="Collider"]
+[node name="Area3D" type="Area3D" parent="Teleporter_1/Collider"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.243887, 0)
-visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collider/Area3D"]
-visible = false
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleporter_1/Collider/Area3D"]
 shape = SubResource("CylinderShape3D_lqy8m")
 
-[node name="Beam" type="RayCast3D" parent="."]
+[node name="Beam" type="RayCast3D" parent="Teleporter_1"]
 transform = Transform3D(-10, 4.52987e-07, 0, -1.50996e-06, -3, 0, 0, 0, 10, 0.00332549, 0.211999, 0.010542)
 
-[node name="BeamMesh" type="MeshInstance3D" parent="Beam"]
+[node name="BeamMesh" type="MeshInstance3D" parent="Teleporter_1/Beam"]
 transform = Transform3D(-0.299075, 1.5053e-07, -0.0235377, -4.52987e-08, -1, 7.02087e-16, -0.0235377, 1.1847e-08, 0.299075, 0.00166712, 0.0124148, -0.000730338)
 mesh = SubResource("CylinderMesh_8ry5f")
-surface_material_override/0 = SubResource("StandardMaterial3D_mf7jy")
+surface_material_override/0 = SubResource("StandardMaterial3D_q0tyg")
 
-[node name="BeamParticles" type="GPUParticles3D" parent="Beam"]
+[node name="BeamParticles" type="GPUParticles3D" parent="Teleporter_1/Beam"]
 transform = Transform3D(0.5, 0, 0, 0, 0.8, 0, 0, 0, 0.5, -6.40284e-09, -0.0593505, 0)
 material_override = SubResource("StandardMaterial3D_ouvy4")
 amount = 10
@@ -339,19 +368,87 @@ lifetime = 0.1
 speed_scale = 0.05
 randomness = 1.0
 interpolate = false
-process_material = SubResource("ParticleProcessMaterial_h3pvn")
+process_material = SubResource("ParticleProcessMaterial_cu0dl")
 draw_pass_1 = SubResource("QuadMesh_c7y67")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Beam"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Teleporter_1/Beam"]
 libraries = {
 "": SubResource("AnimationLibrary_fx5qn")
 }
 playback_default_blend_time = 0.2
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="Teleporter_1"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-material_override = ExtResource("2_r8eoe")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teleporter_1/Node3D"]
+material_override = ExtResource("3_cnw7a")
 
-[connection signal="body_entered" from="Collider/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Collider/Area3D" to="." method="_on_area_3d_body_exited"]
+[node name="Teleporter_2" type="Node3D" parent="." node_paths=PackedStringArray("manager")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.07, 0)
+script = ExtResource("2_7qwnh")
+manager = NodePath("..")
+
+[node name="Base" type="MeshInstance3D" parent="Teleporter_2"]
+transform = Transform3D(0.500659, 6.11671e-05, -2.6737e-12, -6.11671e-05, 0.500659, -4.37691e-08, -2.6737e-12, 4.37691e-08, 0.500659, -0.00723696, -0.00357055, 0.00103092)
+mesh = SubResource("ArrayMesh_nlt1e")
+skeleton = NodePath("")
+
+[node name="StaticCollider" type="Node3D" parent="Teleporter_2/Base"]
+transform = Transform3D(-1.99737, 7.32979e-05, -1.06667e-11, -0.000244326, -0.59921, 1.74616e-07, 1.06931e-11, 5.23847e-08, 1.99737, 0.0144596, -0.0387586, -0.00205913)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Teleporter_2/Base/StaticCollider"]
+transform = Transform3D(-1, -3.89414e-07, 4.54949e-24, 3.89414e-07, -1, -3.38813e-21, -1.32349e-23, -5.92923e-21, 1, -3.3705e-10, -0.00743788, -1.11022e-16)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleporter_2/Base/StaticCollider/StaticBody3D"]
+transform = Transform3D(1, -6.65068e-12, -4.1359e-24, 1.27898e-13, 1, 3.38813e-21, 1.08195e-21, -1.94818e-19, 1, -1.14164e-12, 0.1, 0)
+shape = SubResource("BoxShape3D_if2fm")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Teleporter_2/Base/StaticCollider"]
+transform = Transform3D(-1, -3.89414e-07, 4.1359e-25, 3.89414e-07, -1, 0, -6.61744e-24, -1.69407e-21, 1, 1.07191e-09, 0.0236546, 2.22045e-16)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleporter_2/Base/StaticCollider/StaticBody3D2"]
+transform = Transform3D(1, -1.13971e-11, -4.1359e-24, 1.27898e-13, 1, 3.38813e-21, 1.86943e-21, -3.36272e-19, 1, -4.66706e-08, 0.235628, -1.33227e-15)
+shape = SubResource("BoxShape3D_su5dv")
+
+[node name="Collider" type="Node3D" parent="Teleporter_2"]
+transform = Transform3D(0.4, -2.87565e-14, 0, 3.8342e-14, 0.3, 0, 0, 0, 0.4, 0, 0.0715119, 0)
+
+[node name="Area3D" type="Area3D" parent="Teleporter_2/Collider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.243887, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleporter_2/Collider/Area3D"]
+shape = SubResource("CylinderShape3D_lqy8m")
+
+[node name="Beam" type="RayCast3D" parent="Teleporter_2"]
+transform = Transform3D(-10, 4.52987e-07, 0, -1.50996e-06, -3, 0, 0, 0, 10, 0.00332549, 0.211999, 0.010542)
+
+[node name="BeamMesh" type="MeshInstance3D" parent="Teleporter_2/Beam"]
+transform = Transform3D(-0.299075, 1.5053e-07, -0.0235377, -4.52987e-08, -1, 7.02087e-16, -0.0235377, 1.1847e-08, 0.299075, 0.00166712, 0.0124148, -0.000730338)
+mesh = SubResource("CylinderMesh_8ry5f")
+surface_material_override/0 = SubResource("StandardMaterial3D_mf7jy")
+
+[node name="BeamParticles" type="GPUParticles3D" parent="Teleporter_2/Beam"]
+transform = Transform3D(0.5, 0, 0, 0, 0.8, 0, 0, 0, 0.5, -6.40284e-09, -0.0593505, 0)
+material_override = SubResource("StandardMaterial3D_ouvy4")
+amount = 10
+lifetime = 0.1
+speed_scale = 0.05
+randomness = 1.0
+interpolate = false
+process_material = SubResource("ParticleProcessMaterial_vonya")
+draw_pass_1 = SubResource("QuadMesh_c7y67")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Teleporter_2/Beam"]
+libraries = {
+"": SubResource("AnimationLibrary_fx5qn")
+}
+playback_default_blend_time = 0.2
+
+[node name="Node3D" type="Node3D" parent="Teleporter_2"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teleporter_2/Node3D"]
+material_override = ExtResource("3_cnw7a")
+
+[connection signal="body_entered" from="Teleporter_1/Collider/Area3D" to="Teleporter_1" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Teleporter_1/Collider/Area3D" to="Teleporter_1" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Teleporter_2/Collider/Area3D" to="Teleporter_2" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Teleporter_2/Collider/Area3D" to="Teleporter_2" method="_on_area_3d_body_exited"]

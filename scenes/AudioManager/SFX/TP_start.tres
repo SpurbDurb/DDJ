@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://dolyp75f38cn0"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_yh2gs"]
+[ext_resource type="AudioStream" uid="uid://co420csf8cs3e" path="res://assets/Audio/other/SE_PM_GRAV_LIGHT_DRAWN_ST.wav" id="2_xt4h3"]
+
+[resource]
+script = ExtResource("1_yh2gs")
+limit = 1
+type = 18
+sound_effect = ExtResource("2_xt4h3")
+volume = -24.0
+pitch_scale = 0.4
+pitch_randomness = 0.0
+bus = "SFX_alt2"

@@ -1,11 +1,9 @@
 extends Node3D
 
-var player: CharacterBody3D       
+@export var manager: Node
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body and body.is_in_group("Player"):
-		player = body
+	manager.call("handle_body_entered", self, body)
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	player = null
-	print("exit")
+	manager.call("handle_body_exited", self, body)
