@@ -11,6 +11,7 @@ var character: String = "White"
 @export var SENS = 0.04
 #Spawn
 @export var fall_threshold: float = -8.0  
+var fall: float
 var spawn_position: Vector3 
 var spawn_offset: Vector3 = Vector3(0, 0.5, 0) 
 var spawn_protected: bool = false 
@@ -23,6 +24,7 @@ var was_moving: bool = false  # Tracks whether the player was moving in the last
 func _ready() -> void:
 	#Spawn
 	spawn_position = global_transform.origin + spawn_offset
+	fall = fall_threshold
 	#Timer
 	timer.wait_time = spawn_cooldown
 	timer.one_shot = true
@@ -45,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	#gravity
 	velocity += get_gravity() * delta
 	#fall death
-	if global_transform.origin.y < fall_threshold:
+	if global_transform.origin.y < fall:
 		spawn_player()
 		spawn_throwable()
 

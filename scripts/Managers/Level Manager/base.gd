@@ -57,7 +57,7 @@ func _on_exited_goal() -> void:
 	$camera_pivot.in_goal = false
 	disconnect_start()
 	connect_goal()
-	update_player_fall_threshold()
+	update_player_fall()
 
 
 #UI ----------------------------------------------------------------- pause menu
@@ -144,10 +144,10 @@ func disconnect_start() -> void:
 		goal_node.disconnect("entered_goal", Callable(self, "_on_entered_goal"))
 		goal_node.disconnect("exited_goal", Callable(self, "_on_exited_goal"))
 
-func update_player_fall_threshold() -> void:
-	player_w.fall_threshold = player_w.fall_threshold + LevelManager.level_position.y
+func update_player_fall() -> void:
+	player_w.fall = player_w.fall_threshold + LevelManager.level_position.y
 	
-	player_b.fall_threshold = player_b.fall_threshold + LevelManager.level_position.y
+	player_b.fall = player_b.fall_threshold + LevelManager.level_position.y
 
 func set_player_spawn_pos_by_level(level: int) -> void:
 	player_w.spawn_position = start_position_list[level-1] + Vector3(0.3, 1.5, 0) + LevelManager.level_position
