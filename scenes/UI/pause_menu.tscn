@@ -1,9 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgljbjyyncg1w"]
+[gd_scene load_steps=10 format=3 uid="uid://cgljbjyyncg1w"]
 
 [ext_resource type="Script" path="res://scripts/UI/button_animation.gd" id="1_4px35"]
 [ext_resource type="StyleBox" uid="uid://dyufk1bk2684x" path="res://assets/ui/button2.tres" id="1_4sdrl"]
 [ext_resource type="Script" path="res://scripts/UI/pause_menu.gd" id="1_f5qww"]
 [ext_resource type="FontFile" uid="uid://dpm3atig5yq6m" path="res://assets/ui/NexaRustSans-Black.otf" id="1_vfcb3"]
+[ext_resource type="Shader" path="res://assets/pause_menu_blur_shader.gdshader" id="2_sraj3"]
+[ext_resource type="Script" path="res://scripts/UI/level_select_button.gd" id="6_smvqd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1spsi"]
+shader = ExtResource("2_sraj3")
+shader_parameter/blur_amount = 1.5
+shader_parameter/mix_amount = null
+shader_parameter/color_over = null
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo6jv"]
 bg_color = Color(1, 1, 1, 0.686275)
@@ -22,6 +30,7 @@ Button/styles/normal = ExtResource("1_4sdrl")
 Button/styles/pressed = ExtResource("1_4sdrl")
 
 [node name="pause_menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,23 +39,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f5qww")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1spsi")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 480
-theme_override_constants/margin_top = 180
-theme_override_constants/margin_right = 480
-theme_override_constants/margin_bottom = 180
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="PanelContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 160
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jo6jv")
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="ButtonContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,23 +76,14 @@ theme_override_constants/margin_top = 200
 theme_override_constants/margin_right = 400
 theme_override_constants/margin_bottom = 200
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
-custom_minimum_size = Vector2(200, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonContainer"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="Resume" type="Button" parent="MarginContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme = SubResource("Theme_dddnc")
-text = "Resume"
-script = ExtResource("1_4px35")
-trans_type = 6
-ease_type = 1
-
-[node name="Restart" type="Button" parent="MarginContainer2/VBoxContainer"]
+[node name="Restart" type="Button" parent="ButtonContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = SubResource("Theme_dddnc")
@@ -83,7 +92,7 @@ script = ExtResource("1_4px35")
 trans_type = 6
 ease_type = 1
 
-[node name="Levels" type="Button" parent="MarginContainer2/VBoxContainer"]
+[node name="Levels" type="Button" parent="ButtonContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = SubResource("Theme_dddnc")
@@ -92,7 +101,7 @@ script = ExtResource("1_4px35")
 trans_type = 6
 ease_type = 1
 
-[node name="Settings" type="Button" parent="MarginContainer2/VBoxContainer"]
+[node name="Settings" type="Button" parent="ButtonContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = SubResource("Theme_dddnc")
@@ -101,13 +110,121 @@ script = ExtResource("1_4px35")
 trans_type = 6
 ease_type = 1
 
-[connection signal="mouse_entered" from="MarginContainer2/VBoxContainer/Resume" to="MarginContainer2/VBoxContainer/Resume" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer2/VBoxContainer/Resume" to="MarginContainer2/VBoxContainer/Resume" method="_on_mouse_exited"]
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="mouse_entered" from="MarginContainer2/VBoxContainer/Restart" to="MarginContainer2/VBoxContainer/Restart" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer2/VBoxContainer/Restart" to="MarginContainer2/VBoxContainer/Restart" method="_on_mouse_exited"]
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="mouse_entered" from="MarginContainer2/VBoxContainer/Levels" to="MarginContainer2/VBoxContainer/Levels" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer2/VBoxContainer/Levels" to="MarginContainer2/VBoxContainer/Levels" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="MarginContainer2/VBoxContainer/Settings" to="MarginContainer2/VBoxContainer/Settings" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer2/VBoxContainer/Settings" to="MarginContainer2/VBoxContainer/Settings" method="_on_mouse_exited"]
+[node name="MainMenu" type="Button" parent="ButtonContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = SubResource("Theme_dddnc")
+text = "Main menu"
+script = ExtResource("1_4px35")
+trans_type = 6
+ease_type = 1
+
+[node name="Quit" type="Button" parent="ButtonContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = SubResource("Theme_dddnc")
+text = "Quit
+"
+script = ExtResource("1_4px35")
+trans_type = 6
+ease_type = 1
+
+[node name="L_PanelContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 260
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 260
+
+[node name="Panel" type="Panel" parent="L_PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jo6jv")
+
+[node name="L_ButtonContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="HBoxContainer" parent="L_ButtonContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="1" type="Button" parent="L_ButtonContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = SubResource("Theme_dddnc")
+theme_override_font_sizes/font_size = 30
+text = "1"
+script = ExtResource("6_smvqd")
+
+[node name="2" type="Button" parent="L_ButtonContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = SubResource("Theme_dddnc")
+theme_override_font_sizes/font_size = 30
+text = "2
+"
+script = ExtResource("1_4px35")
+trans_type = 6
+ease_type = 1
+
+[node name="3" type="Button" parent="L_ButtonContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = SubResource("Theme_dddnc")
+theme_override_font_sizes/font_size = 30
+text = "3
+"
+script = ExtResource("1_4px35")
+trans_type = 6
+ease_type = 1
+
+[node name="4" type="Button" parent="L_ButtonContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = SubResource("Theme_dddnc")
+theme_override_font_sizes/font_size = 30
+text = "4"
+script = ExtResource("1_4px35")
+trans_type = 6
+ease_type = 1
+
+[connection signal="mouse_entered" from="ButtonContainer/VBoxContainer/Restart" to="ButtonContainer/VBoxContainer/Restart" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/VBoxContainer/Restart" to="ButtonContainer/VBoxContainer/Restart" method="_on_mouse_exited"]
+[connection signal="pressed" from="ButtonContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="mouse_entered" from="ButtonContainer/VBoxContainer/Levels" to="ButtonContainer/VBoxContainer/Levels" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/VBoxContainer/Levels" to="ButtonContainer/VBoxContainer/Levels" method="_on_mouse_exited"]
+[connection signal="pressed" from="ButtonContainer/VBoxContainer/Levels" to="." method="_on_levels_pressed"]
+[connection signal="mouse_entered" from="ButtonContainer/VBoxContainer/Settings" to="ButtonContainer/VBoxContainer/Settings" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/VBoxContainer/Settings" to="ButtonContainer/VBoxContainer/Settings" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ButtonContainer/VBoxContainer/MainMenu" to="ButtonContainer/VBoxContainer/MainMenu" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/VBoxContainer/MainMenu" to="ButtonContainer/VBoxContainer/MainMenu" method="_on_mouse_exited"]
+[connection signal="pressed" from="ButtonContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="mouse_entered" from="ButtonContainer/VBoxContainer/Quit" to="ButtonContainer/VBoxContainer/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/VBoxContainer/Quit" to="ButtonContainer/VBoxContainer/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="ButtonContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="L_ButtonContainer/VBoxContainer/1" to="L_ButtonContainer/VBoxContainer/1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="L_ButtonContainer/VBoxContainer/1" to="L_ButtonContainer/VBoxContainer/1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="L_ButtonContainer/VBoxContainer/2" to="L_ButtonContainer/VBoxContainer/2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="L_ButtonContainer/VBoxContainer/2" to="L_ButtonContainer/VBoxContainer/2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="L_ButtonContainer/VBoxContainer/3" to="L_ButtonContainer/VBoxContainer/3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="L_ButtonContainer/VBoxContainer/3" to="L_ButtonContainer/VBoxContainer/3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="L_ButtonContainer/VBoxContainer/4" to="L_ButtonContainer/VBoxContainer/4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="L_ButtonContainer/VBoxContainer/4" to="L_ButtonContainer/VBoxContainer/4" method="_on_mouse_exited"]

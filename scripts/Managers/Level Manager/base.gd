@@ -4,7 +4,6 @@ extends Node3D
 const PAUSE_MENU = preload("res://scenes/UI/pause_menu.tscn")
 @onready var pause_menu: Node = null
 var is_game_paused: bool = false
-var is_respawning: bool = false
 
 const Start = preload("res://scenes/Environment/goal.tscn")
 const WIND_AMBIENCE_14720 = preload("res://assets/wind-ambience-14720.mp3")
@@ -17,7 +16,6 @@ func _ready() -> void:
 	LevelManager.init()
 	LevelManager.connect("level_spawned", Callable(self, "_on_level_spawned"))
 	AudioManager.play_music(WIND_AMBIENCE_14720, "sfx_alt2", -10, 10)
-	
 	open_level(1)
 
 func open_level(level:int) -> void:
@@ -33,9 +31,9 @@ func open_level(level:int) -> void:
 	if not goal_node: connect_goal()
 
 func _on_level_spawned() -> void:
-	if is_respawning:
-		connect_goal()
-		is_respawning = false
+	#if is_respawning:
+		#connect_goal()
+		#is_respawning = false
 	unfreeze_player(player_w)
 	unfreeze_player(player_b)
 
@@ -46,7 +44,7 @@ func _on_entered_goal() -> void:
 	update_spawn_pos()
 
 func _on_exited_goal() -> void:
-	LevelManager.despawn_level()
+	LevelManager.despawn_old_level()
 	$camera_pivot.in_goal = false
 	disconnect_start()
 	connect_goal()
@@ -65,9 +63,11 @@ func pause_game() -> void:
 	if not pause_menu:
 		pause_menu = PAUSE_MENU.instantiate()
 		get_tree().root.add_child(pause_menu)
+		get_tree().paused = true
 		
 		pause_menu.connect("resume", Callable(self, "unpause_game"))
 		pause_menu.connect("restart", Callable(self, "restart"))
+		pause_menu.connect("level_select", Callable(self, "select_level"))
 		
 	is_game_paused = true
 
@@ -75,18 +75,24 @@ func unpause_game() -> void:
 	if pause_menu:
 		pause_menu.disconnect("resume", Callable(self, "unpause_game"))
 		pause_menu.disconnect("restart", Callable(self, "restart"))
+		pause_menu.disconnect("level_select", Callable(self, "select_level"))
 		
 		pause_menu.queue_free()
+		get_tree().paused = false
 		pause_menu = null
 	is_game_paused = false
 
 func restart() -> void:
-	is_respawning = true
+	select_level(LevelManager.level)
+
+func select_level(level_given: int) -> void:
 	disconnect_goal()
 	freeze_player(player_w)
 	freeze_player(player_b)
-	LevelManager.respawn_level()
-	respawn_players()
+	LevelManager.total_despawn_level()
+	await get_tree().create_timer(0).timeout
+	open_level(level_given)
+	unpause_game()
 #UI ----------------------------------------------------------------- pause menu
 #UI ----------------------------------------------------------------- pause menu
 
@@ -94,6 +100,7 @@ func disconnect_goal() -> void:
 	goal_node = get_node("Level/Level%s/Goal" % LevelManager.level)
 	goal_node.disconnect("entered_goal", Callable(self, "_on_entered_goal"))
 	goal_node.disconnect("exited_goal", Callable(self, "_on_exited_goal"))
+	goal_node = null
 
 func connect_goal() -> void:
 	goal_node = get_node("Level/Level%s/Goal" % LevelManager.level)
@@ -106,12 +113,14 @@ func disconnect_start() -> void:
 		goal_node.disconnect("exited_goal", Callable(self, "_on_exited_goal"))
 
 func update_spawn_pos() -> void:
-	player_w.spawn_position = goal_node.target_position + Vector3(0.3, 1.5, 0) 
-	player_b.spawn_position = goal_node.target_position + Vector3(-0.3, 1.5, 0)
+	player_w.spawn_position = goal_node.target_position + Vector3(0.3, 1.5, 0) + LevelManager.level_position
+	
+	player_b.spawn_position = goal_node.target_position + Vector3(-0.3, 1.5, 0) + LevelManager.level_position
 
 func set_player_spawn_pos_by_level(level: int) -> void:
-	player_w.spawn_position = start_position_list[level-1] + Vector3(0.3, 1.5, 0) 
-	player_b.spawn_position = start_position_list[level-1] + Vector3(-0.3, 1.5, 0)
+	player_w.spawn_position = start_position_list[level-1] + Vector3(0.3, 1.5, 0) + LevelManager.level_position
+	
+	player_b.spawn_position = start_position_list[level-1] + Vector3(-0.3, 1.5, 0) + LevelManager.level_position
 
 func respawn_players() -> void:
 	player_w.spawn_player()

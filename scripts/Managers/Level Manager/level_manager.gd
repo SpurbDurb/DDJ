@@ -11,12 +11,10 @@ var new_level_instance : Node
 
 func init() -> void:
 	base_level_node = get_tree().root.get_node("Base/Level")
+	reset()
 
 func reset() -> void:
-	level = 0
 	level_position = Vector3.ZERO
-	base_level_node = null
-	new_level_instance = null
 
 func level_up():
 	level_position.y += level_up_offset
@@ -37,7 +35,7 @@ func spawn_level(new_level: int):
 	base_level_node.add_child(new_level_instance)
 	emit_signal("level_spawned")
 
-func despawn_level():
+func despawn_old_level():
 	var level_to_despawn = level -1
 	var old_level_instance = base_level_node.get_node("Level%s" % level_to_despawn)
 	
@@ -50,6 +48,10 @@ func despawn_level():
 		goal_node.global_transform = global_transform
 	
 	old_level_instance.queue_free()
+
+func total_despawn_level():
+	var level_instance = base_level_node.get_node("Level%s" % level)
+	level_instance.queue_free()
 
 func respawn_level() -> void:
 	var level_instance = base_level_node.get_node("Level%s" % level)

@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_bru1f")
-limit = 2
+limit = 4
 type = 17
 sound_effect = ExtResource("2_kxdit")
-volume = -18.0
+volume = -24.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 bus = "SFX_alt2"
