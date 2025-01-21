@@ -11,6 +11,11 @@ func _ready() -> void:
 		sound_effect_dict[sound_effect.type] = sound_effect
 	play_music(EQUATORIAL_COMPLEX, "Music", -18, 30)
 
+func reset() -> void:
+	for child in get_children():
+		child.queue_free()
+	play_music(EQUATORIAL_COMPLEX, "Music", -18, 30)
+
 func play_music(audio_stream: AudioStream, bus_name: String, volume: int, delay: float) -> void:
 	var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 	add_child(music_player)
@@ -18,6 +23,7 @@ func play_music(audio_stream: AudioStream, bus_name: String, volume: int, delay:
 	music_player.bus = bus_name
 	music_player.autoplay = false
 	music_player.volume_db = volume
+	music_player.set_process_mode(PROCESS_MODE_ALWAYS)
 	music_player.play()
 	
 	music_player.finished.connect(func() -> void:
@@ -43,7 +49,7 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			var new_audio: AudioStreamPlayer = AudioStreamPlayer.new()
 			add_child(new_audio)
 			new_audio.stream = sound_effect.sound_effect
-			new_audio.volume_db = sound_effect.volume - (sound_effect.audio_count * 3)
+			new_audio.volume_db = sound_effect.volume - 3
 			new_audio.pitch_scale = sound_effect.pitch_scale + randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness)
 			new_audio.bus = sound_effect.bus
 			new_audio.finished.connect(sound_effect.on_audio_finished)

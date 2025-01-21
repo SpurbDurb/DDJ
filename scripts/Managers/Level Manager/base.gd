@@ -2,7 +2,9 @@ extends Node3D
 
 #UI
 const PAUSE_MENU = preload("res://scenes/UI/pause_menu.tscn")
+const TUTORIAL = preload("res://scenes/UI/tutorial.tscn")
 @onready var pause_menu: Node = null
+@onready var tutorial: Node = null
 var is_game_paused: bool = false
 
 const Start = preload("res://scenes/Environment/goal.tscn")
@@ -19,6 +21,14 @@ func _ready() -> void:
 	LevelManager.connect("level_spawned", Callable(self, "_on_level_spawned"))
 	AudioManager.play_music(WIND_AMBIENCE_14720, "sfx_alt2", -10, 10)
 	open_level(1)
+	
+	#delay for tutorial
+	var timer = Timer.new()
+	timer.one_shot = true
+	timer.wait_time = 1.0
+	add_child(timer)
+	timer.connect("timeout", Callable(self, "show_tutorial"))
+	timer.start()
 
 func open_level(level:int) -> void:
 	freeze_player(player_w)
@@ -62,6 +72,17 @@ func _on_exited_goal() -> void:
 
 #UI ----------------------------------------------------------------- pause menu
 #UI ----------------------------------------------------------------- pause menu
+func show_tutorial() -> void:
+	tutorial = TUTORIAL.instantiate()
+	get_tree().root.add_child(tutorial)
+	get_tree().paused = true
+	tutorial.connect("okay", Callable(self, "resume_from_tutorial"))
+
+func resume_from_tutorial() -> void:
+	get_tree().paused = false
+	tutorial.disconnect("okay", Callable(self, "resume_from_tutorial"))
+	tutorial.queue_free()
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"): # Default key for ESC is "ui_cancel"
 		if is_game_paused:
