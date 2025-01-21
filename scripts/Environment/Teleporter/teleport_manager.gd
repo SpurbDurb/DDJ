@@ -77,7 +77,7 @@ func teleport_players() -> void:
 	player_2 = temp_player
 	
 	var timer = Timer.new()
-	timer.wait_time = 0.1
+	timer.wait_time = 0.8
 	timer.one_shot = true
 	timer.connect("timeout", Callable(self, "_on_teleport_timer_timeout"))
 	add_child(timer)
