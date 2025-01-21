@@ -13,7 +13,7 @@ func _ready():
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
-		if on_level_menu:
+		if on_level_menu or on_settings_menu:
 			on_pause_menu = true
 			on_level_menu = false
 			on_settings_menu = false
