@@ -18,7 +18,6 @@ func enter() -> void:
 func exit() -> void:
 	%CollisionSwim.disabled = true
 
-
 func update(_deta:float):
 	var input_dir := get_input()
 	if input_dir.length() > 0:

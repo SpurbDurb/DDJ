@@ -69,7 +69,6 @@ func _on_exited_goal() -> void:
 	connect_goal()
 	update_player_fall()
 
-
 #UI ----------------------------------------------------------------- pause menu
 #UI ----------------------------------------------------------------- pause menu
 func show_tutorial() -> void:
@@ -145,17 +144,23 @@ func handle_goal_lock(level_given: int) -> void:
 	timer.start()
 
 func _on_timer_timeout():
-	lock_goal = false
-	goal_node.reset()
+	if goal_node:
+		lock_goal = false
+		goal_node.reset()
 #UI ----------------------------------------------------------------- pause menu
 #UI ----------------------------------------------------------------- pause menu
 func disconnect_goal(level:int) -> void:
+	if not goal_node: return
 	goal_node = get_node("Level/Level%s/Goal" % level)
 	goal_node.disconnect("entered_goal", Callable(self, "_on_entered_goal"))
 	goal_node.disconnect("exited_goal", Callable(self, "_on_exited_goal"))
 	goal_node = null
 
 func connect_goal() -> void:
+	if LevelManager.level == 3: 
+		goal_node = null
+		return
+	
 	goal_node = get_node("Level/Level%s/Goal" % LevelManager.level)
 	goal_node.connect("entered_goal", Callable(self, "_on_entered_goal"))
 	goal_node.connect("exited_goal", Callable(self, "_on_exited_goal"))

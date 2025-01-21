@@ -8,9 +8,11 @@ var player: Node = null
 var player_2: Node = null
 
 # camera events -----
+const END_SCREEN = preload("res://scenes/UI/end_screen.tscn")
 var in_goal := false
-
-var in_event:= false
+var in_event := false
+var stop_camera := false
+var stop_camera_count := 0
 var event_global_position : Vector3
 @export var camera_event_speed: float = 0.05
 @export var event_zoom: float = 2.8
@@ -38,6 +40,7 @@ func _ready() -> void:
 	
 	# Connect to signals for camera events
 	SignalManager.connect("camera_event", Callable(self, "_on_camera_event"))
+	SignalManager.connect("camera_end_goal_event", Callable(self, "_on_camera_end_goal_event"))
 
 	
 func _on_node_added(node: Node) -> void:
@@ -53,7 +56,32 @@ func _on_camera_event(global_position_for_event: Vector3):
 	event_global_position = global_position_for_event
 	in_event = true
 
+func _on_camera_end_goal_event() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
+	in_goal = true
+	timer_for_end_screen()
+
+func timer_for_end_screen() -> void:
+	stop_camera_count += 1
+	var timer = Timer.new()
+	timer.one_shot = true
+	timer.wait_time = 2.0
+	add_child(timer)
+	timer.connect("timeout", Callable(self, "stop"))
+	timer.start()
+
+func stop() -> void:
+	if stop_camera_count == 2:
+		get_tree().paused = true
+		AudioManager.fade_out_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal, 6)
+	else:
+		stop_camera = true
+		var end_screen = END_SCREEN.instantiate()
+		get_tree().root.add_child(end_screen)
+		timer_for_end_screen()
+
 func _physics_process(_delta: float) -> void:
+	if stop_camera: return
 	if player == null: player = get_node_or_null("../Player_W")
 	if player_2 == null: player_2 = get_node_or_null("../Player_B")
 	if player == null or player_2 == null: return

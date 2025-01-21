@@ -836,11 +836,12 @@ size = Vector3(1.57178, 1, 1.6)
 script = ExtResource("19_qedpw")
 teleporter_1 = NodePath("Teleporter_1")
 teleporter_2 = NodePath("Teleporter_2")
+swap_spawns = true
 
 [node name="Teleporter_1" type="Node3D" parent="Section 2/TP Manager" node_paths=PackedStringArray("manager")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.83, 12.9)
 script = ExtResource("20_scnpt")
-manager = NodePath("")
+manager = NodePath("..")
 
 [node name="Base" type="MeshInstance3D" parent="Section 2/TP Manager/Teleporter_1"]
 transform = Transform3D(0.500659, 6.11671e-05, -2.6737e-12, -6.11671e-05, 0.500659, -4.37691e-08, -2.6737e-12, 4.37691e-08, 0.500659, -0.00723696, -0.00357055, 0.00103092)
@@ -906,7 +907,7 @@ material_override = ExtResource("21_178eg")
 [node name="Teleporter_2" type="Node3D" parent="Section 2/TP Manager" node_paths=PackedStringArray("manager")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.83, 12.9)
 script = ExtResource("20_scnpt")
-manager = NodePath("")
+manager = NodePath("..")
 
 [node name="Base" type="MeshInstance3D" parent="Section 2/TP Manager/Teleporter_2"]
 transform = Transform3D(0.500659, 6.11671e-05, -2.6737e-12, -6.11671e-05, 0.500659, -4.37691e-08, -2.6737e-12, 4.37691e-08, 0.500659, -0.00723696, -0.00357055, 0.00103092)

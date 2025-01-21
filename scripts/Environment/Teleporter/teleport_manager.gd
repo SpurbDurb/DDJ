@@ -2,6 +2,7 @@ extends Node
 
 @export var teleporter_1: Node3D
 @export var teleporter_2: Node3D
+@export var swap_spawns := false
 
 var player_1: CharacterBody3D = null
 var player_2: CharacterBody3D = null
@@ -63,6 +64,12 @@ func teleport_players() -> void:
 		var target_position = teleporter_1.global_transform.origin
 		target_position.y = player_2.global_position.y
 		player_2.global_position = target_position
+	
+	# Swap player spawns 
+	if swap_spawns:
+		var temp_spwan = player_1.spawn_position
+		player_1.spawn_position = player_2.spawn_position
+		player_2.spawn_position = temp_spwan
 	
 	# Swap player references
 	var temp_player = player_1
