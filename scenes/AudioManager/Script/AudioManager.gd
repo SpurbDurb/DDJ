@@ -59,7 +59,7 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 func fade_out_audio(type: SoundEffect.SOUND_EFFECT_TYPE, duration: float = 1.0) -> void:
 	# Early return if the type doesn't exist in active_audio_players
 	if not active_audio_players.has(type):
-		#push_warning("No active audio players found for type: %s" % type)
+		push_warning("No active audio players found for type: %s" % type)
 		return
 	
 	# Clean up invalid players first
@@ -75,7 +75,7 @@ func fade_out_audio(type: SoundEffect.SOUND_EFFECT_TYPE, duration: float = 1.0) 
 	if valid_players.is_empty():
 		if sound_effect_dict.has(type):
 			sound_effect_dict[type].change_audio_count(0) # Reset the count
-		#push_warning("No valid audio players to fade for type: %s" % type)
+		push_warning("No valid audio players to fade for type: %s" % type)
 		return
 	
 	# Fade out valid players
