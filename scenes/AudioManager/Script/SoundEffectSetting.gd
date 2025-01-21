@@ -24,7 +24,11 @@ enum SOUND_EFFECT_TYPE {
 	Laser_on,
 	Laser_off,
 	TP_start,
-	TP_end
+	TP_end,
+	Tick,
+	Platform_off,
+	Button_hover,
+	Button_pressed
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.
@@ -35,7 +39,7 @@ enum SOUND_EFFECT_TYPE {
 @export_range(0.0, 1.0,.01) var pitch_randomness: float = 0.0 ## The pitch randomness setting of the [member sound_effect].
 @export_enum("Master", "Music", "SFX", "SFX_alt" ,"SFX_alt2")
 var bus: String = "SFX"
-
+@export var ui := false
 var audio_count: int = 0 ## The instances of this [AudioStreamMP3] currently playing.
 
 

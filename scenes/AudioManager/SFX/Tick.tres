@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://b5ro7k4lvyqsq"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_gog5b"]
+[ext_resource type="AudioStream" uid="uid://bdcwdyfslwx3g" path="res://assets/Audio/UI/pack2/Minimalist8.wav" id="2_0wuk7"]
+
+[resource]
+script = ExtResource("1_gog5b")
+limit = 8
+type = 20
+sound_effect = ExtResource("2_0wuk7")
+volume = -4.0
+pitch_scale = 1.2
+pitch_randomness = 0.0
+bus = "SFX_alt2"

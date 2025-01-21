@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://bsjloa113ov2h"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_ltsyl"]
+[ext_resource type="AudioStream" uid="uid://dkolnd73exchn" path="res://assets/Audio/UI/pack2/Retro4.wav" id="2_kun04"]
+
+[resource]
+script = ExtResource("1_ltsyl")
+limit = 8
+type = 23
+sound_effect = ExtResource("2_kun04")
+volume = -20.0
+pitch_scale = 0.4
+pitch_randomness = 0.0
+bus = "SFX"
+ui = true

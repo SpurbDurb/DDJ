@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://4peu8pimccac"]
+
+[ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="1_shwwp"]
+[ext_resource type="AudioStream" uid="uid://c5m64aidw6tw" path="res://assets/Audio/UI/pack1/JDSherbert - Ultimate UI SFX Pack - Popup Close - 1.wav" id="2_bhxrl"]
+
+[resource]
+script = ExtResource("1_shwwp")
+limit = 8
+type = 21
+sound_effect = ExtResource("2_bhxrl")
+volume = -16.0
+pitch_scale = 0.9
+pitch_randomness = 0.0
+bus = "SFX_alt2"

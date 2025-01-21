@@ -47,6 +47,7 @@ collision_mask = 5
 size = Vector3(7, 1, 6)
 
 [node name="water" parent="Map/floor" instance=ExtResource("4_qj0fe")]
+layers = 7
 
 [node name="hole" type="CSGBox3D" parent="Map/floor"]
 transform = Transform3D(1.0014, 0, 0, 0, 1.0014, 0, 0, 0, 1.0014, -3.09328, 0.0949707, 2.66486)

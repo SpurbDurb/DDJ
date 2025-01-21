@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://f2edgo2gjein"]
+[gd_scene load_steps=11 format=3 uid="uid://c7lxyd02a51m"]
 
 [ext_resource type="Script" path="res://scripts/UI/main_menu.gd" id="1_l6oyc"]
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="2_bnmhx"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c8tbtllbkhwio"]
+[gd_scene load_steps=29 format=3 uid="uid://c8tbtllbkhwio"]
 
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/AudioManager.gd" id="1_d5qgc"]
 [ext_resource type="Script" path="res://scenes/AudioManager/Script/SoundEffectSetting.gd" id="2_t17x2"]
@@ -22,6 +22,10 @@
 [ext_resource type="Resource" uid="uid://dwrxbo6l8syjw" path="res://scenes/AudioManager/SFX/laser_off.tres" id="20_xpbqx"]
 [ext_resource type="Resource" uid="uid://dolyp75f38cn0" path="res://scenes/AudioManager/SFX/TP_start.tres" id="21_qw8vv"]
 [ext_resource type="Resource" uid="uid://cktg3d0lf3guo" path="res://scenes/AudioManager/SFX/TP_end.tres" id="22_7b6fm"]
+[ext_resource type="Resource" uid="uid://b5ro7k4lvyqsq" path="res://scenes/AudioManager/SFX/Tick.tres" id="23_jtffd"]
+[ext_resource type="Resource" uid="uid://4peu8pimccac" path="res://scenes/AudioManager/SFX/Platform_off.tres" id="24_pp8vk"]
+[ext_resource type="Resource" uid="uid://8y665jotnxs7" path="res://scenes/AudioManager/SFX/Button_hover.tres" id="25_vspv5"]
+[ext_resource type="Resource" uid="uid://bsjloa113ov2h" path="res://scenes/AudioManager/SFX/Button_pressed.tres" id="26_2b4sb"]
 
 [sub_resource type="Resource" id="Resource_0g3wt"]
 script = ExtResource("2_t17x2")
@@ -32,6 +36,7 @@ volume = -10.0
 pitch_scale = 1.2
 pitch_randomness = 0.2
 bus = "SFX"
+ui = false
 
 [sub_resource type="Resource" id="Resource_2imo4"]
 script = ExtResource("2_t17x2")
@@ -42,7 +47,8 @@ volume = -10.0
 pitch_scale = 1.2
 pitch_randomness = 0.2
 bus = "SFX"
+ui = false
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_d5qgc")
-sound_effects = Array[ExtResource("2_t17x2")]([ExtResource("4_veyeo"), ExtResource("3_njfwf"), ExtResource("5_jwcr2"), ExtResource("5_l7yyr"), ExtResource("6_8cji7"), SubResource("Resource_0g3wt"), SubResource("Resource_2imo4"), ExtResource("10_4kkq4"), ExtResource("11_bml46"), ExtResource("12_pvnru"), ExtResource("13_y83ob"), ExtResource("14_4jcv8"), ExtResource("15_mhfsn"), ExtResource("16_rjghe"), ExtResource("17_tbrs4"), ExtResource("18_44uth"), ExtResource("19_spkoy"), ExtResource("20_xpbqx"), ExtResource("21_qw8vv"), ExtResource("22_7b6fm")])
+sound_effects = Array[ExtResource("2_t17x2")]([ExtResource("4_veyeo"), ExtResource("3_njfwf"), ExtResource("5_jwcr2"), ExtResource("5_l7yyr"), ExtResource("6_8cji7"), SubResource("Resource_0g3wt"), SubResource("Resource_2imo4"), ExtResource("10_4kkq4"), ExtResource("11_bml46"), ExtResource("12_pvnru"), ExtResource("13_y83ob"), ExtResource("14_4jcv8"), ExtResource("15_mhfsn"), ExtResource("16_rjghe"), ExtResource("17_tbrs4"), ExtResource("18_44uth"), ExtResource("19_spkoy"), ExtResource("20_xpbqx"), ExtResource("21_qw8vv"), ExtResource("22_7b6fm"), ExtResource("23_jtffd"), ExtResource("24_pp8vk"), ExtResource("25_vspv5"), ExtResource("26_2b4sb")])

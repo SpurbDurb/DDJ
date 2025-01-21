@@ -54,6 +54,8 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			new_audio.bus = sound_effect.bus
 			new_audio.finished.connect(sound_effect.on_audio_finished)
 			new_audio.finished.connect(new_audio.queue_free)
+			if sound_effect.ui:
+				new_audio.set_process_mode(PROCESS_MODE_ALWAYS)
 			new_audio.play()
 			
 			if not active_audio_players.has(type):

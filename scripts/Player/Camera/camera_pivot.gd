@@ -7,22 +7,11 @@ extends Node3D
 var player: Node = null
 var player_2: Node = null
 
-# camera events -----
-const END_SCREEN = preload("res://scenes/UI/end_screen.tscn")
-var in_goal := false
-var in_event := false
-var stop_camera := false
-var stop_camera_count := 0
-var event_global_position : Vector3
-@export var camera_event_speed: float = 0.05
-@export var event_zoom: float = 2.8
-# camera events -----
-
 # Parâmetros de zoom
 @export var min_zoom: float = 8.0
 @export var max_zoom: float = 1.2
 # Parâmetros de altura
-@export var min_height: float = 1.2
+@export var min_height: float = 1.4
 @export var max_height: float = 2.0
 # Parâmetros de anglo
 @export var min_angle: float = -40.0
@@ -33,52 +22,21 @@ var event_global_position : Vector3
 @export var max_rotation_speed: float = 0.2
 @export var min_rotation_speed: float = 0.01
 
+# camera events ----- # camera events -----
+const END_SCREEN = preload("res://scenes/UI/end_screen.tscn")
+var in_goal := false
+var in_event := false
+var stop_camera := false
+var stop_camera_count := 0
+var event_global_position : Vector3
+@export var camera_event_speed: float = 0.05
+@export var event_zoom: float = 2.8
+# camera events ----- # camera events -----
 
 func _ready() -> void:
-	# Listen for spawned players
-	get_tree().connect("node_added", Callable(self, "_on_node_added"))
-	
 	# Connect to signals for camera events
 	SignalManager.connect("camera_event", Callable(self, "_on_camera_event"))
 	SignalManager.connect("camera_end_goal_event", Callable(self, "_on_camera_end_goal_event"))
-
-	
-func _on_node_added(node: Node) -> void:
-	if node.name == "Player_W":
-		player = node
-	elif node.name == "Player_B":
-		player_2 = node
-		
-	if player != null and player_2 != null:
-		_physics_process(0)  # Run physics processing again
-
-func _on_camera_event(global_position_for_event: Vector3):
-	event_global_position = global_position_for_event
-	in_event = true
-
-func _on_camera_end_goal_event() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
-	in_goal = true
-	timer_for_end_screen()
-
-func timer_for_end_screen() -> void:
-	stop_camera_count += 1
-	var timer = Timer.new()
-	timer.one_shot = true
-	timer.wait_time = 2.0
-	add_child(timer)
-	timer.connect("timeout", Callable(self, "stop"))
-	timer.start()
-
-func stop() -> void:
-	if stop_camera_count == 2:
-		get_tree().paused = true
-		AudioManager.fade_out_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal, 6)
-	else:
-		stop_camera = true
-		var end_screen = END_SCREEN.instantiate()
-		get_tree().root.add_child(end_screen)
-		timer_for_end_screen()
 
 func _physics_process(_delta: float) -> void:
 	if stop_camera: return
@@ -127,6 +85,9 @@ func handle_players(_delta: float) -> void:
 	if in_goal:
 		camera_3d.rotation.x = lerp(camera_3d.rotation.x, deg_to_rad(-15.0), zoom_speed)
 
+
+# camera events ------------------------------------------------------
+# camera events ------------------------------------------------------
 func handle_event(_delta: float) -> void:
 	# Move the camera towards the event_global_position
 	global_transform.origin = lerp(global_transform.origin, event_global_position, camera_speed)
@@ -137,3 +98,32 @@ func handle_event(_delta: float) -> void:
 	if global_transform.origin.distance_to(event_global_position) < 0.05:
 		# End the event
 		in_event = false
+
+func _on_camera_event(global_position_for_event: Vector3):
+	event_global_position = global_position_for_event
+	in_event = true
+
+func _on_camera_end_goal_event() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal)
+	in_goal = true
+	timer_for_end_screen()
+
+func timer_for_end_screen() -> void:
+	stop_camera_count += 1
+	var timer = Timer.new()
+	timer.one_shot = true
+	timer.wait_time = 2.0
+	add_child(timer)
+	timer.connect("timeout", Callable(self, "stop"))
+	timer.start()
+
+func stop() -> void:
+	if stop_camera_count == 2:
+		get_tree().paused = true
+		AudioManager.fade_out_audio(SoundEffect.SOUND_EFFECT_TYPE.Goal, 6)
+	else:
+		stop_camera = true
+		var end_screen = END_SCREEN.instantiate()
+		get_tree().root.add_child(end_screen)
+		timer_for_end_screen()
+# camera events ------------------------------------------------------

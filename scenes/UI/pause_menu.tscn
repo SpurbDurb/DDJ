@@ -101,6 +101,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,6 +118,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jo6jv")
 
 [node name="ButtonContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -182,7 +184,6 @@ trans_type = 6
 ease_type = 1
 
 [node name="L_PanelContainer" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -199,7 +200,6 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jo6jv")
 
 [node name="L_ButtonContainer" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -225,6 +225,8 @@ theme = SubResource("Theme_dddnc")
 theme_override_font_sizes/font_size = 30
 text = "1"
 script = ExtResource("6_smvqd")
+trans_type = 6
+ease_type = 1
 
 [node name="2" type="Button" parent="L_ButtonContainer/VBoxContainer"]
 custom_minimum_size = Vector2(60, 60)

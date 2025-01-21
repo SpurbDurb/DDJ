@@ -14,9 +14,11 @@ func _deferred_ready() -> void:
 func enter() -> void:
 	animation_player.play("swim")
 	%CollisionSwim.disabled = false
+	player.collision_layer = (1 << 1) | (1 << 2)  # Enable layers 2 and 3
 
 func exit() -> void:
 	%CollisionSwim.disabled = true
+	player.collision_layer = (1 << 0) | (1 << 1)  # Enable layers 1 and 2
 
 func update(_deta:float):
 	var input_dir := get_input()

@@ -244,6 +244,8 @@ size = Vector3(1.5, 0.5, 1.5)
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0.777704, -0.3, -1.73725)
 script = ExtResource("3_mffrt")
 connection_id = 3
+is_emitter = null
+is_viseble = null
 fade_speed = 10.0
 visible_duration = 2.3
 

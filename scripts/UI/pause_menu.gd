@@ -22,21 +22,25 @@ func _process(_delta: float) -> void:
 			emit_signal("resume")
 
 func _on_restart_pressed() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Button_pressed)
 	emit_signal("restart")
 
 func _on_main_menu_pressed() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Button_pressed)
 	queue_free()
 	get_tree().paused = false
 	LevelManager.level = 1
 	SceneManager.switch_scene("res://scenes/UI/main_menu.tscn")
 
 func _on_settings_pressed() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Button_pressed)
 	on_settings_menu = true
 	on_pause_menu = false
 	on_level_menu = false
 	switch_menu()
 
 func _on_levels_pressed() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Button_pressed)
 	on_settings_menu = false
 	on_pause_menu = false
 	on_level_menu = true
@@ -46,6 +50,7 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_level_pressed(button_name: String) -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.Button_pressed)
 	var button_level = int(button_name)
 	emit_signal("level_select", button_level)
 
