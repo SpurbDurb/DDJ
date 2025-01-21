@@ -16,3 +16,4 @@ volume = 2.0
 pitch_scale = 1.4
 pitch_randomness = 0.2
 bus = "SFX_alt2"
+ui = false
