@@ -1,6 +1,7 @@
 extends Node3D
 
 @export_range(1,9) var connection_id: int = 1
+@export var one_time := false
 var n_buttons := 0
 var count := 0
 var on := false
@@ -18,6 +19,9 @@ func _deferred_ready() -> void:
 func _on_button_entered() -> void:
 	count += 1
 	if count == n_buttons:
+		if one_time:
+			for child in get_children():
+				child.locked = true
 		on = true
 		SignalManager.emit_connection_signal(connection_id, self)
 
