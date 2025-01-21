@@ -16,6 +16,7 @@ func _process(_delta: float) -> void:
 		if on_level_menu:
 			on_pause_menu = true
 			on_level_menu = false
+			on_settings_menu = false
 			switch_menu()
 		else:
 			emit_signal("resume")
@@ -29,7 +30,14 @@ func _on_main_menu_pressed() -> void:
 	LevelManager.level = 1
 	SceneManager.switch_scene("res://scenes/UI/main_menu.tscn")
 
+func _on_settings_pressed() -> void:
+	on_settings_menu = true
+	on_pause_menu = false
+	on_level_menu = false
+	switch_menu()
+
 func _on_levels_pressed() -> void:
+	on_settings_menu = false
 	on_pause_menu = false
 	on_level_menu = true
 	switch_menu()
@@ -46,3 +54,5 @@ func switch_menu() -> void:
 	$ButtonContainer.visible = on_pause_menu
 	$L_PanelContainer.visible = on_level_menu
 	$L_ButtonContainer.visible = on_level_menu
+	$S_PanelContainer.visible = on_settings_menu
+	$S_ButtonContainer.visible = on_settings_menu
