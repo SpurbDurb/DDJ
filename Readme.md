@@ -14,14 +14,14 @@ The players discover a new platform every time they solve the puzzle for the pla
 The higher the players go, the more complex the puzzles become, and the more they have to rely on each other to progress.
 
 ## Controls
-- Black Player:
+- White Player:
   - Move: W, A, S, D
   - Jump: Space
   - Sprint: Left Shift
   - Push: F
 
 
-- White Player:
+- Black Player:
   - Move: Arrow Keys
   - Jump: J
   - Throw: K
