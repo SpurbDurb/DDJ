@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://deero57i8rjkx"]
+[gd_scene load_steps=106 format=4 uid="uid://deero57i8rjkx"]
 
 [ext_resource type="Texture2D" uid="uid://dqgbgrchvfwve" path="res://assets/grid textures/Green/texture_05.png" id="1_1qgsv"]
 [ext_resource type="Script" path="res://scripts/Environment/Platform/check_point.gd" id="1_kt607"]
@@ -16,11 +16,15 @@
 [ext_resource type="Texture2D" uid="uid://cdtocy1cyj1lp" path="res://assets/button/button_purple.jpg" id="11_inhk2"]
 [ext_resource type="PackedScene" uid="uid://d1qrw8doltj2c" path="res://scenes/Environment/Key Door/key.tscn" id="13_xgb0t"]
 [ext_resource type="PackedScene" uid="uid://dmcij0x5t53sp" path="res://scenes/Environment/Laser/laser.tscn" id="14_q8dgk"]
+[ext_resource type="Script" path="res://scripts/Environment/Laser/laser.gd" id="17_j2wl5"]
 [ext_resource type="Texture2D" uid="uid://c6w7772t1tdo8" path="res://assets/grid textures/Red/texture_08.png" id="18_hm46v"]
 [ext_resource type="Texture2D" uid="uid://dyshw81wmob45" path="res://assets/grid textures/Green/texture_10.png" id="18_xs1wj"]
 [ext_resource type="Script" path="res://scripts/Environment/Platform/end_goal.gd" id="19_d7r2t"]
+[ext_resource type="PackedScene" uid="uid://c1xf8hsj5vju2" path="res://scenes/Environment/Laser/barrier.tscn" id="19_js5r2"]
 [ext_resource type="Script" path="res://scripts/Environment/Platform/basic_platform.gd" id="19_mvtap"]
+[ext_resource type="PackedScene" uid="uid://cpfia88gwklee" path="res://scenes/Environment/Laser/Beam.tscn" id="19_pca2s"]
 [ext_resource type="Script" path="res://scripts/Environment/Teleporter/teleport_manager.gd" id="19_qedpw"]
+[ext_resource type="Script" path="res://scripts/Environment/Laser/beam.gd" id="20_2bh0v"]
 [ext_resource type="Texture2D" uid="uid://bn8wfhbs1omgo" path="res://assets/grid textures/Dark/texture_08.png" id="20_buokl"]
 [ext_resource type="Script" path="res://scripts/Environment/Teleporter/teleport.gd" id="20_scnpt"]
 [ext_resource type="Material" uid="uid://cpdtksbwt3key" path="res://assets/teleporter/new_shader_material.tres" id="21_178eg"]
@@ -242,6 +246,171 @@ _data = {
 "pressdown": SubResource("Animation_gsc3s"),
 "pressup": SubResource("Animation_ehbdj")
 }
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g2lov"]
+flip_faces = true
+top_radius = 0.03
+bottom_radius = 0.08
+height = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esyfk"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.823529)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbsnq"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.788235)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_3qowu"]
+_data = [Vector2(0, 0.549574), 0.0, 0.0, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6ympn"]
+curve = SubResource("Curve_3qowu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vf42y"]
+resource_local_to_scene = true
+spread = 80.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_6ympn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a2r40"]
+size = Vector2(0.02, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xomts"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.870588)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_alemd"]
+_data = [Vector2(0, 0.459488), 0.0, 0.0, 0, 0, Vector2(0.304945, 0.979211), 0.0, 0.0, 0, 0, Vector2(0.884615, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_rjsst"]
+curve = SubResource("Curve_alemd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xrjv8"]
+resource_local_to_scene = true
+emission_shape = 3
+emission_box_extents = Vector3(0.03, 0.1, 0.03)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_rjsst")
+collision_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_f1032"]
+size = Vector2(0.02, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnhik"]
+albedo_texture = ExtResource("2_e4e6p")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_dgda5"]
+material = SubResource("StandardMaterial3D_nnhik")
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o1va3"]
+data = PackedVector3Array(-0.25, 0.25, 0.25, 0.25, 0.25, 0.25, -0.25, -0.25, 0.25, 0.25, 0.25, 0.25, 0.25, -0.25, 0.25, -0.25, -0.25, 0.25, 0.25, 0.25, -0.25, -0.25, 0.25, -0.25, 0.25, -0.25, -0.25, -0.25, 0.25, -0.25, -0.25, -0.25, -0.25, 0.25, -0.25, -0.25, 0.25, 0.25, 0.25, 0.25, 0.25, -0.25, 0.25, -0.25, 0.25, 0.25, 0.25, -0.25, 0.25, -0.25, -0.25, 0.25, -0.25, 0.25, -0.25, 0.25, -0.25, -0.25, 0.25, 0.25, -0.25, -0.25, -0.25, -0.25, 0.25, 0.25, -0.25, -0.25, 0.25, -0.25, -0.25, -0.25, 0.25, 0.25, 0.25, -0.25, 0.25, 0.25, 0.25, 0.25, -0.25, -0.25, 0.25, 0.25, -0.25, 0.25, -0.25, 0.25, 0.25, -0.25, -0.25, -0.25, 0.25, 0.25, -0.25, 0.25, -0.25, -0.25, -0.25, 0.25, -0.25, 0.25, 0.25, -0.25, -0.25, -0.25, -0.25, -0.25)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0qqhw"]
+flip_faces = true
+top_radius = 0.03
+bottom_radius = 0.08
+height = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcl3h"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.823529)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrluh"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.788235)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_g24bd"]
+_data = [Vector2(0, 0.549574), 0.0, 0.0, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_8hje3"]
+curve = SubResource("Curve_g24bd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v55py"]
+resource_local_to_scene = true
+spread = 80.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_8hje3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_o6cur"]
+size = Vector2(0.02, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gq2v"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.870588)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_t0bsv"]
+_data = [Vector2(0, 0.459488), 0.0, 0.0, 0, 0, Vector2(0.304945, 0.979211), 0.0, 0.0, 0, 0, Vector2(0.884615, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_veerr"]
+curve = SubResource("Curve_t0bsv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k31uo"]
+resource_local_to_scene = true
+emission_shape = 3
+emission_box_extents = Vector3(0.03, 0.1, 0.03)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_veerr")
+collision_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_d4v3a"]
+size = Vector2(0.02, 0.02)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jf558"]
 albedo_texture = ExtResource("18_hm46v")
@@ -794,10 +963,107 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 connection_id = 4
 beam_size = 8.0
 
-[node name="Laser2" parent="Environment/Laser" instance=ExtResource("14_q8dgk")]
+[node name="Laser2" type="Node3D" parent="Environment/Laser"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.494847, -0.350981)
+script = ExtResource("17_j2wl5")
 connection_id = 4
 beam_size = 8.0
+
+[node name="Barrier" parent="Environment/Laser/Laser2" instance=ExtResource("19_js5r2")]
+transform = Transform3D(0.999995, 0.00270726, -0.00137378, -0.00270715, 0.999996, 7.97358e-05, 0.00137399, -7.60339e-05, 0.999999, -1.5, 0.25, 0)
+
+[node name="Barrier2" parent="Environment/Laser/Laser2" instance=ExtResource("19_js5r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, 0)
+
+[node name="Beam" parent="Environment/Laser/Laser2" instance=ExtResource("19_pca2s")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -1.24339, 0.34986, -2.38419e-07)
+
+[node name="Beam2" type="RayCast3D" parent="Environment/Laser/Laser2"]
+transform = Transform3D(-4.37114e-08, 1, 1.42109e-14, -1, -4.37114e-08, 0, 0, -1.42109e-14, 1, 1.243, 0.34986, 0)
+script = ExtResource("20_2bh0v")
+secondary_beam = true
+
+[node name="BeamMesh" type="MeshInstance3D" parent="Environment/Laser/Laser2/Beam2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013369, 2.98023e-08, -0.000730336)
+mesh = SubResource("CylinderMesh_g2lov")
+surface_material_override/0 = SubResource("StandardMaterial3D_esyfk")
+
+[node name="EndParticles" type="GPUParticles3D" parent="Environment/Laser/Laser2/Beam2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_bbsnq")
+amount = 25
+lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_vf42y")
+draw_pass_1 = SubResource("QuadMesh_a2r40")
+
+[node name="BeamParticles" type="GPUParticles3D" parent="Environment/Laser/Laser2/Beam2"]
+visible = false
+material_override = SubResource("StandardMaterial3D_xomts")
+amount = 50
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_xrjv8")
+draw_pass_1 = SubResource("QuadMesh_f1032")
+
+[node name="Laser3" type="Node3D" parent="Environment/Laser"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.994148, -0.35098)
+script = ExtResource("17_j2wl5")
+connection_id = 4
+beam_size = 8.0
+
+[node name="Barrier" type="MeshInstance3D" parent="Environment/Laser/Laser3"]
+transform = Transform3D(0.999995, 0.00270726, -0.00137378, -0.00270715, 0.999996, 7.97358e-05, 0.00137399, -7.60339e-05, 0.999999, -1.5, -0.449021, -2.38419e-07)
+visible = false
+mesh = SubResource("BoxMesh_dgda5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Laser/Laser3/Barrier"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Laser/Laser3/Barrier/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_o1va3")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Environment/Laser/Laser3/Barrier"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Barrier2" type="MeshInstance3D" parent="Environment/Laser/Laser3"]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 1.5, -0.449021, 0)
+visible = false
+mesh = SubResource("BoxMesh_dgda5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Laser/Laser3/Barrier2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Laser/Laser3/Barrier2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_o1va3")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Environment/Laser/Laser3/Barrier2"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Beam" parent="Environment/Laser/Laser3" instance=ExtResource("19_pca2s")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -1.24339, -0.449021, -2.38419e-07)
+
+[node name="Beam2" type="RayCast3D" parent="Environment/Laser/Laser3"]
+transform = Transform3D(-4.37114e-08, 1, 1.42109e-14, -1, -4.37114e-08, 0, 0, -1.42109e-14, 1, 1.243, -0.449021, 0)
+script = ExtResource("20_2bh0v")
+secondary_beam = true
+
+[node name="BeamMesh" type="MeshInstance3D" parent="Environment/Laser/Laser3/Beam2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013369, 2.98023e-08, -0.000730336)
+mesh = SubResource("CylinderMesh_0qqhw")
+surface_material_override/0 = SubResource("StandardMaterial3D_vcl3h")
+
+[node name="EndParticles" type="GPUParticles3D" parent="Environment/Laser/Laser3/Beam2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xrluh")
+amount = 25
+lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_v55py")
+draw_pass_1 = SubResource("QuadMesh_o6cur")
+
+[node name="BeamParticles" type="GPUParticles3D" parent="Environment/Laser/Laser3/Beam2"]
+visible = false
+material_override = SubResource("StandardMaterial3D_6gq2v")
+amount = 50
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_k31uo")
+draw_pass_1 = SubResource("QuadMesh_d4v3a")
 
 [node name="End Goal" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19411, 0.593995, 12.7331)
