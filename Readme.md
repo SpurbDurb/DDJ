@@ -28,7 +28,7 @@ The higher the players go, the more complex the puzzles become, and the more the
 
 ## Resources
 ### Environment
-- [3D Assets](https://www.mixamo.com)
+- [Animations](https://www.mixamo.com)
 - [Player](https://skfb.ly/6UUQT)
 - [Button](https://skfb.ly/ovJHW)
 - [Key](https://skfb.ly/on77Z)
